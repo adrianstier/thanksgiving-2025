@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wednesday Prep Night - Thanksgiving 2025</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .simple-menu {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: var(--space-lg);
+        }
+        .simple-item {
+            background: white;
+            padding: var(--space-lg);
+            border-radius: var(--radius-md);
+            border-left: 3px solid var(--color-primary);
+        }
+        .simple-item h4 {
+            margin: 0 0 var(--space-sm);
+            color: var(--color-text);
+        }
+        .simple-item p {
+            font-size: 0.9rem;
+            color: var(--color-text-secondary);
+            margin: 0;
+        }
+        .simple-item .why {
+            margin-top: var(--space-sm);
+            font-style: italic;
+            font-size: 0.85rem;
+            color: var(--color-text-light);
+        }
+        .prep-reminder {
+            background: rgba(101, 163, 13, 0.1);
+            border-left: 3px solid var(--color-success);
+            padding: var(--space-lg);
+            border-radius: var(--radius-md);
+            margin-top: var(--space-xl);
+        }
+        .prep-reminder h4 {
+            color: var(--color-success-hover);
+            margin: 0 0 var(--space-md);
+        }
+        .prep-reminder ul {
+            margin: 0;
+            padding-left: var(--space-lg);
+        }
+        .prep-reminder li {
+            font-size: 0.9rem;
+            padding: var(--space-xs) 0;
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <div class="nav-container">
+            <div class="nav-brand">Thanksgiving 2025</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Menu</a></li>
+                <li><a href="shopping.html">Shopping</a></li>
+                <li><a href="timeline.html">Timeline</a></li>
+                <li><a href="recipes.html">Recipes</a></li>
+                <li><a href="wednesday.html" class="active">Wed</a></li>
+                <li><a href="friday.html">Fri</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="header">
+        <h1>Wednesday Night</h1>
+        <p>November 26th • Keep it Simple</p>
+    </header>
+
+    <main class="container">
+        <section class="section">
+            <h2>Easy Dinner Ideas</h2>
+            <p class="section-intro">You'll be busy prepping tomorrow's feast. Pick something quick and easy tonight.</p>
+
+            <div class="simple-menu">
+                <div class="simple-item">
+                    <h4>Takeout Pizza</h4>
+                    <p>Order your favorite. No dishes, no stress.</p>
+                    <p class="why">Best choice if you're still shopping or have lots of prep.</p>
+                </div>
+
+                <div class="simple-item">
+                    <h4>Grilled Cheese & Soup</h4>
+                    <p>Classic comfort food. Use any bread and cheese you have.</p>
+                    <p class="why">Quick and uses minimal cookware.</p>
+                </div>
+
+                <div class="simple-item">
+                    <h4>Rotisserie Chicken</h4>
+                    <p>Grab one from the store. Serve with salad or bread.</p>
+                    <p class="why">Zero cooking, still feels like a real meal.</p>
+                </div>
+
+                <div class="simple-item">
+                    <h4>Pasta with Jarred Sauce</h4>
+                    <p>Boil pasta, heat sauce. Done in 15 minutes.</p>
+                    <p class="why">Everyone loves it, easy cleanup.</p>
+                </div>
+
+                <div class="simple-item">
+                    <h4>Sandwiches</h4>
+                    <p>Deli meat, cheese, whatever's in the fridge.</p>
+                    <p class="why">No cooking required at all.</p>
+                </div>
+
+                <div class="simple-item">
+                    <h4>Frozen Pizza</h4>
+                    <p>Keep one in the freezer for backup.</p>
+                    <p class="why">Oven does the work while you prep.</p>
+                </div>
+            </div>
+
+            <div class="prep-reminder">
+                <h4>Don't Forget Tonight's Prep</h4>
+                <ul>
+                    <li>Dry brine the turkey (if not done Monday)</li>
+                    <li>Make cranberry sauce</li>
+                    <li>Cube bread for stuffing</li>
+                    <li>Prep vegetables (peel, chop, store)</li>
+                    <li>Set the table</li>
+                    <li>Clear fridge space for Thursday</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Save your energy for the big day!</p>
+    </footer>
+</body>
+</html>
