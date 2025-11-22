@@ -5,60 +5,111 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Timeline - Thanksgiving 2025</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="https://d3js.org/d3.v7.min.js"></script>
     <style>
-        .day-btn {
+        .timeline-container {
             width: 100%;
-            background: white;
-            border: none;
-            padding: var(--space-md);
-            text-align: left;
-            cursor: pointer;
-            border-radius: var(--radius-md);
-            margin-bottom: var(--space-sm);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-family: var(--font-display);
-            font-size: 1rem;
-            font-weight: 600;
-            color: var(--color-text);
-            transition: all var(--transition-fast);
-            border-left: 3px solid var(--color-primary);
+            overflow-x: auto;
         }
-        .day-btn:hover {
-            background: var(--color-surface-elevated);
-        }
-        .day-btn .hint {
-            font-size: 0.8rem;
-            color: var(--color-text-secondary);
-            font-weight: normal;
-        }
-        .day-content {
-            display: none;
-            background: white;
-            padding: var(--space-md);
-            margin: -0.5rem 0 var(--space-md) 0;
-            border-radius: 0 0 var(--radius-md) var(--radius-md);
-        }
-        .day-content.active {
+        .timeline-svg {
             display: block;
+            margin: 0 auto;
         }
-        .task {
-            padding: var(--space-sm) 0;
-            border-bottom: 1px solid var(--color-border-light);
-            font-size: 0.9rem;
+        .task-block {
+            cursor: pointer;
+            transition: all 0.2s ease;
         }
-        .task:last-child {
-            border-bottom: none;
+        .task-block:hover {
+            filter: brightness(1.1);
         }
-        .task-time {
-            font-weight: 600;
-            color: var(--color-primary);
+        .task-text {
+            font-family: system-ui, -apple-system, sans-serif;
+            font-size: 11px;
+            fill: white;
+            pointer-events: none;
+        }
+        .time-label {
+            font-family: 'SF Mono', 'Consolas', monospace;
+            font-size: 10px;
+            fill: #78716c;
+        }
+        .day-label {
+            font-family: 'Georgia', serif;
+            font-size: 14px;
+            font-weight: bold;
+            fill: #44403c;
+        }
+        .grid-line {
+            stroke: #e7e5e4;
+            stroke-width: 1;
+        }
+        .now-line {
+            stroke: #dc2626;
+            stroke-width: 2;
+            stroke-dasharray: 4,4;
+        }
+        .legend {
+            display: flex;
+            gap: var(--space-lg);
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: var(--space-lg);
+        }
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: var(--space-xs);
             font-size: 0.85rem;
         }
-        .thursday-highlight {
-            background: rgba(245, 158, 11, 0.1);
-            border-left-color: var(--color-warm);
+        .legend-color {
+            width: 16px;
+            height: 16px;
+            border-radius: 3px;
+        }
+        .tooltip {
+            position: absolute;
+            background: white;
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-md);
+            padding: var(--space-md);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.2s;
+            max-width: 250px;
+            z-index: 100;
+        }
+        .tooltip h4 {
+            margin: 0 0 var(--space-xs);
+            font-size: 0.9rem;
+        }
+        .tooltip p {
+            margin: 0;
+            font-size: 0.8rem;
+            color: var(--color-text-secondary);
+        }
+        .view-toggle {
+            display: flex;
+            gap: var(--space-sm);
+            justify-content: center;
+            margin-bottom: var(--space-lg);
+        }
+        .view-btn {
+            padding: var(--space-sm) var(--space-md);
+            border: 1px solid var(--color-border);
+            background: white;
+            border-radius: var(--radius-sm);
+            cursor: pointer;
+            font-size: 0.85rem;
+            transition: all var(--transition-fast);
+        }
+        .view-btn.active {
+            background: var(--color-primary);
+            color: white;
+            border-color: var(--color-primary);
+        }
+        .view-btn:hover:not(.active) {
+            background: var(--color-surface-elevated);
         }
     </style>
 </head>
@@ -77,144 +128,333 @@
 
     <header class="header">
         <h1>Timeline</h1>
-        <p>Tap a day to see tasks</p>
+        <p>Visual schedule for prep and cooking</p>
     </header>
 
     <main class="container">
         <section class="section">
-            <h2>Prep Days</h2>
+            <div class="view-toggle">
+                <button class="view-btn active" onclick="showView('thursday')">Thursday</button>
+                <button class="view-btn" onclick="showView('prep')">Prep Days</button>
+            </div>
 
-            <button class="day-btn" onclick="toggle('monday')">
-                Monday <span class="hint">Shop & start brine</span>
-            </button>
-            <div id="monday" class="day-content">
-                <div class="task">
-                    <div class="task-time">Morning</div>
-                    Shop for all groceries except fresh herbs, avocado, and rolls.
+            <div class="timeline-container">
+                <svg id="timeline" class="timeline-svg"></svg>
+            </div>
+
+            <div class="legend">
+                <div class="legend-item">
+                    <div class="legend-color" style="background: #9f1239;"></div>
+                    <span>Turkey</span>
                 </div>
-                <div class="task">
-                    <div class="task-time">Afternoon</div>
-                    Start dry brine: Pat turkey dry, season with salt (1 tbsp per 5 lbs), place uncovered on rack in fridge.
+                <div class="legend-item">
+                    <div class="legend-color" style="background: #f59e0b;"></div>
+                    <span>Oven</span>
                 </div>
-                <div class="task">
-                    <div class="task-time">Evening</div>
-                    Roast garlic for potatoes. Toast croissants for stuffing.
+                <div class="legend-item">
+                    <div class="legend-color" style="background: #65a30d;"></div>
+                    <span>Stovetop</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background: #0891b2;"></div>
+                    <span>Prep</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background: #7c3aed;"></div>
+                    <span>Serve</span>
                 </div>
             </div>
 
-            <button class="day-btn" onclick="toggle('tuesday')">
-                Tuesday <span class="hint">Prep vegetables & gravy</span>
-            </button>
-            <div id="tuesday" class="day-content">
-                <div class="task">
-                    <div class="task-time">Morning</div>
-                    Pick up fresh herbs. Peel and chop carrots, parsnips, sweet potatoes. Store in containers.
-                </div>
-                <div class="task">
-                    <div class="task-time">Afternoon</div>
-                    Make mushroom gravy. Prep salad dressing. Shred cheeses for mac and cheese.
-                </div>
-            </div>
-
-            <button class="day-btn" onclick="toggle('wednesday')">
-                Wednesday <span class="hint">Assemble sides & set table</span>
-            </button>
-            <div id="wednesday" class="day-content">
-                <div class="task">
-                    <div class="task-time">Morning</div>
-                    Assemble stuffing (don't bake). Make apple cake.
-                </div>
-                <div class="task">
-                    <div class="task-time">Afternoon</div>
-                    Make mashed potatoes. Pick up avocado and dinner rolls.
-                </div>
-                <div class="task">
-                    <div class="task-time">Evening</div>
-                    Set the table. Lay out serving dishes and label them.
-                </div>
-            </div>
-        </section>
-
-        <section class="section">
-            <h2>Thursday</h2>
-
-            <button class="day-btn thursday-highlight" onclick="toggle('morning')">
-                Morning <span class="hint">Turkey prep & in oven</span>
-            </button>
-            <div id="morning" class="day-content">
-                <div class="task">
-                    <div class="task-time">8:00 AM</div>
-                    Take turkey out of fridge. Let come to room temperature.
-                </div>
-                <div class="task">
-                    <div class="task-time">9:30 AM</div>
-                    Spatchcock turkey. Prepare herb mayo coating.
-                </div>
-                <div class="task">
-                    <div class="task-time">10:00 AM</div>
-                    Preheat oven to 450°F. Rub turkey with herb mayo.
-                </div>
-                <div class="task">
-                    <div class="task-time">10:30 AM</div>
-                    Turkey goes in at 450°F for 30 min, then reduce to 400°F.
-                </div>
-            </div>
-
-            <button class="day-btn thursday-highlight" onclick="toggle('midday')">
-                Midday <span class="hint">Turkey done, sides in oven</span>
-            </button>
-            <div id="midday" class="day-content">
-                <div class="task">
-                    <div class="task-time">12:00 PM</div>
-                    Check turkey temp. Looking for 165°F in thigh.
-                </div>
-                <div class="task">
-                    <div class="task-time">12:30 PM</div>
-                    Turkey done. Rest for 30 minutes under foil.
-                </div>
-                <div class="task">
-                    <div class="task-time">12:45 PM</div>
-                    Oven to 375°F. Root vegetables and stuffing go in.
-                </div>
-            </div>
-
-            <button class="day-btn thursday-highlight" onclick="toggle('final')">
-                Final Push <span class="hint">Finish sides, carve turkey</span>
-            </button>
-            <div id="final" class="day-content">
-                <div class="task">
-                    <div class="task-time">1:15 PM</div>
-                    Mac and cheese in oven. Reheat mashed potatoes on stove.
-                </div>
-                <div class="task">
-                    <div class="task-time">1:45 PM</div>
-                    Reheat gravy. Cook green beans.
-                </div>
-                <div class="task">
-                    <div class="task-time">2:15 PM</div>
-                    Remove everything from oven. Assemble salad.
-                </div>
-                <div class="task">
-                    <div class="task-time">2:30 PM</div>
-                    Carve turkey. Transfer to serving dishes.
-                </div>
-                <div class="task">
-                    <div class="task-time">3:00 PM</div>
-                    Dinner is served!
-                </div>
-            </div>
+            <div class="tooltip" id="tooltip"></div>
         </section>
     </main>
 
     <footer>
-        <p>Print this page and keep it in the kitchen.</p>
+        <p>Hover over tasks for details</p>
     </footer>
 
     <script>
-        function toggle(id) {
-            const el = document.getElementById(id);
-            el.classList.toggle('active');
+        // Task data
+        const thursdayTasks = [
+            { start: 8, end: 10, task: "Turkey to room temp", category: "turkey", detail: "Take turkey out of fridge. Let come to room temperature for even cooking." },
+            { start: 9.5, end: 10, task: "Spatchcock & prep", category: "prep", detail: "Spatchcock turkey if not done. Mix herb mayo coating." },
+            { start: 10, end: 10.5, task: "Preheat & rub", category: "prep", detail: "Preheat oven to 450°F. Rub turkey with herb mayo." },
+            { start: 10.5, end: 12.5, task: "Roast turkey", category: "turkey", detail: "450°F for 30 min, then 400°F until 165°F in thigh." },
+            { start: 11.5, end: 12, task: "Prep mac & cheese", category: "prep", detail: "Make bechamel, cook pasta, assemble in dish." },
+            { start: 12.5, end: 13, task: "Rest turkey", category: "turkey", detail: "Rest 30 minutes under foil. Essential for juicy meat." },
+            { start: 12.75, end: 13.5, task: "Bake stuffing", category: "oven", detail: "375°F for 25-30 minutes until golden." },
+            { start: 12.75, end: 14.25, task: "Roast vegetables", category: "oven", detail: "375°F for 40 minutes, stir once." },
+            { start: 13.25, end: 14.25, task: "Bake mac & cheese", category: "oven", detail: "375°F for 30 minutes until golden and bubbly." },
+            { start: 13.25, end: 14, task: "Reheat potatoes", category: "stovetop", detail: "On stove with extra cream and butter." },
+            { start: 13.75, end: 14.25, task: "Green beans", category: "stovetop", detail: "Quick sauté with garlic, finish with lemon." },
+            { start: 13.75, end: 14.25, task: "Reheat gravy", category: "stovetop", detail: "Warm on stove, add splash of broth if needed." },
+            { start: 14.25, end: 14.5, task: "Assemble salad", category: "prep", detail: "Combine greens, apple, feta, pomegranate. Dress just before serving." },
+            { start: 14.5, end: 15, task: "Carve & serve", category: "serve", detail: "Carve turkey, transfer everything to serving dishes." }
+        ];
+
+        const prepTasks = [
+            // Monday
+            { day: "Monday", start: 9, end: 12, task: "Shop for groceries", category: "prep", detail: "All groceries except fresh herbs, avocado, and rolls." },
+            { day: "Monday", start: 14, end: 15, task: "Start dry brine", category: "turkey", detail: "Pat turkey dry, season with salt (1 tbsp per 5 lbs)." },
+            { day: "Monday", start: 18, end: 19, task: "Roast garlic", category: "oven", detail: "For mashed potatoes. Toast croissants for stuffing." },
+            // Tuesday
+            { day: "Tuesday", start: 10, end: 12, task: "Prep vegetables", category: "prep", detail: "Peel and chop carrots, parsnips, sweet potatoes." },
+            { day: "Tuesday", start: 14, end: 16, task: "Make gravy", category: "stovetop", detail: "Mushroom gravy. Prep salad dressing. Shred cheeses." },
+            // Wednesday
+            { day: "Wednesday", start: 10, end: 12, task: "Assemble stuffing", category: "prep", detail: "Assemble but don't bake. Make apple cake." },
+            { day: "Wednesday", start: 14, end: 16, task: "Make potatoes", category: "stovetop", detail: "Mashed potatoes reheat beautifully." },
+            { day: "Wednesday", start: 18, end: 19, task: "Set table", category: "serve", detail: "Set table, lay out serving dishes with labels." }
+        ];
+
+        const colors = {
+            turkey: "#9f1239",
+            oven: "#f59e0b",
+            stovetop: "#65a30d",
+            prep: "#0891b2",
+            serve: "#7c3aed"
+        };
+
+        let currentView = 'thursday';
+
+        function showView(view) {
+            currentView = view;
+            document.querySelectorAll('.view-btn').forEach(btn => {
+                btn.classList.toggle('active', btn.textContent.toLowerCase().includes(view));
+            });
+            if (view === 'thursday') {
+                drawThursdayTimeline();
+            } else {
+                drawPrepTimeline();
+            }
         }
+
+        function drawThursdayTimeline() {
+            const svg = d3.select("#timeline");
+            svg.selectAll("*").remove();
+
+            const margin = { top: 40, right: 30, bottom: 40, left: 80 };
+            const width = Math.min(900, window.innerWidth - 60);
+            const height = 500;
+
+            svg.attr("width", width).attr("height", height);
+
+            const innerWidth = width - margin.left - margin.right;
+            const innerHeight = height - margin.top - margin.bottom;
+
+            const g = svg.append("g")
+                .attr("transform", `translate(${margin.left},${margin.top})`);
+
+            // Time scale (8 AM to 3 PM)
+            const timeScale = d3.scaleLinear()
+                .domain([8, 15])
+                .range([0, innerWidth]);
+
+            // Category positions
+            const categories = ["turkey", "oven", "stovetop", "prep", "serve"];
+            const categoryScale = d3.scaleBand()
+                .domain(categories)
+                .range([0, innerHeight])
+                .padding(0.2);
+
+            // Grid lines
+            for (let hour = 8; hour <= 15; hour++) {
+                g.append("line")
+                    .attr("class", "grid-line")
+                    .attr("x1", timeScale(hour))
+                    .attr("x2", timeScale(hour))
+                    .attr("y1", 0)
+                    .attr("y2", innerHeight);
+            }
+
+            // Time labels
+            for (let hour = 8; hour <= 15; hour++) {
+                const label = hour <= 12 ? `${hour}am` : hour === 12 ? "12pm" : `${hour-12}pm`;
+                g.append("text")
+                    .attr("class", "time-label")
+                    .attr("x", timeScale(hour))
+                    .attr("y", -10)
+                    .attr("text-anchor", "middle")
+                    .text(label);
+            }
+
+            // Category labels
+            categories.forEach(cat => {
+                g.append("text")
+                    .attr("class", "day-label")
+                    .attr("x", -10)
+                    .attr("y", categoryScale(cat) + categoryScale.bandwidth() / 2)
+                    .attr("text-anchor", "end")
+                    .attr("dominant-baseline", "middle")
+                    .style("font-size", "12px")
+                    .text(cat.charAt(0).toUpperCase() + cat.slice(1));
+            });
+
+            // Task blocks
+            const tooltip = d3.select("#tooltip");
+
+            thursdayTasks.forEach(task => {
+                const rect = g.append("rect")
+                    .attr("class", "task-block")
+                    .attr("x", timeScale(task.start))
+                    .attr("y", categoryScale(task.category))
+                    .attr("width", timeScale(task.end) - timeScale(task.start))
+                    .attr("height", categoryScale.bandwidth())
+                    .attr("rx", 4)
+                    .attr("fill", colors[task.category])
+                    .on("mouseover", function(event) {
+                        tooltip.style("opacity", 1)
+                            .html(`<h4>${task.task}</h4><p>${task.detail}</p>`)
+                            .style("left", (event.pageX + 10) + "px")
+                            .style("top", (event.pageY - 10) + "px");
+                    })
+                    .on("mousemove", function(event) {
+                        tooltip.style("left", (event.pageX + 10) + "px")
+                            .style("top", (event.pageY - 10) + "px");
+                    })
+                    .on("mouseout", function() {
+                        tooltip.style("opacity", 0);
+                    });
+
+                // Task text
+                const textWidth = timeScale(task.end) - timeScale(task.start);
+                if (textWidth > 40) {
+                    g.append("text")
+                        .attr("class", "task-text")
+                        .attr("x", timeScale(task.start) + 6)
+                        .attr("y", categoryScale(task.category) + categoryScale.bandwidth() / 2)
+                        .attr("dominant-baseline", "middle")
+                        .text(task.task.length > textWidth/7 ? task.task.substring(0, Math.floor(textWidth/7)) + "..." : task.task);
+                }
+            });
+
+            // Dinner time marker
+            g.append("line")
+                .attr("class", "now-line")
+                .attr("x1", timeScale(15))
+                .attr("x2", timeScale(15))
+                .attr("y1", 0)
+                .attr("y2", innerHeight);
+
+            g.append("text")
+                .attr("x", timeScale(15))
+                .attr("y", innerHeight + 25)
+                .attr("text-anchor", "middle")
+                .attr("fill", "#dc2626")
+                .attr("font-size", "12px")
+                .attr("font-weight", "bold")
+                .text("DINNER");
+        }
+
+        function drawPrepTimeline() {
+            const svg = d3.select("#timeline");
+            svg.selectAll("*").remove();
+
+            const margin = { top: 40, right: 30, bottom: 40, left: 100 };
+            const width = Math.min(900, window.innerWidth - 60);
+            const height = 400;
+
+            svg.attr("width", width).attr("height", height);
+
+            const innerWidth = width - margin.left - margin.right;
+            const innerHeight = height - margin.top - margin.bottom;
+
+            const g = svg.append("g")
+                .attr("transform", `translate(${margin.left},${margin.top})`);
+
+            // Time scale (9 AM to 7 PM)
+            const timeScale = d3.scaleLinear()
+                .domain([9, 19])
+                .range([0, innerWidth]);
+
+            // Day positions
+            const days = ["Monday", "Tuesday", "Wednesday"];
+            const dayScale = d3.scaleBand()
+                .domain(days)
+                .range([0, innerHeight])
+                .padding(0.3);
+
+            // Grid lines
+            for (let hour = 9; hour <= 19; hour += 2) {
+                g.append("line")
+                    .attr("class", "grid-line")
+                    .attr("x1", timeScale(hour))
+                    .attr("x2", timeScale(hour))
+                    .attr("y1", 0)
+                    .attr("y2", innerHeight);
+            }
+
+            // Time labels
+            for (let hour = 9; hour <= 19; hour += 2) {
+                const label = hour < 12 ? `${hour}am` : hour === 12 ? "12pm" : `${hour-12}pm`;
+                g.append("text")
+                    .attr("class", "time-label")
+                    .attr("x", timeScale(hour))
+                    .attr("y", -10)
+                    .attr("text-anchor", "middle")
+                    .text(label);
+            }
+
+            // Day labels
+            days.forEach(day => {
+                g.append("text")
+                    .attr("class", "day-label")
+                    .attr("x", -10)
+                    .attr("y", dayScale(day) + dayScale.bandwidth() / 2)
+                    .attr("text-anchor", "end")
+                    .attr("dominant-baseline", "middle")
+                    .text(day);
+            });
+
+            // Task blocks
+            const tooltip = d3.select("#tooltip");
+
+            prepTasks.forEach(task => {
+                const rect = g.append("rect")
+                    .attr("class", "task-block")
+                    .attr("x", timeScale(task.start))
+                    .attr("y", dayScale(task.day))
+                    .attr("width", timeScale(task.end) - timeScale(task.start))
+                    .attr("height", dayScale.bandwidth())
+                    .attr("rx", 4)
+                    .attr("fill", colors[task.category])
+                    .on("mouseover", function(event) {
+                        tooltip.style("opacity", 1)
+                            .html(`<h4>${task.task}</h4><p>${task.detail}</p>`)
+                            .style("left", (event.pageX + 10) + "px")
+                            .style("top", (event.pageY - 10) + "px");
+                    })
+                    .on("mousemove", function(event) {
+                        tooltip.style("left", (event.pageX + 10) + "px")
+                            .style("top", (event.pageY - 10) + "px");
+                    })
+                    .on("mouseout", function() {
+                        tooltip.style("opacity", 0);
+                    });
+
+                // Task text
+                const textWidth = timeScale(task.end) - timeScale(task.start);
+                if (textWidth > 50) {
+                    g.append("text")
+                        .attr("class", "task-text")
+                        .attr("x", timeScale(task.start) + 6)
+                        .attr("y", dayScale(task.day) + dayScale.bandwidth() / 2)
+                        .attr("dominant-baseline", "middle")
+                        .text(task.task);
+                }
+            });
+        }
+
+        // Initial draw
+        drawThursdayTimeline();
+
+        // Redraw on resize
+        window.addEventListener('resize', () => {
+            if (currentView === 'thursday') {
+                drawThursdayTimeline();
+            } else {
+                drawPrepTimeline();
+            }
+        });
     </script>
 </body>
 </html>
