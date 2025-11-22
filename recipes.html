@@ -186,6 +186,14 @@
         <!-- Recipe Grid (default view) -->
         <div id="recipe-list" class="section">
             <div class="recipe-grid">
+                <a href="#charcuterie" class="recipe-card-link" onclick="showRecipe('charcuterie')">
+                    <img src="https://images.unsplash.com/photo-1541529086526-db283c563270?w=800" alt="Charcuterie">
+                    <div class="card-content">
+                        <h3>Charcuterie Board</h3>
+                        <p>Prep 30 min</p>
+                    </div>
+                </a>
+
                 <a href="#turkey" class="recipe-card-link" onclick="showRecipe('turkey')">
                     <img src="https://images.unsplash.com/photo-1574672280600-4accfa5b6f98?w=800" alt="Turkey">
                     <div class="card-content">
@@ -261,6 +269,48 @@
         </div>
 
         <!-- Individual Recipe Details -->
+        <div id="charcuterie" class="recipe-detail">
+            <a href="#" class="back-link" onclick="showList()">← Back to all recipes</a>
+            <div class="recipe-detail-card">
+                <img src="https://images.unsplash.com/photo-1541529086526-db283c563270?w=800" alt="Charcuterie Board">
+                <div class="content">
+                    <h2>Charcuterie Board</h2>
+                    <div class="recipe-meta">
+                        <span>Prep: 30 min</span>
+                        <span>Serves: 8</span>
+                    </div>
+                    <div class="two-column">
+                        <div class="ingredients">
+                            <h4>Ingredients</h4>
+                            <ul>
+                                <li><strong>Cheeses (pick 3-4):</strong> aged cheddar, brie, goat cheese, gruyere, cranberry Wensleydale, smoked gouda</li>
+                                <li><strong>Meats (pick 3-4):</strong> prosciutto, salami, sopressata, smoked turkey, chorizo, capicola</li>
+                                <li><strong>Crackers:</strong> water crackers, rosemary crackers, baguette slices, crostini</li>
+                                <li><strong>Fruits:</strong> apple slices, pear slices, grapes, fresh figs, dried apricots, dried cranberries</li>
+                                <li><strong>Nuts:</strong> candied pecans, marcona almonds, spiced nuts</li>
+                                <li><strong>Spreads:</strong> whole grain mustard, honey, fig jam, cranberry chutney</li>
+                                <li><strong>Extras:</strong> cornichons, olives, cherry tomatoes, dark chocolate, honeycomb</li>
+                            </ul>
+                        </div>
+                        <div class="instructions">
+                            <h4>Assembly</h4>
+                            <ol>
+                                <li><strong>Prep cheeses:</strong> Pull from fridge 30-60 min before serving. Cut into wedges or slices.</li>
+                                <li><strong>Arrange anchors:</strong> Place cheese wedges and small bowls (for honey, olives, etc.) first.</li>
+                                <li><strong>Add meats:</strong> Fold or roll meats and place around cheeses.</li>
+                                <li><strong>Fill gaps:</strong> Add crackers, fruits, and nuts in remaining spaces.</li>
+                                <li><strong>Garnish:</strong> Add fresh herbs like rosemary for color.</li>
+                            </ol>
+                            <div class="tip-box">
+                                <h4>Portions</h4>
+                                <p>For pre-dinner snacking: 2-3 oz cheese and 2 oz meat per person. Keep portions moderate so guests aren't full before dinner!</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <div id="turkey" class="recipe-detail">
             <a href="#" class="back-link" onclick="showList()">← Back to all recipes</a>
             <div class="recipe-detail-card">

@@ -113,6 +113,24 @@
 
     <main class="container">
         <section class="section">
+            <button class="category-btn" onclick="toggle('charcuterie')">
+                Charcuterie Board <span class="count">12 items</span>
+            </button>
+            <div id="charcuterie" class="category-content">
+                <div class="item"><input type="checkbox" id="c1" onchange="checkItem(this)"><label for="c1">Cheeses (pick 3-4): aged cheddar, brie, goat cheese, gruyere</label></div>
+                <div class="item"><input type="checkbox" id="c2" onchange="checkItem(this)"><label for="c2">Meats (pick 3-4): prosciutto, salami, sopressata</label></div>
+                <div class="item"><input type="checkbox" id="c3" onchange="checkItem(this)"><label for="c3">Water crackers & rosemary crackers</label></div>
+                <div class="item"><input type="checkbox" id="c4" onchange="checkItem(this)"><label for="c4">Baguette for slicing</label></div>
+                <div class="item"><input type="checkbox" id="c5" onchange="checkItem(this)"><label for="c5">Grapes - red and green</label></div>
+                <div class="item"><input type="checkbox" id="c6" onchange="checkItem(this)"><label for="c6">Fresh figs (if available)</label></div>
+                <div class="item"><input type="checkbox" id="c7" onchange="checkItem(this)"><label for="c7">Dried apricots & cranberries</label></div>
+                <div class="item"><input type="checkbox" id="c8" onchange="checkItem(this)"><label for="c8">Candied pecans or marcona almonds</label></div>
+                <div class="item"><input type="checkbox" id="c9" onchange="checkItem(this)"><label for="c9">Fig jam & cranberry chutney</label></div>
+                <div class="item"><input type="checkbox" id="c10" onchange="checkItem(this)"><label for="c10">Cornichons & mixed olives</label></div>
+                <div class="item"><input type="checkbox" id="c11" onchange="checkItem(this)"><label for="c11">Dark chocolate pieces</label></div>
+                <div class="item"><input type="checkbox" id="c12" onchange="checkItem(this)"><label for="c12">Honeycomb (optional)</label></div>
+            </div>
+
             <button class="category-btn" onclick="toggle('meat')">
                 Meat & Deli <span class="count">2 items</span>
             </button>
