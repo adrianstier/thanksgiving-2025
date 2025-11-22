@@ -1,0 +1,1205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thanksgiving 2025 - Complete Plan with Recipes</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            line-height: 1.6;
+            color: #3a3a3a;
+            background: linear-gradient(135deg, #f5f1e8 0%, #fff8e7 100%);
+        }
+
+        .header {
+            background: linear-gradient(135deg, #8b4513 0%, #d2691e 100%);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .header h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.95;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .intro {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+            border-left: 5px solid #d2691e;
+        }
+
+        .intro h2 {
+            color: #8b4513;
+            margin-bottom: 1rem;
+        }
+
+        .section {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+        }
+
+        .section h2 {
+            color: #8b4513;
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+            border-bottom: 3px solid #d2691e;
+            padding-bottom: 0.5rem;
+        }
+
+        .recipe-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            margin-bottom: 2rem;
+            border-left: 5px solid #d2691e;
+        }
+
+        .recipe-header {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 2rem;
+            padding: 2rem;
+            background: #fff8e7;
+        }
+
+        .recipe-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .recipe-header-content h3 {
+            font-size: 1.8rem;
+            color: #8b4513;
+            margin-bottom: 0.5rem;
+        }
+
+        .recipe-source {
+            font-size: 0.9rem;
+            color: #666;
+            font-style: italic;
+            margin-bottom: 1rem;
+        }
+
+        .recipe-body {
+            padding: 2rem;
+        }
+
+        .recipe-meta {
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .recipe-meta-item {
+            background: #fff8e7;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            font-size: 0.9rem;
+        }
+
+        .recipe-meta-item strong {
+            color: #8b4513;
+        }
+
+        .ingredients-instructions {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .ingredients h4, .instructions h4 {
+            color: #8b4513;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+            border-bottom: 2px solid #d2691e;
+            padding-bottom: 0.5rem;
+        }
+
+        .ingredients ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .ingredients li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #f0e8d8;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .ingredients li:before {
+            content: "▪";
+            color: #d2691e;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        .instructions ol {
+            counter-reset: step-counter;
+            list-style: none;
+            padding: 0;
+        }
+
+        .instructions li {
+            counter-increment: step-counter;
+            margin-bottom: 1.5rem;
+            padding-left: 3rem;
+            position: relative;
+        }
+
+        .instructions li:before {
+            content: counter(step-counter);
+            background: #d2691e;
+            color: white;
+            font-weight: bold;
+            width: 2rem;
+            height: 2rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        .recipe-notes {
+            background: #e8f5e9;
+            padding: 1rem;
+            border-radius: 8px;
+            margin-top: 1.5rem;
+            border-left: 4px solid #4caf50;
+        }
+
+        .recipe-notes h5 {
+            color: #2e7d32;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline {
+            background: #fff8e7;
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin: 1rem 0;
+            border-left: 4px solid #d2691e;
+        }
+
+        .timeline h3 {
+            color: #8b4513;
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
+        }
+
+        .timeline-item {
+            margin: 1rem 0;
+            padding: 0.75rem;
+            background: white;
+            border-radius: 8px;
+        }
+
+        .timeline-time {
+            font-weight: bold;
+            color: #d2691e;
+            margin-bottom: 0.5rem;
+        }
+
+        .shopping-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .shopping-category {
+            background: #fff8e7;
+            padding: 1.5rem;
+            border-radius: 10px;
+            border-top: 3px solid #d2691e;
+        }
+
+        .shopping-category h3 {
+            color: #8b4513;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .shopping-category ul {
+            list-style: none;
+        }
+
+        .shopping-category li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #e0d5c0;
+        }
+
+        .shopping-category li:before {
+            content: "□ ";
+            color: #d2691e;
+            font-weight: bold;
+            margin-right: 0.5rem;
+        }
+
+        .tips-box {
+            background: #e8f5e9;
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin: 1rem 0;
+            border-left: 4px solid #4caf50;
+        }
+
+        .tips-box h3 {
+            color: #2e7d32;
+            margin-bottom: 0.75rem;
+        }
+
+        .warning-box {
+            background: #fff3e0;
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin: 1rem 0;
+            border-left: 4px solid #ff9800;
+        }
+
+        .warning-box h3 {
+            color: #e65100;
+            margin-bottom: 0.75rem;
+        }
+
+        .icon {
+            font-size: 1.5rem;
+            margin-right: 0.5rem;
+        }
+
+        @media print {
+            body {
+                background: white;
+            }
+            .recipe-card {
+                break-inside: avoid;
+                page-break-inside: avoid;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+            .recipe-header {
+                grid-template-columns: 1fr;
+            }
+            .ingredients-instructions {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>🦃 Thanksgiving 2025 🍂</h1>
+        <p>Your Complete Cooking Plan for 8 People</p>
+        <p style="font-size: 1rem; margin-top: 0.5rem;">4 Adults • 2 Teenagers • 2 Children (ages 4 & 7)</p>
+    </div>
+
+    <div class="container">
+        <div class="intro">
+            <h2>🎯 Your Menu at a Glance</h2>
+            <p>You've chosen an incredible menu with <strong>10 delicious dishes</strong> that will create the perfect Thanksgiving feast. With proper planning and prep work, you'll have a stress-free holiday with minimal leftovers!</p>
+            <p style="margin-top: 1rem;"><strong>Estimated Total Cost:</strong> $150-200 | <strong>Dinner Time:</strong> 3:00 PM</p>
+        </div>
+
+        <!-- Recipe 1: Turkey -->
+        <div class="recipe-card">
+            <div class="recipe-header">
+                <img src="https://images.unsplash.com/photo-1574672280600-4accfa5b6f98?w=800" alt="Spatchcock Turkey" class="recipe-image">
+                <div class="recipe-header-content">
+                    <h3>🦃 Spatchcock Roast Turkey</h3>
+                    <p class="recipe-source">NYT Cooking / Various sources</p>
+                    <p>The star of the show! Spatchcocking (removing the backbone) allows the turkey to cook evenly and quickly - about 70-80 minutes total. You'll get perfectly crispy skin and juicy meat every time.</p>
+                    <div class="recipe-meta">
+                        <div class="recipe-meta-item"><strong>Serves:</strong> 8 people</div>
+                        <div class="recipe-meta-item"><strong>Cook Time:</strong> 70-80 minutes</div>
+                        <div class="recipe-meta-item"><strong>Prep Ahead:</strong> Dry brine 2-3 days before</div>
+                    </div>
+                </div>
+            </div>
+            <div class="recipe-body">
+                <div class="ingredients-instructions">
+                    <div class="ingredients">
+                        <h4>Ingredients</h4>
+                        <ul>
+                            <li>12-14 lb whole turkey</li>
+                            <li>6 tablespoons Diamond Crystal kosher salt (or 4 tbsp Morton's)</li>
+                            <li>2-3 tablespoons olive oil</li>
+                            <li>Fresh black pepper</li>
+                            <li>Optional: fresh thyme, sage, and rosemary sprigs</li>
+                        </ul>
+                    </div>
+                    <div class="instructions">
+                        <h4>Instructions</h4>
+                        <ol>
+                            <li><strong>Spatchcock the turkey (2-3 days before):</strong> Place turkey breast-side down. Using sharp kitchen shears, cut along both sides of the backbone and remove it (save for stock). Flip turkey over and press down firmly on the breastbone to flatten.</li>
+                            <li><strong>Dry brine:</strong> Pat turkey completely dry with paper towels. Carefully loosen skin from breasts. Season each breast with 1 teaspoon salt under the skin. Sprinkle remaining salt evenly over entire turkey. Place on a baking sheet, refrigerate uncovered for 12-48 hours.</li>
+                            <li><strong>Thanksgiving Day:</strong> Remove turkey from fridge 30-60 minutes before cooking. Preheat oven to 425°F.</li>
+                            <li><strong>Prepare for roasting:</strong> Brush turkey lightly with olive oil, season with black pepper. Place on a rimmed baking sheet or roasting pan.</li>
+                            <li><strong>Roast:</strong> Place turkey in center of oven. Roast at 425°F for 30 minutes. Reduce heat to 350°F and continue roasting for 40-50 minutes, until thickest part of breast reaches 155°F (carryover heat will bring it to 165°F).</li>
+                            <li><strong>Rest:</strong> Remove turkey from oven, tent loosely with foil. Let rest 15 minutes before carving. Temperature will rise to 165°F during rest.</li>
+                        </ol>
+                    </div>
+                </div>
+                <div class="recipe-notes">
+                    <h5>💡 Pro Tips:</h5>
+                    <p>• The backbone can be roasted separately with vegetables for amazing gravy<br>
+                    • Use an instant-read thermometer for accuracy<br>
+                    • Don't skip the resting time - it allows juices to redistribute</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Recipe 2: Croissant Stuffing -->
+        <div class="recipe-card">
+            <div class="recipe-header">
+                <img src="https://www.halfbakedharvest.com/wp-content/uploads/2018/11/Herby-Mushroom-Croissant-Stuffing-1.jpg" alt="Croissant Stuffing" class="recipe-image">
+                <div class="recipe-header-content">
+                    <h3>🥐 Herby Mushroom Croissant Stuffing</h3>
+                    <p class="recipe-source">Half Baked Harvest</p>
+                    <p>Buttery croissants transform classic stuffing into something extraordinary. With wild mushrooms, kale, and Gruyère cheese, this is the stuffing that converts stuffing skeptics!</p>
+                    <div class="recipe-meta">
+                        <div class="recipe-meta-item"><strong>Serves:</strong> 6-8</div>
+                        <div class="recipe-meta-item"><strong>Cook Time:</strong> 45 minutes</div>
+                        <div class="recipe-meta-item"><strong>Prep Ahead:</strong> Yes, assemble day before</div>
+                    </div>
+                </div>
+            </div>
+            <div class="recipe-body">
+                <div class="ingredients-instructions">
+                    <div class="ingredients">
+                        <h4>Ingredients</h4>
+                        <ul>
+                            <li>12 cups torn croissants (6-8 croissants)</li>
+                            <li>8 tablespoons (1 stick) butter, divided</li>
+                            <li>3 tablespoons olive oil</li>
+                            <li>1 small onion, chopped</li>
+                            <li>3 celery stalks, chopped</li>
+                            <li>3-4 cups mixed mushrooms, sliced</li>
+                            <li>Salt and pepper</li>
+                            <li>2 cloves garlic, minced</li>
+                            <li>2 cups Tuscan kale, torn</li>
+                            <li>2 tablespoons fresh sage, chopped</li>
+                            <li>1 tablespoon fresh thyme, chopped</li>
+                            <li>2-3 cups low-sodium vegetable broth</li>
+                            <li>3 eggs, beaten</li>
+                            <li>½ cup shredded Gruyère cheese</li>
+                        </ul>
+                    </div>
+                    <div class="instructions">
+                        <h4>Instructions</h4>
+                        <ol>
+                            <li><strong>Toast croissants:</strong> Preheat oven to 350°F. Grease a 9x13 inch baking dish. Arrange torn croissants in dish, dot with 2 tablespoons thinly sliced butter. Bake 5-8 minutes until lightly toasted. Set aside.</li>
+                            <li><strong>Sauté vegetables:</strong> Heat olive oil in large skillet over medium heat. Add onions, cook 3-5 minutes until fragrant. Add celery and mushrooms, season with salt and pepper. Cook undisturbed 5 minutes until golden, then stir and cook another 3-5 minutes.</li>
+                            <li><strong>Add aromatics:</strong> Add remaining 6 tablespoons butter, garlic, kale, sage, and thyme. Cook, stirring occasionally, until kale wilts, about 5 minutes. Remove from heat.</li>
+                            <li><strong>Combine:</strong> In a large bowl, whisk together 2 cups broth and eggs. Add toasted croissants and mushroom mixture with all the butter from the skillet. Gently toss. If mixture seems dry, add additional broth ¼ cup at a time until bread is moist but not soggy.</li>
+                            <li><strong>Assemble:</strong> Pour mixture into the baking dish. Top evenly with Gruyère cheese.</li>
+                            <li><strong>Bake:</strong> Cover with foil and bake 35 minutes. Remove foil, check for dryness (add more broth if needed), then continue baking 10-15 minutes uncovered until golden on top.</li>
+                        </ol>
+                    </div>
+                </div>
+                <div class="recipe-notes">
+                    <h5>💡 Make-Ahead Option:</h5>
+                    <p>Complete through step 4 the day before. Store croissants and vegetable mixture separately in fridge. On Thanksgiving, combine with egg mixture and assemble in baking dish up to 4 hours before baking.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Recipe 3: Root Vegetables -->
+        <div class="recipe-card">
+            <div class="recipe-header">
+                <img src="https://cdn.loveandlemons.com/wp-content/uploads/2020/10/roasted-root-vegetables.jpg" alt="Roasted Root Vegetables" class="recipe-image">
+                <div class="recipe-header-content">
+                    <h3>🥕 Roasted Root Vegetables with Crispy Sage</h3>
+                    <p class="recipe-source">Love and Lemons</p>
+                    <p>A colorful medley of carrots, parsnips, and sweet potatoes roasted to caramelized perfection and topped with crispy sage leaves and sage oil.</p>
+                    <div class="recipe-meta">
+                        <div class="recipe-meta-item"><strong>Serves:</strong> 6-8</div>
+                        <div class="recipe-meta-item"><strong>Cook Time:</strong> 25-50 minutes</div>
+                        <div class="recipe-meta-item"><strong>Prep Ahead:</strong> Chop day before</div>
+                    </div>
+                </div>
+            </div>
+            <div class="recipe-body">
+                <div class="ingredients-instructions">
+                    <div class="ingredients">
+                        <h4>Ingredients</h4>
+                        <ul>
+                            <li>1½ lbs carrots, peeled and cut into 1-inch chunks</li>
+                            <li>1½ lbs parsnips, peeled and cut into 1-inch chunks</li>
+                            <li>1 lb sweet potato, cut into 1-inch chunks</li>
+                            <li>1 red or golden beet, peeled and chopped (optional)</li>
+                            <li>¼ cup olive oil, plus more for sage</li>
+                            <li>2 teaspoons fresh rosemary, chopped</li>
+                            <li>1 teaspoon fresh sage, chopped</li>
+                            <li>1 teaspoon fresh thyme leaves</li>
+                            <li>Salt and freshly ground black pepper</li>
+                            <li><strong>For crispy sage:</strong></li>
+                            <li>¼ cup olive oil</li>
+                            <li>8-10 fresh sage leaves</li>
+                        </ul>
+                    </div>
+                    <div class="instructions">
+                        <h4>Instructions</h4>
+                        <ol>
+                            <li><strong>Prep:</strong> Preheat oven to 425°F. Line two baking sheets with parchment paper.</li>
+                            <li><strong>Separate vegetables:</strong> Place beets and carrots on one baking sheet. Place parsnips and sweet potatoes on the other. (They cook at different rates.)</li>
+                            <li><strong>Season:</strong> Drizzle vegetables with olive oil and sprinkle with rosemary, sage, thyme, salt, and pepper. Toss to coat and spread in single layers.</li>
+                            <li><strong>Roast:</strong> Roast for 25-50 minutes, checking frequently. Parsnips and sweet potatoes will be done first (25-35 min). Carrots and beets take longer (40-50 min). Remove pans as vegetables are done.</li>
+                            <li><strong>Make crispy sage:</strong> Line a plate with paper towels. Heat ¼ cup olive oil in small saucepan until bubbling. Add sage leaves, stir, and cook until crisp, about 1 minute. Transfer leaves to prepared plate. Reserve the sage oil.</li>
+                            <li><strong>Serve:</strong> Transfer all roasted vegetables to a serving platter. Drizzle with 1 tablespoon of the sage oil and top with crispy sage leaves.</li>
+                        </ol>
+                    </div>
+                </div>
+                <div class="recipe-notes">
+                    <h5>💡 Pro Tip:</h5>
+                    <p>You can roast vegetables a few hours ahead and reheat in a 350°F oven. Add the sage oil and crispy sage just before serving for maximum impact.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Recipe 4: Mac and Cheese -->
+        <div class="recipe-card">
+            <div class="recipe-header">
+                <img src="https://images.unsplash.com/photo-1543340904-d6e1571f88b0?w=800" alt="Mac and Cheese" class="recipe-image">
+                <div class="recipe-header-content">
+                    <h3>🧀 Martha Stewart's Perfect Mac & Cheese</h3>
+                    <p class="recipe-source">Martha Stewart / Food52</p>
+                    <p>The gold standard of baked mac and cheese. Sharp white cheddar and Gruyère create a creamy, sophisticated sauce, topped with golden buttered breadcrumbs.</p>
+                    <div class="recipe-meta">
+                        <div class="recipe-meta-item"><strong>Serves:</strong> 8-10</div>
+                        <div class="recipe-meta-item"><strong>Cook Time:</strong> 30 minutes</div>
+                        <div class="recipe-meta-item"><strong>Prep Ahead:</strong> Assemble day-of</div>
+                    </div>
+                </div>
+            </div>
+            <div class="recipe-body">
+                <div class="ingredients-instructions">
+                    <div class="ingredients">
+                        <h4>Ingredients</h4>
+                        <ul>
+                            <li>8 tablespoons (1 stick) butter, plus 2 tbsp for breadcrumbs</li>
+                            <li>6 slices white bread, crusts removed, torn into ¼-½ inch pieces</li>
+                            <li>5½ cups milk</li>
+                            <li>½ cup all-purpose flour</li>
+                            <li>2 teaspoons salt, plus more for pasta water</li>
+                            <li>¼ teaspoon nutmeg</li>
+                            <li>¼ teaspoon black pepper</li>
+                            <li>¼ teaspoon cayenne pepper</li>
+                            <li>4½ cups (18 oz) sharp white cheddar cheese, grated (divided)</li>
+                            <li>2 cups (8 oz) Gruyère cheese, grated (divided)</li>
+                            <li>1 lb elbow macaroni</li>
+                        </ul>
+                    </div>
+                    <div class="instructions">
+                        <h4>Instructions</h4>
+                        <ol>
+                            <li><strong>Prep:</strong> Preheat oven to 375°F. Butter a 3-quart (9x13 inch) casserole dish.</li>
+                            <li><strong>Breadcrumbs:</strong> Place torn bread in a bowl. Melt 2 tablespoons butter and pour over bread, toss to coat. Set aside.</li>
+                            <li><strong>Heat milk:</strong> Warm milk in a medium saucepan over medium heat (don't boil).</li>
+                            <li><strong>Make roux:</strong> In a large pot over medium heat, melt remaining 6 tablespoons butter. When bubbling, add flour. Cook, stirring constantly with a whisk, for 1 minute.</li>
+                            <li><strong>Make béchamel:</strong> Slowly pour hot milk into flour-butter mixture while whisking constantly. Continue cooking, whisking constantly, until mixture bubbles and thickens considerably.</li>
+                            <li><strong>Add cheese:</strong> Remove from heat. Stir in salt, nutmeg, black pepper, cayenne, 3 cups cheddar, and 1½ cups Gruyère. Stir until melted and smooth. Set aside.</li>
+                            <li><strong>Cook pasta:</strong> Bring large pot of salted water to boil. Cook macaroni 2-3 minutes LESS than package directions (pasta should still have a bite). Drain, rinse under cold water, drain well.</li>
+                            <li><strong>Combine:</strong> Stir macaroni into cheese sauce until well coated.</li>
+                            <li><strong>Assemble:</strong> Pour mixture into prepared dish. Sprinkle remaining 1½ cups cheddar and ½ cup Gruyère over top. Scatter breadcrumbs over cheese.</li>
+                            <li><strong>Bake:</strong> Cover with foil, bake 30 minutes. Uncover and bake 10-15 more minutes until golden brown on top. If not brown enough, broil briefly (watch carefully!). Let rest 5 minutes before serving.</li>
+                        </ol>
+                    </div>
+                </div>
+                <div class="recipe-notes">
+                    <h5>💡 Why This Recipe Works:</h5>
+                    <p>Undercooking the pasta is key - it finishes cooking in the oven and absorbs the sauce perfectly. The combination of sharp cheddar (for flavor) and Gruyère (for smoothness) is magic!</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Recipe 5: Harvest Salad -->
+        <div class="recipe-card">
+            <div class="recipe-header">
+                <img src="https://www.halfbakedharvest.com/wp-content/uploads/2021/09/Autumn-Harvest-Honeycrisp-Apple-and-Feta-Salad-1.jpg" alt="Harvest Salad" class="recipe-image">
+                <div class="recipe-header-content">
+                    <h3>🥗 Autumn Harvest Honeycrisp Apple & Feta Salad</h3>
+                    <p class="recipe-source">Half Baked Harvest</p>
+                    <p>A stunning fall salad with crisp apples, jewel-like pomegranate, candied nuts, and crispy prosciutto. The apple cider vinaigrette ties it all together beautifully.</p>
+                    <div class="recipe-meta">
+                        <div class="recipe-meta-item"><strong>Serves:</strong> 6-8</div>
+                        <div class="recipe-meta-item"><strong>Cook Time:</strong> 15 minutes</div>
+                        <div class="recipe-meta-item"><strong>Prep Ahead:</strong> Roast nuts/make dressing day before</div>
+                    </div>
+                </div>
+            </div>
+            <div class="recipe-body">
+                <div class="ingredients-instructions">
+                    <div class="ingredients">
+                        <h4>Ingredients</h4>
+                        <ul>
+                            <li><strong>Salad:</strong></li>
+                            <li>¼ cup raw pecans</li>
+                            <li>2 tablespoons pumpkin seeds</li>
+                            <li>3 tablespoons maple syrup</li>
+                            <li>½ teaspoon cayenne pepper</li>
+                            <li>¼ teaspoon cinnamon</li>
+                            <li>Flaky sea salt</li>
+                            <li>3 oz thinly sliced prosciutto</li>
+                            <li>6 cups arugula (or kale)</li>
+                            <li>2 Honeycrisp apples, thinly sliced</li>
+                            <li>1 avocado, diced</li>
+                            <li>Arils from 1 pomegranate</li>
+                            <li>½ cup crumbled feta cheese</li>
+                            <li><strong>Vinaigrette:</strong></li>
+                            <li>⅓ cup olive oil</li>
+                            <li>¼ cup apple cider vinegar</li>
+                            <li>1 tablespoon Dijon mustard</li>
+                            <li>1 tablespoon apple butter (optional but great)</li>
+                            <li>2 teaspoons honey or maple syrup</li>
+                            <li>1 tablespoon fresh thyme leaves</li>
+                            <li>2 teaspoons fresh sage, chopped</li>
+                            <li>Salt and pepper</li>
+                        </ul>
+                    </div>
+                    <div class="instructions">
+                        <h4>Instructions</h4>
+                        <ol>
+                            <li><strong>Prep:</strong> Preheat oven to 350°F. Line a baking sheet with parchment paper.</li>
+                            <li><strong>Candy nuts:</strong> Toss pecans and pumpkin seeds with maple syrup, cayenne, and cinnamon. Spread in a single layer on one side of the baking sheet. Lay prosciutto flat on the other side.</li>
+                            <li><strong>Bake:</strong> Bake 10-15 minutes, watching closely. Remove when nuts are toasted and prosciutto is crispy. Sprinkle nuts with sea salt. Let cool.</li>
+                            <li><strong>Make vinaigrette:</strong> Combine all vinaigrette ingredients in a jar with lid. Shake vigorously. Taste and adjust seasoning.</li>
+                            <li><strong>Assemble salad:</strong> In a large bowl, combine arugula, sliced apples, avocado, and pomegranate arils.</li>
+                            <li><strong>Finish:</strong> Pour vinaigrette over salad and toss to combine. Top with candied nuts, crispy prosciutto pieces, and crumbled feta. Serve immediately.</li>
+                        </ol>
+                    </div>
+                </div>
+                <div class="recipe-notes">
+                    <h5>💡 Make-Ahead Tips:</h5>
+                    <p>• Roast nuts and prosciutto up to 2 days ahead, store in airtight container<br>
+                    • Make vinaigrette up to 3 days ahead<br>
+                    • Don't slice apples or avocado until just before serving to prevent browning<br>
+                    • No pomegranate? Use dried cranberries!</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Recipe 6: Apple Crumble Cake -->
+        <div class="recipe-card">
+            <div class="recipe-header">
+                <img src="https://www.halfbakedharvest.com/wp-content/uploads/2016/10/Cinnamon-Apple-Crumble-Cake-1.jpg" alt="Apple Crumble Cake" class="recipe-image">
+                <div class="recipe-header-content">
+                    <h3>🍎 Cinnamon Apple Crumble Cake</h3>
+                    <p class="recipe-source">Half Baked Harvest / Eat In My Kitchen</p>
+                    <p>A buttery, moist cake loaded with apples and topped with an insane amount of cinnamon crumble. Serve warm with vanilla ice cream for the ultimate fall dessert.</p>
+                    <div class="recipe-meta">
+                        <div class="recipe-meta-item"><strong>Serves:</strong> 10-12</div>
+                        <div class="recipe-meta-item"><strong>Cook Time:</strong> 50-60 minutes</div>
+                        <div class="recipe-meta-item"><strong>Prep Ahead:</strong> Bake 1-2 days before</div>
+                    </div>
+                </div>
+            </div>
+            <div class="recipe-body">
+                <div class="ingredients-instructions">
+                    <div class="ingredients">
+                        <h4>Ingredients</h4>
+                        <ul>
+                            <li><strong>Cake:</strong></li>
+                            <li>½ cup + 1 tablespoon butter, room temp</li>
+                            <li>⅔ cup granulated sugar</li>
+                            <li>¼ teaspoon vanilla bean seeds (or 1 tsp vanilla extract)</li>
+                            <li>3 eggs</li>
+                            <li>2 cups all-purpose flour</li>
+                            <li>2 teaspoons baking powder</li>
+                            <li>½ teaspoon fine sea salt</li>
+                            <li>4-5 baking apples, cored and sliced</li>
+                            <li><strong>Crumble:</strong></li>
+                            <li>1½ cups all-purpose flour</li>
+                            <li>⅔ cup + 2 teaspoons granulated sugar</li>
+                            <li>¼ teaspoon vanilla bean seeds (or 1 tsp extract)</li>
+                            <li>2⅛ teaspoons cinnamon</li>
+                            <li>½ cup + 1 tablespoon butter, melted</li>
+                            <li><strong>To Serve:</strong></li>
+                            <li>Powdered sugar for dusting</li>
+                            <li>Vanilla ice cream</li>
+                        </ul>
+                    </div>
+                    <div class="instructions">
+                        <h4>Instructions</h4>
+                        <ol>
+                            <li><strong>Prep:</strong> Preheat oven to 350°F. Butter a 10-inch springform pan (or 9x13 pan).</li>
+                            <li><strong>Make cake batter:</strong> In a large bowl with electric mixer, beat butter, sugar, and vanilla for several minutes until light and fluffy. Add eggs one at a time, beating well after each. Continue beating 2-3 minutes until creamy.</li>
+                            <li><strong>Add dry ingredients:</strong> In a separate bowl, whisk together flour, baking powder, and salt. Add to butter mixture and mix with electric mixer for 1 minute until well combined.</li>
+                            <li><strong>Assemble cake layer:</strong> Scrape batter into prepared pan. Arrange apple slices on top, pushing them gently into the batter.</li>
+                            <li><strong>Make crumble:</strong> In a large bowl, whisk together flour, ⅔ cup sugar, vanilla, and 2 teaspoons cinnamon. Add melted butter and mix until crumbles form. Sprinkle crumble over apples.</li>
+                            <li><strong>Final topping:</strong> In a small bowl, whisk together 2 teaspoons sugar and ⅛ teaspoon cinnamon. Sprinkle over crumble.</li>
+                            <li><strong>Bake:</strong> Bake 50-60 minutes until golden on top. A skewer inserted in center should come out almost clean (a few crumbs are okay). Let cool 15 minutes before removing from pan.</li>
+                            <li><strong>Serve:</strong> Dust with powdered sugar. Serve warm with vanilla ice cream.</li>
+                        </ol>
+                    </div>
+                </div>
+                <div class="recipe-notes">
+                    <h5>💡 Baker's Notes:</h5>
+                    <p>• This cake is meant to be moist and almost doughy in the center - don't overbake!<br>
+                    • Use a mix of Honeycrisp and Granny Smith apples for best flavor<br>
+                    • Can be made 1-2 days ahead; store covered at room temperature<br>
+                    • Rewarm individual slices in microwave for 20-30 seconds</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Recipe 7: Mashed Potatoes -->
+        <div class="recipe-card">
+            <div class="recipe-header">
+                <img src="https://www.halfbakedharvest.com/wp-content/uploads/2021/11/Make-Ahead-Roasted-Garlic-Mashed-Potatoes-1.jpg" alt="Mashed Potatoes" class="recipe-image">
+                <div class="recipe-header-content">
+                    <h3>🥔 Make-Ahead Roasted Garlic Mashed Potatoes</h3>
+                    <p class="recipe-source">Half Baked Harvest</p>
+                    <p>The creamiest, most flavorful mashed potatoes you'll ever make. Cooking the potatoes in milk and cream infuses them with richness, while roasted garlic adds sweet, mellow flavor.</p>
+                    <div class="recipe-meta">
+                        <div class="recipe-meta-item"><strong>Serves:</strong> 8-10</div>
+                        <div class="recipe-meta-item"><strong>Cook Time:</strong> 25 minutes + 45 for garlic</div>
+                        <div class="recipe-meta-item"><strong>Prep Ahead:</strong> Yes! Make 1-2 days before</div>
+                    </div>
+                </div>
+            </div>
+            <div class="recipe-body">
+                <div class="ingredients-instructions">
+                    <div class="ingredients">
+                        <h4>Ingredients</h4>
+                        <ul>
+                            <li>1 head garlic</li>
+                            <li>Olive oil</li>
+                            <li>4-5 lbs Yukon gold potatoes, peeled and cubed</li>
+                            <li>2 cups heavy cream</li>
+                            <li>2 cups whole milk</li>
+                            <li>3-4 sprigs fresh sage</li>
+                            <li>3-4 sprigs fresh thyme</li>
+                            <li>8 tablespoons (1 stick) butter</li>
+                            <li>Salt and pepper</li>
+                            <li><strong>Optional for serving:</strong></li>
+                            <li>2 tablespoons butter</li>
+                            <li>Fresh sage or thyme for brown butter swirl</li>
+                        </ul>
+                    </div>
+                    <div class="instructions">
+                        <h4>Instructions</h4>
+                        <ol>
+                            <li><strong>Roast garlic:</strong> Preheat oven to 400°F. Slice off top portion of garlic head to expose cloves. Place on foil, drizzle with olive oil, wrap up. Roast 40-55 minutes until deeply golden and very soft. Let cool, then squeeze out cloves.</li>
+                            <li><strong>Cook potatoes:</strong> In a large Dutch oven, combine potatoes, heavy cream, milk, sage sprigs, and thyme sprigs. Bring to a gentle boil over medium heat. Reduce heat and cook 20-25 minutes until potatoes are fork-tender.</li>
+                            <li><strong>Drain and save cream:</strong> Drain potatoes, RESERVING all the cream mixture. Discard herb sprigs.</li>
+                            <li><strong>Mash:</strong> Press potatoes and roasted garlic cloves through a potato ricer back into the warm pot. (Or mash with a potato masher in the pot.)</li>
+                            <li><strong>Add cream and butter:</strong> Over low heat, add 1½ cups of the reserved cream and the stick of butter. Stir gently. Continue adding cream until you reach desired consistency. Season generously with salt and pepper.</li>
+                            <li><strong>Optional finishing touch:</strong> Brown 2 tablespoons butter with fresh sage or thyme in a small pan. Swirl into potatoes just before serving.</li>
+                            <li><strong>Serve:</strong> Transfer to serving bowl and serve warm and creamy!</li>
+                        </ol>
+                    </div>
+                </div>
+                <div class="recipe-notes">
+                    <h5>💡 Make-Ahead Instructions:</h5>
+                    <p><strong>In Oven:</strong> Make through step 5. Transfer to baking dish, cover, refrigerate up to 3 days. To reheat: Preheat oven to 325°F. Pour ½ cup milk/cream over potatoes + 2 tbsp butter (don't stir). Cover with foil, bake 20-25 minutes until warmed. Stir before serving.<br><br>
+                    <strong>In Slow Cooker:</strong> Transfer finished potatoes to slow cooker, keep on low up to 4 hours. 30 minutes before serving, add ½ cup cream + 2 tbsp butter on top (don't stir). Let warm through, then stir.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Recipe 8: Green Beans -->
+        <div class="recipe-card">
+            <div class="recipe-header">
+                <img src="https://images.unsplash.com/photo-1603105037880-880cd4edfb0d?w=800" alt="Green Beans" class="recipe-image">
+                <div class="recipe-header-content">
+                    <h3>🫘 Lemon Garlic Green Beans</h3>
+                    <p class="recipe-source">Simple & Fresh</p>
+                    <p>Fresh, bright, and simple - these green beans provide a light, crisp contrast to the richer dishes. The lemon and garlic keep them from being boring!</p>
+                    <div class="recipe-meta">
+                        <div class="recipe-meta-item"><strong>Serves:</strong> 8</div>
+                        <div class="recipe-meta-item"><strong>Cook Time:</strong> 10 minutes</div>
+                        <div class="recipe-meta-item"><strong>Prep Ahead:</strong> Trim day before</div>
+                    </div>
+                </div>
+            </div>
+            <div class="recipe-body">
+                <div class="ingredients-instructions">
+                    <div class="ingredients">
+                        <h4>Ingredients</h4>
+                        <ul>
+                            <li>2 lbs fresh green beans, trimmed</li>
+                            <li>2-3 tablespoons olive oil</li>
+                            <li>2-3 cloves garlic, minced</li>
+                            <li>Zest of 1 lemon</li>
+                            <li>Juice of 1-2 lemons</li>
+                            <li>Salt and freshly ground black pepper</li>
+                            <li>Optional: red pepper flakes</li>
+                        </ul>
+                    </div>
+                    <div class="instructions">
+                        <h4>Instructions</h4>
+                        <ol>
+                            <li><strong>Blanch beans:</strong> Bring a large pot of salted water to boil. Add green beans and cook 4-5 minutes until tender-crisp and bright green.</li>
+                            <li><strong>Drain:</strong> Drain beans well in a colander.</li>
+                            <li><strong>Make dressing:</strong> In a large bowl, whisk together olive oil, minced garlic, lemon zest, lemon juice, salt, and pepper.</li>
+                            <li><strong>Toss:</strong> Add warm green beans to the bowl and toss well to coat.</li>
+                            <li><strong>Adjust:</strong> Taste and add more lemon juice, salt, or pepper as needed. Add a pinch of red pepper flakes if you like a little heat.</li>
+                            <li><strong>Serve:</strong> Transfer to serving dish and serve immediately while warm.</li>
+                        </ol>
+                    </div>
+                </div>
+                <div class="recipe-notes">
+                    <h5>💡 Timing Tip:</h5>
+                    <p>Make these while other dishes are finishing in the oven. They come together in 10 minutes and are best served immediately. You can blanch them ahead of time and store in fridge, then just toss with the warm dressing before serving.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Recipe 9: Mushroom Gravy -->
+        <div class="recipe-card">
+            <div class="recipe-header">
+                <img src="https://cdn.loveandlemons.com/wp-content/uploads/2020/10/mushroom-gravy.jpg" alt="Mushroom Gravy" class="recipe-image">
+                <div class="recipe-header-content">
+                    <h3>🍄 Vegan Mushroom Gravy</h3>
+                    <p class="recipe-source">Love and Lemons</p>
+                    <p>Rich, velvety, and packed with umami flavor. This vegan gravy is so good, even meat lovers won't miss traditional turkey gravy. Perfect make-ahead dish!</p>
+                    <div class="recipe-meta">
+                        <div class="recipe-meta-item"><strong>Serves:</strong> 8 (makes ~3 cups)</div>
+                        <div class="recipe-meta-item"><strong>Cook Time:</strong> 35 minutes</div>
+                        <div class="recipe-meta-item"><strong>Prep Ahead:</strong> Make 2-3 days before</div>
+                    </div>
+                </div>
+            </div>
+            <div class="recipe-body">
+                <div class="ingredients-instructions">
+                    <div class="ingredients">
+                        <h4>Ingredients</h4>
+                        <ul>
+                            <li>2 tablespoons olive oil</li>
+                            <li>1 shallot, finely chopped (⅓ cup)</li>
+                            <li>1 lb cremini mushrooms, sliced</li>
+                            <li>½ tablespoon tamari or soy sauce</li>
+                            <li>2 garlic cloves, minced</li>
+                            <li>1½ tablespoons fresh thyme leaves</li>
+                            <li>½ tablespoon fresh rosemary, chopped</li>
+                            <li>¼ cup all-purpose flour</li>
+                            <li>3 cups vegetable broth</li>
+                            <li>Sea salt and black pepper</li>
+                        </ul>
+                    </div>
+                    <div class="instructions">
+                        <h4>Instructions</h4>
+                        <ol>
+                            <li><strong>Sauté shallot:</strong> Heat olive oil in a large skillet over medium heat. Add shallot and cook until soft, about 4 minutes.</li>
+                            <li><strong>Cook mushrooms:</strong> Add mushrooms and cook until soft and releasing their liquid, about 8-10 minutes. Stir in tamari, garlic, thyme, and rosemary.</li>
+                            <li><strong>Add flour:</strong> Sprinkle flour over the mushrooms and stir for 1 minute to cook out the raw flour taste.</li>
+                            <li><strong>Add broth:</strong> Pour in vegetable broth and bring to a simmer. Simmer until thickened, whisking often, about 20 minutes. The gravy should coat the back of a spoon.</li>
+                            <li><strong>Season:</strong> Taste and season generously with salt and pepper.</li>
+                            <li><strong>Serve or store:</strong> Serve warm over mashed potatoes, turkey, or stuffing!</li>
+                        </ol>
+                    </div>
+                </div>
+                <div class="recipe-notes">
+                    <h5>💡 Make-Ahead & Reheating:</h5>
+                    <p>This gravy is perfect to make 2-3 days ahead! Store in an airtight container in the fridge. It will thicken as it sits. To reheat: Warm on stovetop over low heat, stirring in a splash of vegetable broth or water until you reach desired consistency. Taste and adjust seasoning.<br><br>
+                    <strong>Gluten-Free Option:</strong> Skip the flour in step 3. After adding broth, mix 2 tablespoons cornstarch with a few tablespoons of the hot gravy in a small bowl until smooth. Pour this mixture back into the pan and stir until gravy thickens.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Recipe 10: Bread -->
+        <div class="recipe-card">
+            <div class="recipe-header">
+                <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?w=800" alt="Bread" class="recipe-image">
+                <div class="recipe-header-content">
+                    <h3>🥖 Fresh Rolls or Cornbread</h3>
+                    <p class="recipe-source">Oat Bakery / Your Choice</p>
+                    <p>Fresh bread is essential for sopping up all those delicious gravies and sauces! Choose between bakery rolls or homemade cornbread.</p>
+                    <div class="recipe-meta">
+                        <div class="recipe-meta-item"><strong>Serves:</strong> 8</div>
+                        <div class="recipe-meta-item"><strong>Option 1:</strong> Buy from bakery</div>
+                        <div class="recipe-meta-item"><strong>Option 2:</strong> Make cornbread</div>
+                    </div>
+                </div>
+            </div>
+            <div class="recipe-body">
+                <div class="ingredients-instructions">
+                    <div class="ingredients">
+                        <h4>Two Options:</h4>
+                        <ul>
+                            <li><strong>Option 1 (Easiest):</strong> Purchase 12-16 fresh rolls from Oat Bakery the day before or morning of Thanksgiving. Warm in 300°F oven for 10 minutes before serving.</li>
+                            <li><strong>Option 2 (Homemade Cornbread):</strong> Use your favorite cornbread recipe or box mix. A 9x13 pan will serve 12-16 people generously.</li>
+                        </ul>
+                    </div>
+                    <div class="instructions">
+                        <h4>Quick Cornbread Recipe</h4>
+                        <ol>
+                            <li>1 cup cornmeal, 1 cup all-purpose flour, ¼ cup sugar, 1 tablespoon baking powder, ½ teaspoon salt</li>
+                            <li>1 cup buttermilk, 2 eggs, ¼ cup melted butter</li>
+                            <li>Mix dry ingredients. Whisk wet ingredients separately. Combine and pour into greased 9x9 pan.</li>
+                            <li>Bake at 400°F for 20-25 minutes until golden and toothpick comes out clean.</li>
+                            <li>Can be made 1-2 days ahead and rewarmed.</li>
+                        </ol>
+                    </div>
+                </div>
+                <div class="recipe-notes">
+                    <h5>💡 Pro Tip:</h5>
+                    <p>If buying rolls, ask the bakery to slice them in half for you! Makes serving easier and helps them warm through evenly. Brush with melted butter before warming for extra deliciousness.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Shopping List Section -->
+        <div class="section">
+            <h2>🛒 Complete Shopping List</h2>
+            <div class="shopping-list">
+                <div class="shopping-category">
+                    <h3>🥩 Meat & Dairy</h3>
+                    <ul>
+                        <li>12-14 lb whole turkey</li>
+                        <li>3 oz prosciutto (thinly sliced)</li>
+                        <li>1 quart vanilla ice cream</li>
+                        <li>5 sticks butter (20 oz)</li>
+                        <li>5½ cups whole milk</li>
+                        <li>4 cups heavy cream</li>
+                        <li>18 oz sharp white cheddar</li>
+                        <li>10 oz Gruyère cheese</li>
+                        <li>½ cup feta cheese</li>
+                        <li>12 eggs</li>
+                    </ul>
+                </div>
+
+                <div class="shopping-category">
+                    <h3>🥕 Fresh Produce</h3>
+                    <ul>
+                        <li>Fresh sage (2-3 bunches)</li>
+                        <li>Fresh thyme (2-3 bunches)</li>
+                        <li>Fresh rosemary (1 bunch)</li>
+                        <li>1 head garlic + 8-10 cloves</li>
+                        <li>1½ lbs carrots</li>
+                        <li>1½ lbs parsnips</li>
+                        <li>1 lb sweet potato</li>
+                        <li>4-5 lbs Yukon gold potatoes</li>
+                        <li>2 lbs green beans</li>
+                        <li>1 lb mixed mushrooms (stuffing)</li>
+                        <li>1 lb cremini mushrooms (gravy)</li>
+                        <li>2 cups Tuscan kale</li>
+                        <li>6 cups arugula</li>
+                        <li>1 small onion</li>
+                        <li>1 shallot</li>
+                        <li>3 celery stalks</li>
+                        <li>1 avocado</li>
+                    </ul>
+                </div>
+
+                <div class="shopping-category">
+                    <h3>🍎 Fruit</h3>
+                    <ul>
+                        <li>2 Honeycrisp apples (salad)</li>
+                        <li>4-5 baking apples (cake)</li>
+                        <li>1 pomegranate</li>
+                        <li>3-4 lemons</li>
+                    </ul>
+                </div>
+
+                <div class="shopping-category">
+                    <h3>🥖 Bakery</h3>
+                    <ul>
+                        <li>6-8 croissants</li>
+                        <li>6 slices white bread</li>
+                        <li>12-16 rolls from Oat Bakery</li>
+                    </ul>
+                </div>
+
+                <div class="shopping-category">
+                    <h3>🥫 Pantry</h3>
+                    <ul>
+                        <li>2 cups olive oil</li>
+                        <li>Apple cider vinegar</li>
+                        <li>5 cups all-purpose flour</li>
+                        <li>Baking powder</li>
+                        <li>2 cups granulated sugar</li>
+                        <li>Powdered sugar</li>
+                        <li>Vanilla extract</li>
+                        <li>Cinnamon</li>
+                        <li>Nutmeg</li>
+                        <li>Cayenne pepper</li>
+                        <li>1 lb elbow macaroni</li>
+                        <li>5-6 cups vegetable broth</li>
+                        <li>6 tbsp kosher salt (for brine)</li>
+                        <li>Sea salt</li>
+                        <li>Black pepper</li>
+                    </ul>
+                </div>
+
+                <div class="shopping-category">
+                    <h3>🍯 Specialty Items</h3>
+                    <ul>
+                        <li>Dijon mustard</li>
+                        <li>Apple butter</li>
+                        <li>Maple syrup (3+ tbsp)</li>
+                        <li>Honey</li>
+                        <li>Tamari or soy sauce</li>
+                        <li>¼ cup pecans</li>
+                        <li>2 tbsp pumpkin seeds</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Timeline Section -->
+        <div class="section">
+            <h2>📅 Your Prep Timeline</h2>
+            
+            <div class="timeline">
+                <h3>🗓️ 3-4 Days Before (If Using Frozen Turkey)</h3>
+                <div class="timeline-item">
+                    <div class="timeline-time">Monday/Tuesday</div>
+                    <p>Move frozen turkey from freezer to refrigerator to thaw completely (needs 24 hours per 5 lbs)</p>
+                </div>
+            </div>
+
+            <div class="timeline">
+                <h3>🗓️ 2-3 Days Before Thanksgiving</h3>
+                <div class="timeline-item">
+                    <div class="timeline-time">Turkey Prep</div>
+                    <p>• Spatchcock turkey (or have butcher do it)<br>
+                    • Dry brine: Salt generously all over, refrigerate uncovered</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-time">Make Mushroom Gravy</div>
+                    <p>• Cook gravy completely following recipe above<br>
+                    • Cool and store in airtight container in fridge</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-time">Bake Apple Crumble Cake</div>
+                    <p>• Bake cake following recipe above<br>
+                    • Cool completely, cover tightly, store at room temp</p>
+                </div>
+            </div>
+
+            <div class="timeline">
+                <h3>🗓️ 1 Day Before Thanksgiving (Wednesday)</h3>
+                <div class="timeline-item">
+                    <div class="timeline-time">Mashed Potatoes</div>
+                    <p>• Roast garlic (40-55 minutes at 400°F)<br>
+                    • Cook potatoes in milk/cream with herbs<br>
+                    • Mash with roasted garlic, butter, cream<br>
+                    • Store in baking dish, covered, in fridge</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-time">Stuffing Prep</div>
+                    <p>• Toast croissants in oven (step 1)<br>
+                    • Sauté vegetables and mushrooms (steps 2-3)<br>
+                    • Store separately in fridge (don't mix with egg/broth yet)</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-time">Salad Components</div>
+                    <p>• Roast pecans, pumpkin seeds, and prosciutto<br>
+                    • Store in airtight container at room temp<br>
+                    • Make vinaigrette, store in jar in fridge</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-time">Vegetable Prep</div>
+                    <p>• Peel and chop all root vegetables<br>
+                    • Store in water in fridge (drain before roasting)<br>
+                    • Trim green beans, store in fridge</p>
+                </div>
+            </div>
+
+            <div class="warning-box">
+                <h3><span class="icon">⚠️</span>Thanksgiving Day Oven Schedule - Critical!</h3>
+                <p><strong>You'll have overlapping dishes. Here's the master plan:</strong></p>
+                <ul style="margin-top: 0.5rem;">
+                    <li><strong>11:00 AM - 12:30 PM:</strong> Turkey (425°F for 30 min, then 350°F for 40-50 min)</li>
+                    <li><strong>12:45 PM - 1:25 PM:</strong> Covered Potatoes + Covered Stuffing (both 350°F)</li>
+                    <li><strong>1:30 PM - 2:15 PM:</strong> Mac & Cheese (350°F) + Root Vegetables (425°F)</li>
+                </ul>
+                <p style="margin-top: 0.5rem;"><em>Note: You can roast root vegetables at 350°F if needed to avoid temperature juggling - they'll just take 10-15 minutes longer.</em></p>
+            </div>
+        </div>
+
+        <!-- Thanksgiving Day Schedule -->
+        <div class="section">
+            <h2>🦃 Thanksgiving Day Hour-by-Hour Schedule</h2>
+            
+            <div class="timeline">
+                <h3>☀️ Morning (8:00 AM - 12:00 PM)</h3>
+                <div class="timeline-item">
+                    <div class="timeline-time">8:00 AM - Mac & Cheese Assembly</div>
+                    <p>Follow mac & cheese recipe through step 9 (assemble completely). Cover with foil and set aside on counter. Don't bake yet.</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-time">9:00 AM - Stuffing Assembly</div>
+                    <p>Mix yesterday's croissants with yesterday's vegetable mixture. Add egg mixture and broth (stuffing recipe steps 4-5). Top with cheese, cover with foil, and set aside.</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-time">10:00 AM - Turkey Prep</div>
+                    <p>Remove turkey from fridge. Let sit at room temperature 30-60 minutes. Preheat oven to 425°F. Brush turkey with oil, season with pepper.</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-time">11:00 AM - 🦃 TURKEY IN OVEN!</div>
+                    <p>• Place turkey in center of oven at 425°F<br>
+                    • Set timer for 30 minutes<br>
+                    • After 30 min: Reduce to 350°F, continue 40-50 min<br>
+                    • Turkey is done when breast reaches 155°F<br>
+                    • <strong>Total cook time: 70-80 minutes</strong></p>
+                </div>
+            </div>
+
+            <div class="timeline">
+                <h3>🕐 Afternoon Push (12:00 PM - 3:00 PM)</h3>
+                <div class="timeline-item">
+                    <div class="timeline-time">12:30 PM - Turkey Done! 🎉</div>
+                    <p>• Remove when breast reaches 155°F (carryover will reach 165°F)<br>
+                    • Tent loosely with foil and let rest 15 minutes<br>
+                    • Keep oven on at 350°F</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-time">12:45 PM - First Oven Round</div>
+                    <p>• Take mashed potatoes from fridge. Pour ½ cup cream + 2 tbsp butter on top (don't stir). Cover tightly with foil.<br>
+                    • Put covered potatoes in oven<br>
+                    • Put covered stuffing in oven<br>
+                    • Both bake 35 minutes covered at 350°F</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-time">1:00 PM - Root Vegetable Prep</div>
+                    <p>Drain root vegetables. Spread on baking sheet, drizzle with oil, season with herbs, salt, and pepper. Set aside.</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-time">1:20 PM - Stuffing Finishing</div>
+                    <p>Remove foil from stuffing. Continue baking 10-15 minutes until golden on top. When done, remove from oven and keep covered with foil.</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-time">1:25 PM - Potatoes Keep Warm</div>
+                    <p>Remove potatoes from oven. Stir well. Keep warm: either back in low (200°F) oven covered, or transfer to slow cooker on low.</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-time">1:30 PM - Second Oven Round</div>
+                    <p>• Put covered mac & cheese in oven at 350°F - will bake 30 minutes<br>
+                    • Increase oven temp to 425°F (or use second oven if you have one)<br>
+                    • Put root vegetables in oven - will roast 25-50 min<br>
+                    • Check and rotate root veg every 15 minutes</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-time">2:00 PM - Mac & Cheese Finishing</div>
+                    <p>Remove foil from mac & cheese. Continue baking 10-15 minutes until top is golden brown. Watch carefully!</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-time">2:15 PM - Green Beans</div>
+                    <p>• Bring large pot of salted water to boil<br>
+                    • Blanch green beans 4-5 minutes<br>
+                    • Drain and toss with lemon-garlic dressing (recipe above)<br>
+                    • Keep warm, covered</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-time">2:30 PM - Final Assembly & Plating</div>
+                    <p>• Check root vegetables - remove when done, top with crispy sage<br>
+                    • Reheat gravy on stovetop over low heat (add splash of broth if thick)<br>
+                    • Toss salad with vinaigrette, add all toppings<br>
+                    • Warm bread/rolls wrapped in foil in oven (10 min at 300°F)<br>
+                    • Carve turkey<br>
+                    • Transfer everything to serving dishes</p>
+                </div>
+                <div class="timeline-item" style="background: #d2691e; color: white;">
+                    <div class="timeline-time" style="color: white;">🎉 3:00 PM - DINNER IS SERVED!</div>
+                    <p style="color: white;"><strong>You did it! Time to sit down and enjoy your incredible feast!</strong></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Serving Suggestions -->
+        <div class="section">
+            <h2>🍽️ Serving & Presentation Notes</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem;">
+                <div style="background: #e3f2fd; padding: 1.5rem; border-radius: 10px;">
+                    <h3 style="color: #1976d2; margin-bottom: 1rem;">👶 Kid-Friendly Favorites</h3>
+                    <p>Your 4 and 7-year-old will likely gravitate toward:</p>
+                    <ul style="margin-top: 0.5rem; list-style: none;">
+                        <li>⭐ Mac & Cheese (always a winner!)</li>
+                        <li>⭐ Mashed Potatoes (creamy and mild)</li>
+                        <li>⭐ Turkey - white meat slices</li>
+                        <li>⭐ Rolls with butter</li>
+                        <li>⭐ Apple Cake with Ice Cream (dessert champion)</li>
+                    </ul>
+                    <p style="margin-top: 0.5rem; font-size: 0.9rem;"><em>Pro tip: Serve kids first while food is warm, with small portions of each. They can always get more!</em></p>
+                </div>
+                <div style="background: #f3e5f5; padding: 1.5rem; border-radius: 10px;">
+                    <h3 style="color: #7b1fa2; margin-bottom: 1rem;">🥗 Lighter, Fresher Options</h3>
+                    <p>For those wanting to balance the richer dishes:</p>
+                    <ul style="margin-top: 0.5rem; list-style: none;">
+                        <li>• Harvest Salad (bright and crisp)</li>
+                        <li>• Roasted Root Vegetables (naturally sweet)</li>
+                        <li>• Lemon Green Beans (light and tangy)</li>
+                        <li>• Turkey - mix of white and dark meat</li>
+                    </ul>
+                    <p style="margin-top: 0.5rem; font-size: 0.9rem;"><em>The beauty of this menu is the variety - something for everyone's preferences and appetites!</em></p>
+                </div>
+            </div>
+
+            <div class="tips-box" style="margin-top: 2rem;">
+                <h3><span class="icon">🎨</span>Plating & Presentation Tips</h3>
+                <ul>
+                    <li><strong>Turkey:</strong> Carve and arrange on a large platter. Garnish with fresh herbs and roasted lemon halves</li>
+                    <li><strong>Sides:</strong> Use your nicest serving bowls. A little height and color makes everything more appealing</li>
+                    <li><strong>Gravy:</strong> Serve warm in a gravy boat or pitcher for easy pouring</li>
+                    <li><strong>Salad:</strong> Toss and plate right before serving to keep it crisp and fresh</li>
+                    <li><strong>Dessert:</strong> Dust cake with powdered sugar just before serving. Scoop ice cream tableside!</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Final Encouragement -->
+        <div class="tips-box" style="background: #fff3e0; border-left-color: #f57c00;">
+            <h3 style="color: #e65100;"><span class="icon">🎊</span>You've Got This! Final Pep Talk</h3>
+            <p><strong>This is YOUR year for Thanksgiving greatness!</strong> Here's why you're set up for success:</p>
+            <ul style="margin-top: 1rem;">
+                <li>📝 <strong>Every recipe is written out in detail</strong> - no hunting around websites</li>
+                <li>⏰ <strong>Hour-by-hour schedule</strong> - you know exactly what to do and when</li>
+                <li>🎯 <strong>Realistic portions</strong> - variety without waste</li>
+                <li>🍰 <strong>Make-ahead strategy</strong> - half the work is done before Thursday</li>
+                <li>👨‍👩‍👧‍👦 <strong>Something for everyone</strong> - from picky kids to adventurous adults</li>
+                <li>💡 <strong>Pro tips throughout</strong> - learned from trial and error so you don't have to</li>
+            </ul>
+            <p style="margin-top: 1rem; font-size: 1.1rem; font-weight: bold; color: #8b4513;">Remember: The goal is to enjoy the day with your family, not to achieve perfection. This plan gives you the structure to stay calm and have fun!</p>
+            <p style="margin-top: 1rem; font-size: 1.2rem; text-align: center;">🦃 Happy Thanksgiving! 🍂</p>
+        </div>
+
+        <div style="text-align: center; padding: 2rem; color: #666; font-style: italic; border-top: 2px solid #e0d5c0; margin-top: 2rem;">
+            <p><strong>Pro Tip:</strong> Print this page or save to your device for easy reference while cooking!</p>
+            <p style="margin-top: 0.5rem; font-size: 0.9rem;">Recipe sources: Half Baked Harvest • Love and Lemons • Martha Stewart • NYT Cooking</p>
+            <p style="margin-top: 0.5rem; font-size: 0.85rem; color: #999;">Created with ❤️ for your Thanksgiving 2025</p>
+        </div>
+    </div>
+</body>
+</html>

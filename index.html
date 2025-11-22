@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thanksgiving 2025</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+            gap: var(--space-md);
+        }
+        .menu-item {
+            padding: var(--space-sm);
+            cursor: pointer;
+            text-decoration: none;
+            display: block;
+            color: inherit;
+        }
+        .menu-item img {
+            height: 100px;
+        }
+        .menu-item h4 {
+            font-size: 0.95rem;
+        }
+        .menu-item p, .menu-item .source, .menu-item .tags {
+            display: none;
+        }
+        .quick-info {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--space-sm);
+            margin-top: var(--space-lg);
+        }
+        .quick-info-item {
+            text-align: center;
+            padding: var(--space-md);
+            background: white;
+            border-radius: var(--radius-md);
+        }
+        .quick-info-item h4 {
+            font-size: 0.9rem;
+            margin-bottom: var(--space-xs);
+            color: var(--color-primary);
+        }
+        .quick-info-item p {
+            font-size: 0.8rem;
+            margin: 0;
+            color: var(--color-text-secondary);
+        }
+        @media (max-width: 600px) {
+            .quick-info {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <div class="nav-container">
+            <div class="nav-brand">Thanksgiving 2025</div>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Menu</a></li>
+                <li><a href="shopping.html">Shopping</a></li>
+                <li><a href="timeline.html">Timeline</a></li>
+                <li><a href="recipes.html">Recipes</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="header">
+        <h1>Thanksgiving 2025</h1>
+        <p>Thursday, November 27th • 3:00 PM • 8 Guests</p>
+    </header>
+
+    <main class="container">
+        <section class="section">
+            <h2>The Menu</h2>
+
+            <div class="menu-grid">
+                <a href="recipes.html#turkey" class="menu-item">
+                    <img src="https://images.unsplash.com/photo-1574672280600-4accfa5b6f98?w=800" alt="Turkey">
+                    <h4>Spatchcock Turkey</h4>
+                </a>
+
+                <a href="recipes.html#stuffing" class="menu-item">
+                    <img src="https://www.halfbakedharvest.com/wp-content/uploads/2019/11/Herby-Mushroom-Croissant-Stuffing-1.jpg" alt="Stuffing">
+                    <h4>Croissant Stuffing</h4>
+                </a>
+
+                <a href="recipes.html#vegetables" class="menu-item">
+                    <img src="https://cdn.loveandlemons.com/wp-content/uploads/2022/11/roasted-root-vegetables-1.jpg" alt="Root Vegetables">
+                    <h4>Root Vegetables</h4>
+                </a>
+
+                <a href="recipes.html#mac-cheese" class="menu-item">
+                    <img src="https://images.unsplash.com/photo-1543339494-b4cd4f7ba686?w=800" alt="Mac and Cheese">
+                    <h4>Mac & Cheese</h4>
+                </a>
+
+                <a href="recipes.html#salad" class="menu-item">
+                    <img src="https://i0.wp.com/www.halfbakedharvest.com/wp-content/uploads/2021/09/Autumn-Harvest-Honeycrisp-Apple-and-Feta-Salad-5.jpg" alt="Salad">
+                    <h4>Autumn Salad</h4>
+                </a>
+
+                <a href="recipes.html#potatoes" class="menu-item">
+                    <img src="https://images.unsplash.com/photo-1568569350062-ebfa3cb195df?w=800" alt="Mashed Potatoes">
+                    <h4>Mashed Potatoes</h4>
+                </a>
+
+                <a href="recipes.html#green-beans" class="menu-item">
+                    <img src="https://images.unsplash.com/photo-1567306226416-28f0efdc88ce?w=800" alt="Green Beans">
+                    <h4>Green Beans</h4>
+                </a>
+
+                <a href="recipes.html#gravy" class="menu-item">
+                    <img src="https://cdn.loveandlemons.com/wp-content/uploads/2020/10/mushroom-gravy-1.jpg" alt="Gravy">
+                    <h4>Mushroom Gravy</h4>
+                </a>
+
+                <a href="recipes.html" class="menu-item">
+                    <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?w=800" alt="Bread">
+                    <h4>Dinner Rolls</h4>
+                </a>
+
+                <a href="recipes.html#cake" class="menu-item">
+                    <img src="https://images.unsplash.com/photo-1568571780765-9276ac8b75a2?w=800" alt="Apple Cake">
+                    <h4>Apple Cake</h4>
+                </a>
+            </div>
+
+            <div class="quick-info">
+                <div class="quick-info-item">
+                    <h4>Budget</h4>
+                    <p>$180-240</p>
+                </div>
+                <div class="quick-info-item">
+                    <h4>Prep Starts</h4>
+                    <p>Monday</p>
+                </div>
+                <div class="quick-info-item">
+                    <h4>Turkey In</h4>
+                    <p>10:30 AM</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>See <a href="recipes.html">Recipes</a> for full instructions</p>
+    </footer>
+</body>
+</html>

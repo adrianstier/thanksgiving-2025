@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping List - Thanksgiving 2025</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .category-btn {
+            width: 100%;
+            background: white;
+            border: none;
+            padding: var(--space-md);
+            text-align: left;
+            cursor: pointer;
+            border-radius: var(--radius-md);
+            margin-bottom: var(--space-sm);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: var(--font-display);
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--color-text);
+            transition: all var(--transition-fast);
+            border-left: 3px solid var(--color-primary);
+        }
+        .category-btn:hover {
+            background: var(--color-surface-elevated);
+        }
+        .category-btn .count {
+            font-size: 0.8rem;
+            color: var(--color-text-secondary);
+            font-weight: normal;
+        }
+        .category-content {
+            display: none;
+            background: white;
+            padding: var(--space-md);
+            margin: -0.5rem 0 var(--space-md) 0;
+            border-radius: 0 0 var(--radius-md) var(--radius-md);
+        }
+        .category-content.active {
+            display: block;
+        }
+        .item {
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);
+            padding: var(--space-sm) 0;
+            border-bottom: 1px solid var(--color-border-light);
+            font-size: 0.9rem;
+        }
+        .item:last-child {
+            border-bottom: none;
+        }
+        .item input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            accent-color: var(--color-primary);
+            cursor: pointer;
+        }
+        .item label {
+            cursor: pointer;
+            flex: 1;
+        }
+        .item.checked label {
+            text-decoration: line-through;
+            color: var(--color-text-light);
+        }
+        .tip-box {
+            background: rgba(101, 163, 13, 0.1);
+            padding: var(--space-md);
+            border-radius: var(--radius-md);
+            margin-top: var(--space-lg);
+            font-size: 0.85rem;
+        }
+        .tip-box strong {
+            color: var(--color-success-hover);
+        }
+        .clear-btn {
+            background: none;
+            border: 1px solid var(--color-border);
+            padding: var(--space-sm) var(--space-md);
+            border-radius: var(--radius-sm);
+            cursor: pointer;
+            font-size: 0.8rem;
+            color: var(--color-text-secondary);
+            margin-top: var(--space-md);
+        }
+        .clear-btn:hover {
+            background: var(--color-surface-elevated);
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <div class="nav-container">
+            <div class="nav-brand">Thanksgiving 2025</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Menu</a></li>
+                <li><a href="shopping.html" class="active">Shopping</a></li>
+                <li><a href="timeline.html">Timeline</a></li>
+                <li><a href="recipes.html">Recipes</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="header">
+        <h1>Shopping List</h1>
+        <p>Tap items to check them off</p>
+    </header>
+
+    <main class="container">
+        <section class="section">
+            <button class="category-btn" onclick="toggle('meat')">
+                Meat & Deli <span class="count">2 items</span>
+            </button>
+            <div id="meat" class="category-content">
+                <div class="item"><input type="checkbox" id="m1" onchange="checkItem(this)"><label for="m1">12-14 lb whole turkey</label></div>
+                <div class="item"><input type="checkbox" id="m2" onchange="checkItem(this)"><label for="m2">Italian sausage - 1/2 lb (optional)</label></div>
+            </div>
+
+            <button class="category-btn" onclick="toggle('dairy')">
+                Dairy & Eggs <span class="count">8 items</span>
+            </button>
+            <div id="dairy" class="category-content">
+                <div class="item"><input type="checkbox" id="d1" onchange="checkItem(this)"><label for="d1">Butter - 5 sticks</label></div>
+                <div class="item"><input type="checkbox" id="d2" onchange="checkItem(this)"><label for="d2">Heavy cream - 2 cups</label></div>
+                <div class="item"><input type="checkbox" id="d3" onchange="checkItem(this)"><label for="d3">Whole milk - 4 cups</label></div>
+                <div class="item"><input type="checkbox" id="d4" onchange="checkItem(this)"><label for="d4">Eggs - 4 large</label></div>
+                <div class="item"><input type="checkbox" id="d5" onchange="checkItem(this)"><label for="d5">Gruyere cheese - 1 lb</label></div>
+                <div class="item"><input type="checkbox" id="d6" onchange="checkItem(this)"><label for="d6">Sharp white cheddar - 1.5 lbs</label></div>
+                <div class="item"><input type="checkbox" id="d7" onchange="checkItem(this)"><label for="d7">Feta cheese - 6 oz</label></div>
+                <div class="item"><input type="checkbox" id="d8" onchange="checkItem(this)"><label for="d8">Sour cream - 1/2 cup</label></div>
+            </div>
+
+            <button class="category-btn" onclick="toggle('produce')">
+                Produce <span class="count">16 items</span>
+            </button>
+            <div id="produce" class="category-content">
+                <div class="item"><input type="checkbox" id="p1" onchange="checkItem(this)"><label for="p1">Garlic - 2 heads</label></div>
+                <div class="item"><input type="checkbox" id="p2" onchange="checkItem(this)"><label for="p2">Yellow onions - 4 large</label></div>
+                <div class="item"><input type="checkbox" id="p3" onchange="checkItem(this)"><label for="p3">Shallots - 4</label></div>
+                <div class="item"><input type="checkbox" id="p4" onchange="checkItem(this)"><label for="p4">Celery - 1 bunch</label></div>
+                <div class="item"><input type="checkbox" id="p5" onchange="checkItem(this)"><label for="p5">Carrots - 2 lbs</label></div>
+                <div class="item"><input type="checkbox" id="p6" onchange="checkItem(this)"><label for="p6">Parsnips - 1 lb</label></div>
+                <div class="item"><input type="checkbox" id="p7" onchange="checkItem(this)"><label for="p7">Sweet potatoes - 1 lb</label></div>
+                <div class="item"><input type="checkbox" id="p8" onchange="checkItem(this)"><label for="p8">Yukon gold potatoes - 5 lbs</label></div>
+                <div class="item"><input type="checkbox" id="p9" onchange="checkItem(this)"><label for="p9">Green beans - 2 lbs</label></div>
+                <div class="item"><input type="checkbox" id="p10" onchange="checkItem(this)"><label for="p10">Mixed mushrooms - 12 oz</label></div>
+                <div class="item"><input type="checkbox" id="p11" onchange="checkItem(this)"><label for="p11">Tuscan kale - 1 bunch</label></div>
+                <div class="item"><input type="checkbox" id="p12" onchange="checkItem(this)"><label for="p12">Mixed greens - 6 oz</label></div>
+                <div class="item"><input type="checkbox" id="p13" onchange="checkItem(this)"><label for="p13">Avocado - 1 large</label></div>
+                <div class="item"><input type="checkbox" id="p14" onchange="checkItem(this)"><label for="p14">Honeycrisp apples - 4</label></div>
+                <div class="item"><input type="checkbox" id="p15" onchange="checkItem(this)"><label for="p15">Lemons - 3</label></div>
+                <div class="item"><input type="checkbox" id="p16" onchange="checkItem(this)"><label for="p16">Pomegranate seeds - 1/2 cup</label></div>
+            </div>
+
+            <button class="category-btn" onclick="toggle('herbs')">
+                Fresh Herbs <span class="count">4 items</span>
+            </button>
+            <div id="herbs" class="category-content">
+                <div class="item"><input type="checkbox" id="h1" onchange="checkItem(this)"><label for="h1">Fresh sage - 2 bunches</label></div>
+                <div class="item"><input type="checkbox" id="h2" onchange="checkItem(this)"><label for="h2">Fresh thyme - 2 bunches</label></div>
+                <div class="item"><input type="checkbox" id="h3" onchange="checkItem(this)"><label for="h3">Fresh rosemary - 1 bunch</label></div>
+                <div class="item"><input type="checkbox" id="h4" onchange="checkItem(this)"><label for="h4">Fresh parsley - 1 bunch</label></div>
+            </div>
+
+            <button class="category-btn" onclick="toggle('bakery')">
+                Bakery <span class="count">3 items</span>
+            </button>
+            <div id="bakery" class="category-content">
+                <div class="item"><input type="checkbox" id="b1" onchange="checkItem(this)"><label for="b1">Croissants - 6-8 large</label></div>
+                <div class="item"><input type="checkbox" id="b2" onchange="checkItem(this)"><label for="b2">White sandwich bread - 6 slices</label></div>
+                <div class="item"><input type="checkbox" id="b3" onchange="checkItem(this)"><label for="b3">Dinner rolls - 12-16</label></div>
+            </div>
+
+            <button class="category-btn" onclick="toggle('pantry')">
+                Pantry <span class="count">20 items</span>
+            </button>
+            <div id="pantry" class="category-content">
+                <div class="item"><input type="checkbox" id="y1" onchange="checkItem(this)"><label for="y1">All-purpose flour - 5 cups</label></div>
+                <div class="item"><input type="checkbox" id="y2" onchange="checkItem(this)"><label for="y2">Granulated sugar - 1 cup</label></div>
+                <div class="item"><input type="checkbox" id="y3" onchange="checkItem(this)"><label for="y3">Brown sugar - 3/4 cup</label></div>
+                <div class="item"><input type="checkbox" id="y4" onchange="checkItem(this)"><label for="y4">Baking powder - 2 tsp</label></div>
+                <div class="item"><input type="checkbox" id="y5" onchange="checkItem(this)"><label for="y5">Vanilla extract - 2 tsp</label></div>
+                <div class="item"><input type="checkbox" id="y6" onchange="checkItem(this)"><label for="y6">Ground cinnamon - 3 tsp</label></div>
+                <div class="item"><input type="checkbox" id="y7" onchange="checkItem(this)"><label for="y7">Ground nutmeg - 1/2 tsp</label></div>
+                <div class="item"><input type="checkbox" id="y8" onchange="checkItem(this)"><label for="y8">Dry mustard - 1/2 tsp</label></div>
+                <div class="item"><input type="checkbox" id="y9" onchange="checkItem(this)"><label for="y9">Extra-virgin olive oil - 2 cups</label></div>
+                <div class="item"><input type="checkbox" id="y10" onchange="checkItem(this)"><label for="y10">Mayonnaise - 1 cup</label></div>
+                <div class="item"><input type="checkbox" id="y11" onchange="checkItem(this)"><label for="y11">Dijon mustard - 3 tbsp</label></div>
+                <div class="item"><input type="checkbox" id="y12" onchange="checkItem(this)"><label for="y12">Apple cider vinegar - 1/4 cup</label></div>
+                <div class="item"><input type="checkbox" id="y13" onchange="checkItem(this)"><label for="y13">Honey - 3 tbsp</label></div>
+                <div class="item"><input type="checkbox" id="y14" onchange="checkItem(this)"><label for="y14">Chicken or vegetable broth - 6 cups</label></div>
+                <div class="item"><input type="checkbox" id="y15" onchange="checkItem(this)"><label for="y15">Dry white wine - 1/2 cup</label></div>
+                <div class="item"><input type="checkbox" id="y16" onchange="checkItem(this)"><label for="y16">Elbow macaroni - 1 lb</label></div>
+                <div class="item"><input type="checkbox" id="y17" onchange="checkItem(this)"><label for="y17">Kosher salt</label></div>
+                <div class="item"><input type="checkbox" id="y18" onchange="checkItem(this)"><label for="y18">Black pepper</label></div>
+                <div class="item"><input type="checkbox" id="y19" onchange="checkItem(this)"><label for="y19">Cayenne pepper</label></div>
+                <div class="item"><input type="checkbox" id="y20" onchange="checkItem(this)"><label for="y20">Pepitas & pecans</label></div>
+            </div>
+
+            <div class="tip-box">
+                <strong>When to shop:</strong> Monday for most items. Tuesday for herbs. Wednesday for avocado and rolls.
+            </div>
+
+            <button class="clear-btn" onclick="clearAll()">Clear all checkmarks</button>
+        </section>
+    </main>
+
+    <footer>
+        <p>Your checked items are saved automatically.</p>
+    </footer>
+
+    <script>
+        function toggle(id) {
+            const el = document.getElementById(id);
+            el.classList.toggle('active');
+        }
+
+        function checkItem(checkbox) {
+            const item = checkbox.closest('.item');
+            if (checkbox.checked) {
+                item.classList.add('checked');
+            } else {
+                item.classList.remove('checked');
+            }
+            saveState();
+        }
+
+        function saveState() {
+            const checked = [];
+            document.querySelectorAll('input[type="checkbox"]:checked').forEach(cb => {
+                checked.push(cb.id);
+            });
+            localStorage.setItem('thanksgiving-shopping', JSON.stringify(checked));
+        }
+
+        function loadState() {
+            const saved = localStorage.getItem('thanksgiving-shopping');
+            if (saved) {
+                const checked = JSON.parse(saved);
+                checked.forEach(id => {
+                    const cb = document.getElementById(id);
+                    if (cb) {
+                        cb.checked = true;
+                        cb.closest('.item').classList.add('checked');
+                    }
+                });
+            }
+        }
+
+        function clearAll() {
+            document.querySelectorAll('input[type="checkbox"]').forEach(cb => {
+                cb.checked = false;
+                cb.closest('.item').classList.remove('checked');
+            });
+            localStorage.removeItem('thanksgiving-shopping');
+        }
+
+        // Load saved state on page load
+        loadState();
+    </script>
+</body>
+</html>

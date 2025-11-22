@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timeline - Thanksgiving 2025</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .day-btn {
+            width: 100%;
+            background: white;
+            border: none;
+            padding: var(--space-md);
+            text-align: left;
+            cursor: pointer;
+            border-radius: var(--radius-md);
+            margin-bottom: var(--space-sm);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: var(--font-display);
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--color-text);
+            transition: all var(--transition-fast);
+            border-left: 3px solid var(--color-primary);
+        }
+        .day-btn:hover {
+            background: var(--color-surface-elevated);
+        }
+        .day-btn .hint {
+            font-size: 0.8rem;
+            color: var(--color-text-secondary);
+            font-weight: normal;
+        }
+        .day-content {
+            display: none;
+            background: white;
+            padding: var(--space-md);
+            margin: -0.5rem 0 var(--space-md) 0;
+            border-radius: 0 0 var(--radius-md) var(--radius-md);
+        }
+        .day-content.active {
+            display: block;
+        }
+        .task {
+            padding: var(--space-sm) 0;
+            border-bottom: 1px solid var(--color-border-light);
+            font-size: 0.9rem;
+        }
+        .task:last-child {
+            border-bottom: none;
+        }
+        .task-time {
+            font-weight: 600;
+            color: var(--color-primary);
+            font-size: 0.85rem;
+        }
+        .thursday-highlight {
+            background: rgba(245, 158, 11, 0.1);
+            border-left-color: var(--color-warm);
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <div class="nav-container">
+            <div class="nav-brand">Thanksgiving 2025</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Menu</a></li>
+                <li><a href="shopping.html">Shopping</a></li>
+                <li><a href="timeline.html" class="active">Timeline</a></li>
+                <li><a href="recipes.html">Recipes</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="header">
+        <h1>Timeline</h1>
+        <p>Tap a day to see tasks</p>
+    </header>
+
+    <main class="container">
+        <section class="section">
+            <h2>Prep Days</h2>
+
+            <button class="day-btn" onclick="toggle('monday')">
+                Monday <span class="hint">Shop & start brine</span>
+            </button>
+            <div id="monday" class="day-content">
+                <div class="task">
+                    <div class="task-time">Morning</div>
+                    Shop for all groceries except fresh herbs, avocado, and rolls.
+                </div>
+                <div class="task">
+                    <div class="task-time">Afternoon</div>
+                    Start dry brine: Pat turkey dry, season with salt (1 tbsp per 5 lbs), place uncovered on rack in fridge.
+                </div>
+                <div class="task">
+                    <div class="task-time">Evening</div>
+                    Roast garlic for potatoes. Toast croissants for stuffing.
+                </div>
+            </div>
+
+            <button class="day-btn" onclick="toggle('tuesday')">
+                Tuesday <span class="hint">Prep vegetables & gravy</span>
+            </button>
+            <div id="tuesday" class="day-content">
+                <div class="task">
+                    <div class="task-time">Morning</div>
+                    Pick up fresh herbs. Peel and chop carrots, parsnips, sweet potatoes. Store in containers.
+                </div>
+                <div class="task">
+                    <div class="task-time">Afternoon</div>
+                    Make mushroom gravy. Prep salad dressing. Shred cheeses for mac and cheese.
+                </div>
+            </div>
+
+            <button class="day-btn" onclick="toggle('wednesday')">
+                Wednesday <span class="hint">Assemble sides & set table</span>
+            </button>
+            <div id="wednesday" class="day-content">
+                <div class="task">
+                    <div class="task-time">Morning</div>
+                    Assemble stuffing (don't bake). Make apple cake.
+                </div>
+                <div class="task">
+                    <div class="task-time">Afternoon</div>
+                    Make mashed potatoes. Pick up avocado and dinner rolls.
+                </div>
+                <div class="task">
+                    <div class="task-time">Evening</div>
+                    Set the table. Lay out serving dishes and label them.
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Thursday</h2>
+
+            <button class="day-btn thursday-highlight" onclick="toggle('morning')">
+                Morning <span class="hint">Turkey prep & in oven</span>
+            </button>
+            <div id="morning" class="day-content">
+                <div class="task">
+                    <div class="task-time">8:00 AM</div>
+                    Take turkey out of fridge. Let come to room temperature.
+                </div>
+                <div class="task">
+                    <div class="task-time">9:30 AM</div>
+                    Spatchcock turkey. Prepare herb mayo coating.
+                </div>
+                <div class="task">
+                    <div class="task-time">10:00 AM</div>
+                    Preheat oven to 450°F. Rub turkey with herb mayo.
+                </div>
+                <div class="task">
+                    <div class="task-time">10:30 AM</div>
+                    Turkey goes in at 450°F for 30 min, then reduce to 400°F.
+                </div>
+            </div>
+
+            <button class="day-btn thursday-highlight" onclick="toggle('midday')">
+                Midday <span class="hint">Turkey done, sides in oven</span>
+            </button>
+            <div id="midday" class="day-content">
+                <div class="task">
+                    <div class="task-time">12:00 PM</div>
+                    Check turkey temp. Looking for 165°F in thigh.
+                </div>
+                <div class="task">
+                    <div class="task-time">12:30 PM</div>
+                    Turkey done. Rest for 30 minutes under foil.
+                </div>
+                <div class="task">
+                    <div class="task-time">12:45 PM</div>
+                    Oven to 375°F. Root vegetables and stuffing go in.
+                </div>
+            </div>
+
+            <button class="day-btn thursday-highlight" onclick="toggle('final')">
+                Final Push <span class="hint">Finish sides, carve turkey</span>
+            </button>
+            <div id="final" class="day-content">
+                <div class="task">
+                    <div class="task-time">1:15 PM</div>
+                    Mac and cheese in oven. Reheat mashed potatoes on stove.
+                </div>
+                <div class="task">
+                    <div class="task-time">1:45 PM</div>
+                    Reheat gravy. Cook green beans.
+                </div>
+                <div class="task">
+                    <div class="task-time">2:15 PM</div>
+                    Remove everything from oven. Assemble salad.
+                </div>
+                <div class="task">
+                    <div class="task-time">2:30 PM</div>
+                    Carve turkey. Transfer to serving dishes.
+                </div>
+                <div class="task">
+                    <div class="task-time">3:00 PM</div>
+                    Dinner is served!
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Print this page and keep it in the kitchen.</p>
+    </footer>
+
+    <script>
+        function toggle(id) {
+            const el = document.getElementById(id);
+            el.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>

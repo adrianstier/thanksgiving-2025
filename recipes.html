@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipes - Thanksgiving 2025</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .recipe-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: var(--space-lg);
+        }
+
+        .recipe-card-link {
+            display: block;
+            text-decoration: none;
+            color: inherit;
+            background: white;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            transition: all var(--transition-fast);
+        }
+
+        .recipe-card-link:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+        }
+
+        .recipe-card-link img {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+        }
+
+        .recipe-card-link .card-content {
+            padding: var(--space-md);
+        }
+
+        .recipe-card-link h3 {
+            font-size: 1.1rem;
+            margin: 0 0 var(--space-xs);
+        }
+
+        .recipe-card-link p {
+            font-size: 0.85rem;
+            color: var(--color-text-secondary);
+            margin: 0;
+        }
+
+        .recipe-detail {
+            display: none;
+        }
+
+        .recipe-detail.active {
+            display: block;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-xs);
+            margin-bottom: var(--space-lg);
+            color: var(--color-primary);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .back-link:hover {
+            color: var(--color-primary-active);
+        }
+
+        .recipe-detail-card {
+            background: white;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+
+        .recipe-detail-card img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+        }
+
+        .recipe-detail-card .content {
+            padding: var(--space-xl);
+        }
+
+        .recipe-detail-card h2 {
+            margin: 0 0 var(--space-sm);
+            border: none;
+            padding: 0;
+        }
+
+        .recipe-meta {
+            display: flex;
+            gap: var(--space-md);
+            color: var(--color-text-secondary);
+            font-size: 0.9rem;
+            margin-bottom: var(--space-lg);
+        }
+
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: var(--space-xl);
+        }
+
+        @media (max-width: 768px) {
+            .two-column {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .ingredients h4, .instructions h4 {
+            margin: 0 0 var(--space-md);
+            padding-bottom: var(--space-sm);
+            border-bottom: 2px solid var(--color-primary);
+        }
+
+        .ingredients ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .ingredients li {
+            padding: var(--space-sm) 0;
+            border-bottom: 1px solid var(--color-border-light);
+            font-size: 0.9rem;
+        }
+
+        .instructions ol {
+            padding-left: var(--space-lg);
+            margin: 0;
+        }
+
+        .instructions li {
+            margin-bottom: var(--space-md);
+            font-size: 0.9rem;
+        }
+
+        .tip-box {
+            background: rgba(101, 163, 13, 0.1);
+            border-left: 3px solid var(--color-success);
+            padding: var(--space-md);
+            border-radius: var(--radius-sm);
+            margin-top: var(--space-lg);
+        }
+
+        .tip-box h4 {
+            color: var(--color-success-hover);
+            margin: 0 0 var(--space-xs);
+            font-size: 0.9rem;
+            border: none;
+            padding: 0;
+        }
+
+        .tip-box p {
+            margin: 0;
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <div class="nav-container">
+            <div class="nav-brand">Thanksgiving 2025</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Menu</a></li>
+                <li><a href="shopping.html">Shopping</a></li>
+                <li><a href="timeline.html">Timeline</a></li>
+                <li><a href="recipes.html" class="active">Recipes</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="header">
+        <h1>Recipes</h1>
+        <p>Click any dish to see the full recipe</p>
+    </header>
+
+    <main class="container">
+        <!-- Recipe Grid (default view) -->
+        <div id="recipe-list" class="section">
+            <div class="recipe-grid">
+                <a href="#turkey" class="recipe-card-link" onclick="showRecipe('turkey')">
+                    <img src="https://images.unsplash.com/photo-1574672280600-4accfa5b6f98?w=800" alt="Turkey">
+                    <div class="card-content">
+                        <h3>Spatchcock Roast Turkey</h3>
+                        <p>Prep 30 min • Cook 1.5-2 hrs</p>
+                    </div>
+                </a>
+
+                <a href="#stuffing" class="recipe-card-link" onclick="showRecipe('stuffing')">
+                    <img src="https://www.halfbakedharvest.com/wp-content/uploads/2019/11/Herby-Mushroom-Croissant-Stuffing-1.jpg" alt="Stuffing">
+                    <div class="card-content">
+                        <h3>Croissant Stuffing</h3>
+                        <p>Prep 30 min • Cook 45 min</p>
+                    </div>
+                </a>
+
+                <a href="#vegetables" class="recipe-card-link" onclick="showRecipe('vegetables')">
+                    <img src="https://cdn.loveandlemons.com/wp-content/uploads/2022/11/roasted-root-vegetables-1.jpg" alt="Root Vegetables">
+                    <div class="card-content">
+                        <h3>Roasted Root Vegetables</h3>
+                        <p>Prep 20 min • Cook 40 min</p>
+                    </div>
+                </a>
+
+                <a href="#mac-cheese" class="recipe-card-link" onclick="showRecipe('mac-cheese')">
+                    <img src="https://images.unsplash.com/photo-1543339494-b4cd4f7ba686?w=800" alt="Mac and Cheese">
+                    <div class="card-content">
+                        <h3>Mac & Cheese</h3>
+                        <p>Prep 20 min • Cook 30 min</p>
+                    </div>
+                </a>
+
+                <a href="#potatoes" class="recipe-card-link" onclick="showRecipe('potatoes')">
+                    <img src="https://images.unsplash.com/photo-1568569350062-ebfa3cb195df?w=800" alt="Mashed Potatoes">
+                    <div class="card-content">
+                        <h3>Mashed Potatoes</h3>
+                        <p>Prep 15 min • Cook 45 min</p>
+                    </div>
+                </a>
+
+                <a href="#salad" class="recipe-card-link" onclick="showRecipe('salad')">
+                    <img src="https://i0.wp.com/www.halfbakedharvest.com/wp-content/uploads/2021/09/Autumn-Harvest-Honeycrisp-Apple-and-Feta-Salad-5.jpg" alt="Salad">
+                    <div class="card-content">
+                        <h3>Autumn Harvest Salad</h3>
+                        <p>Prep 15 min</p>
+                    </div>
+                </a>
+
+                <a href="#green-beans" class="recipe-card-link" onclick="showRecipe('green-beans')">
+                    <img src="https://images.unsplash.com/photo-1567306226416-28f0efdc88ce?w=800" alt="Green Beans">
+                    <div class="card-content">
+                        <h3>Green Beans</h3>
+                        <p>Prep 10 min • Cook 10 min</p>
+                    </div>
+                </a>
+
+                <a href="#gravy" class="recipe-card-link" onclick="showRecipe('gravy')">
+                    <img src="https://cdn.loveandlemons.com/wp-content/uploads/2020/10/mushroom-gravy-1.jpg" alt="Gravy">
+                    <div class="card-content">
+                        <h3>Mushroom Gravy</h3>
+                        <p>Prep 10 min • Cook 25 min</p>
+                    </div>
+                </a>
+
+                <a href="#cake" class="recipe-card-link" onclick="showRecipe('cake')">
+                    <img src="https://images.unsplash.com/photo-1568571780765-9276ac8b75a2?w=800" alt="Apple Cake">
+                    <div class="card-content">
+                        <h3>Apple Crumble Cake</h3>
+                        <p>Prep 30 min • Cook 50 min</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <!-- Individual Recipe Details -->
+        <div id="turkey" class="recipe-detail">
+            <a href="#" class="back-link" onclick="showList()">← Back to all recipes</a>
+            <div class="recipe-detail-card">
+                <img src="https://images.unsplash.com/photo-1574672280600-4accfa5b6f98?w=800" alt="Spatchcock Turkey">
+                <div class="content">
+                    <h2>Spatchcock Roast Turkey</h2>
+                    <div class="recipe-meta">
+                        <span>Prep: 30 min</span>
+                        <span>Cook: 1.5-2 hours</span>
+                        <span>Serves: 8-10</span>
+                    </div>
+                    <div class="two-column">
+                        <div class="ingredients">
+                            <h4>Ingredients</h4>
+                            <ul>
+                                <li>12-14 lb turkey, giblets removed</li>
+                                <li>3 tbsp kosher salt (for dry brine)</li>
+                                <li>1 cup mayonnaise</li>
+                                <li>3 tbsp mixed fresh herbs, minced</li>
+                                <li>4 cloves garlic, minced</li>
+                                <li>Zest of 1 lemon</li>
+                                <li>1 tsp black pepper</li>
+                            </ul>
+                        </div>
+                        <div class="instructions">
+                            <h4>Instructions</h4>
+                            <ol>
+                                <li><strong>Dry brine (Monday):</strong> Pat turkey dry. Season all over with salt. Place uncovered on a rack in fridge for 2-3 days.</li>
+                                <li><strong>Spatchcock:</strong> Cut along both sides of backbone and remove. Flip and press on breastbone to flatten.</li>
+                                <li><strong>Make herb mayo:</strong> Mix mayonnaise, herbs, garlic, lemon zest, and pepper.</li>
+                                <li><strong>Prep:</strong> Rub herb mayo all over, getting under the skin.</li>
+                                <li><strong>Roast:</strong> 450°F for 30 min, then 400°F until thigh reaches 165°F (about 1-1.5 hrs more).</li>
+                                <li><strong>Rest:</strong> 20-30 minutes before carving.</li>
+                            </ol>
+                            <div class="tip-box">
+                                <h4>Why spatchcock?</h4>
+                                <p>Cooks faster, more evenly, with crispier skin. Save the backbone for stock.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="stuffing" class="recipe-detail">
+            <a href="#" class="back-link" onclick="showList()">← Back to all recipes</a>
+            <div class="recipe-detail-card">
+                <img src="https://www.halfbakedharvest.com/wp-content/uploads/2019/11/Herby-Mushroom-Croissant-Stuffing-1.jpg" alt="Stuffing">
+                <div class="content">
+                    <h2>Herby Mushroom Croissant Stuffing</h2>
+                    <div class="recipe-meta">
+                        <span>Prep: 30 min</span>
+                        <span>Cook: 45 min</span>
+                        <span>Serves: 8-10</span>
+                    </div>
+                    <div class="two-column">
+                        <div class="ingredients">
+                            <h4>Ingredients</h4>
+                            <ul>
+                                <li>6-8 large croissants, torn</li>
+                                <li>4 tbsp butter</li>
+                                <li>12 oz mixed mushrooms</li>
+                                <li>1 large onion, diced</li>
+                                <li>3 celery stalks, diced</li>
+                                <li>3 cloves garlic, minced</li>
+                                <li>2 cups Tuscan kale, chopped</li>
+                                <li>2 tbsp fresh sage</li>
+                                <li>1 tbsp fresh thyme</li>
+                                <li>1 cup shredded Gruyere</li>
+                                <li>2 cups chicken broth</li>
+                                <li>2 eggs, beaten</li>
+                            </ul>
+                        </div>
+                        <div class="instructions">
+                            <h4>Instructions</h4>
+                            <ol>
+                                <li><strong>Toast croissants:</strong> Bake at 325°F for 15 min until dried out.</li>
+                                <li><strong>Cook vegetables:</strong> Sauté mushrooms in butter until golden. Add onion, celery, garlic, kale, herbs.</li>
+                                <li><strong>Combine:</strong> Mix vegetables with croissants and Gruyere. Add broth whisked with eggs.</li>
+                                <li><strong>Assemble:</strong> Transfer to buttered 9x13" dish. Can refrigerate overnight.</li>
+                                <li><strong>Bake:</strong> 375°F for 25-30 min until golden.</li>
+                            </ol>
+                            <div class="tip-box">
+                                <h4>Make-ahead</h4>
+                                <p>Assemble night before. Add 10 min to bake time from fridge.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="vegetables" class="recipe-detail">
+            <a href="#" class="back-link" onclick="showList()">← Back to all recipes</a>
+            <div class="recipe-detail-card">
+                <img src="https://cdn.loveandlemons.com/wp-content/uploads/2022/11/roasted-root-vegetables-1.jpg" alt="Root Vegetables">
+                <div class="content">
+                    <h2>Roasted Root Vegetables</h2>
+                    <div class="recipe-meta">
+                        <span>Prep: 20 min</span>
+                        <span>Cook: 40 min</span>
+                        <span>Serves: 8</span>
+                    </div>
+                    <div class="two-column">
+                        <div class="ingredients">
+                            <h4>Ingredients</h4>
+                            <ul>
+                                <li>2 lbs carrots, chunked</li>
+                                <li>1 lb parsnips, chunked</li>
+                                <li>1 lb sweet potatoes, cubed</li>
+                                <li>1/4 cup olive oil</li>
+                                <li>1 tbsp fresh thyme</li>
+                                <li>1 tbsp fresh rosemary</li>
+                                <li>Salt and pepper</li>
+                                <li>Fresh sage leaves</li>
+                            </ul>
+                        </div>
+                        <div class="instructions">
+                            <h4>Instructions</h4>
+                            <ol>
+                                <li><strong>Prep:</strong> Cut vegetables into similar sizes. Toss with oil and herbs.</li>
+                                <li><strong>Roast:</strong> Single layer on baking sheets. 400°F for 35-40 min, stirring once.</li>
+                                <li><strong>Crispy sage:</strong> Fry sage leaves in butter until crispy. Scatter over vegetables.</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="mac-cheese" class="recipe-detail">
+            <a href="#" class="back-link" onclick="showList()">← Back to all recipes</a>
+            <div class="recipe-detail-card">
+                <img src="https://images.unsplash.com/photo-1543339494-b4cd4f7ba686?w=800" alt="Mac and Cheese">
+                <div class="content">
+                    <h2>Martha Stewart Mac & Cheese</h2>
+                    <div class="recipe-meta">
+                        <span>Prep: 20 min</span>
+                        <span>Cook: 30 min</span>
+                        <span>Serves: 8</span>
+                    </div>
+                    <div class="two-column">
+                        <div class="ingredients">
+                            <h4>Ingredients</h4>
+                            <ul>
+                                <li>1 lb elbow macaroni</li>
+                                <li>6 tbsp butter, divided</li>
+                                <li>1/4 cup flour</li>
+                                <li>4 cups whole milk</li>
+                                <li>1/2 tsp nutmeg</li>
+                                <li>Pinch of cayenne</li>
+                                <li>8 oz sharp white cheddar</li>
+                                <li>8 oz Gruyere</li>
+                                <li>6 slices white bread, cubed</li>
+                            </ul>
+                        </div>
+                        <div class="instructions">
+                            <h4>Instructions</h4>
+                            <ol>
+                                <li><strong>Cook pasta:</strong> 2 minutes less than package directions.</li>
+                                <li><strong>Make bechamel:</strong> Melt 4 tbsp butter, whisk in flour, cook 1 min. Add milk gradually. Simmer until thick.</li>
+                                <li><strong>Add cheese:</strong> Off heat, stir in cheese. Add pasta.</li>
+                                <li><strong>Assemble:</strong> Pour into 9x13" dish. Top with buttered bread cubes.</li>
+                                <li><strong>Bake:</strong> 375°F for 30 min until golden.</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="potatoes" class="recipe-detail">
+            <a href="#" class="back-link" onclick="showList()">← Back to all recipes</a>
+            <div class="recipe-detail-card">
+                <img src="https://images.unsplash.com/photo-1568569350062-ebfa3cb195df?w=800" alt="Mashed Potatoes">
+                <div class="content">
+                    <h2>Roasted Garlic Mashed Potatoes</h2>
+                    <div class="recipe-meta">
+                        <span>Prep: 15 min</span>
+                        <span>Cook: 45 min</span>
+                        <span>Serves: 8</span>
+                    </div>
+                    <div class="two-column">
+                        <div class="ingredients">
+                            <h4>Ingredients</h4>
+                            <ul>
+                                <li>5 lbs Yukon gold potatoes</li>
+                                <li>1 head garlic</li>
+                                <li>2 cups whole milk</li>
+                                <li>1 cup heavy cream</li>
+                                <li>8 tbsp butter</li>
+                                <li>1/2 cup sour cream</li>
+                                <li>Salt and pepper</li>
+                                <li>Chives for garnish</li>
+                            </ul>
+                        </div>
+                        <div class="instructions">
+                            <h4>Instructions</h4>
+                            <ol>
+                                <li><strong>Roast garlic:</strong> Cut top off, drizzle with oil, wrap in foil. 400°F for 40 min.</li>
+                                <li><strong>Cook potatoes:</strong> Simmer cubed potatoes in milk and cream until tender, 20 min.</li>
+                                <li><strong>Mash:</strong> Drain (save liquid). Mash with butter, sour cream, garlic. Add liquid as needed.</li>
+                                <li><strong>Season:</strong> Salt, pepper, top with chives.</li>
+                            </ol>
+                            <div class="tip-box">
+                                <h4>Make-ahead</h4>
+                                <p>Reheat with extra cream and butter. Can be made a day ahead.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="salad" class="recipe-detail">
+            <a href="#" class="back-link" onclick="showList()">← Back to all recipes</a>
+            <div class="recipe-detail-card">
+                <img src="https://i0.wp.com/www.halfbakedharvest.com/wp-content/uploads/2021/09/Autumn-Harvest-Honeycrisp-Apple-and-Feta-Salad-5.jpg" alt="Salad">
+                <div class="content">
+                    <h2>Autumn Harvest Salad</h2>
+                    <div class="recipe-meta">
+                        <span>Prep: 15 min</span>
+                        <span>Serves: 8</span>
+                    </div>
+                    <div class="two-column">
+                        <div class="ingredients">
+                            <h4>Ingredients</h4>
+                            <ul>
+                                <li>6 oz mixed greens</li>
+                                <li>2 Honeycrisp apples, sliced</li>
+                                <li>1 avocado, sliced</li>
+                                <li>1/2 cup pomegranate seeds</li>
+                                <li>4 oz feta, crumbled</li>
+                                <li>1/4 cup pepitas</li>
+                                <li>1/4 cup olive oil</li>
+                                <li>2 tbsp apple cider vinegar</li>
+                                <li>1 tbsp honey</li>
+                                <li>1 tbsp Dijon mustard</li>
+                            </ul>
+                        </div>
+                        <div class="instructions">
+                            <h4>Instructions</h4>
+                            <ol>
+                                <li><strong>Make dressing:</strong> Whisk oil, vinegar, honey, Dijon. Can make 2 days ahead.</li>
+                                <li><strong>Toast pepitas:</strong> Dry pan until fragrant.</li>
+                                <li><strong>Assemble:</strong> Greens, apple, avocado, pomegranate, feta, pepitas.</li>
+                                <li><strong>Dress:</strong> Just before serving.</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="green-beans" class="recipe-detail">
+            <a href="#" class="back-link" onclick="showList()">← Back to all recipes</a>
+            <div class="recipe-detail-card">
+                <img src="https://images.unsplash.com/photo-1567306226416-28f0efdc88ce?w=800" alt="Green Beans">
+                <div class="content">
+                    <h2>Lemon Garlic Green Beans</h2>
+                    <div class="recipe-meta">
+                        <span>Prep: 10 min</span>
+                        <span>Cook: 10 min</span>
+                        <span>Serves: 8</span>
+                    </div>
+                    <div class="two-column">
+                        <div class="ingredients">
+                            <h4>Ingredients</h4>
+                            <ul>
+                                <li>2 lbs green beans, trimmed</li>
+                                <li>3 tbsp butter</li>
+                                <li>3 cloves garlic, minced</li>
+                                <li>Zest and juice of 1 lemon</li>
+                                <li>Salt and pepper</li>
+                                <li>2 tbsp fresh parsley</li>
+                            </ul>
+                        </div>
+                        <div class="instructions">
+                            <h4>Instructions</h4>
+                            <ol>
+                                <li><strong>Blanch:</strong> Boil 3 min until bright green. Shock in ice water.</li>
+                                <li><strong>Sauté:</strong> Melt butter, add garlic 30 sec, add beans.</li>
+                                <li><strong>Finish:</strong> Lemon zest, juice, salt, pepper, parsley.</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="gravy" class="recipe-detail">
+            <a href="#" class="back-link" onclick="showList()">← Back to all recipes</a>
+            <div class="recipe-detail-card">
+                <img src="https://cdn.loveandlemons.com/wp-content/uploads/2020/10/mushroom-gravy-1.jpg" alt="Gravy">
+                <div class="content">
+                    <h2>Mushroom Gravy</h2>
+                    <div class="recipe-meta">
+                        <span>Prep: 10 min</span>
+                        <span>Cook: 25 min</span>
+                        <span>Makes: 3 cups</span>
+                    </div>
+                    <div class="two-column">
+                        <div class="ingredients">
+                            <h4>Ingredients</h4>
+                            <ul>
+                                <li>4 tbsp butter</li>
+                                <li>8 oz cremini mushrooms</li>
+                                <li>2 shallots, minced</li>
+                                <li>3 cloves garlic, minced</li>
+                                <li>1/4 cup flour</li>
+                                <li>1/2 cup dry white wine</li>
+                                <li>3 cups vegetable broth</li>
+                                <li>1 tbsp fresh thyme</li>
+                            </ul>
+                        </div>
+                        <div class="instructions">
+                            <h4>Instructions</h4>
+                            <ol>
+                                <li><strong>Cook mushrooms:</strong> In butter until golden, 8 min. Add shallots, garlic.</li>
+                                <li><strong>Make roux:</strong> Sprinkle flour, stir 1 min.</li>
+                                <li><strong>Add liquid:</strong> Wine, scrape bits. Add broth, thyme. Simmer 10-15 min.</li>
+                                <li><strong>Season:</strong> Salt and pepper.</li>
+                            </ol>
+                            <div class="tip-box">
+                                <h4>Make-ahead</h4>
+                                <p>Make 2 days ahead. Reheat with splash of broth.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="cake" class="recipe-detail">
+            <a href="#" class="back-link" onclick="showList()">← Back to all recipes</a>
+            <div class="recipe-detail-card">
+                <img src="https://images.unsplash.com/photo-1568571780765-9276ac8b75a2?w=800" alt="Apple Cake">
+                <div class="content">
+                    <h2>Cinnamon Apple Crumble Cake</h2>
+                    <div class="recipe-meta">
+                        <span>Prep: 30 min</span>
+                        <span>Cook: 50 min</span>
+                        <span>Serves: 10</span>
+                    </div>
+                    <div class="two-column">
+                        <div class="ingredients">
+                            <h4>Ingredients</h4>
+                            <ul>
+                                <li>2 cups flour</li>
+                                <li>2 tsp baking powder</li>
+                                <li>1 tsp cinnamon</li>
+                                <li>1/2 cup butter, softened</li>
+                                <li>3/4 cup sugar</li>
+                                <li>2 eggs</li>
+                                <li>1 tsp vanilla</li>
+                                <li>1/2 cup sour cream</li>
+                                <li>2 apples, sliced</li>
+                                <li>1/3 cup brown sugar (crumble)</li>
+                                <li>4 tbsp cold butter (crumble)</li>
+                            </ul>
+                        </div>
+                        <div class="instructions">
+                            <h4>Instructions</h4>
+                            <ol>
+                                <li><strong>Make crumble:</strong> Mix flour, brown sugar, cinnamon. Cut in butter.</li>
+                                <li><strong>Make batter:</strong> Beat butter and sugar. Add eggs, vanilla. Alternate flour and sour cream.</li>
+                                <li><strong>Assemble:</strong> Half batter in 10" springform, layer apples, rest of batter, top with crumble.</li>
+                                <li><strong>Bake:</strong> 350°F for 45-50 min.</li>
+                                <li><strong>Serve:</strong> Warm with vanilla ice cream.</li>
+                            </ol>
+                            <div class="tip-box">
+                                <h4>Make-ahead</h4>
+                                <p>Bake day before. Warm in low oven before serving.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>Recipe sources: Half Baked Harvest, Love and Lemons, Martha Stewart, NYT Cooking</p>
+    </footer>
+
+    <script>
+        function showRecipe(id) {
+            document.getElementById('recipe-list').style.display = 'none';
+            document.querySelectorAll('.recipe-detail').forEach(el => el.classList.remove('active'));
+            document.getElementById(id).classList.add('active');
+            window.scrollTo(0, 0);
+        }
+
+        function showList() {
+            document.querySelectorAll('.recipe-detail').forEach(el => el.classList.remove('active'));
+            document.getElementById('recipe-list').style.display = 'block';
+            window.scrollTo(0, 0);
+        }
+
+        // Handle direct links to recipes
+        if (window.location.hash) {
+            const id = window.location.hash.substring(1);
+            if (document.getElementById(id)) {
+                showRecipe(id);
+            }
+        }
+    </script>
+</body>
+</html>

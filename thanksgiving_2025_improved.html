@@ -1,0 +1,1980 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thanksgiving 2025 - Complete Master Plan</title>
+    <style>
+        /* Design System Custom Properties */
+        :root {
+            /* Colors - Harvest Theme */
+            --color-primary: #f59e0b;
+            --color-primary-hover: #d97706;
+            --color-primary-active: #b45309;
+            --color-accent: #dc2626;
+            --color-accent-hover: #b91c1c;
+            --color-success: #65a30d;
+            --color-success-hover: #4d7c0f;
+            --color-warm: #f97316;
+            --color-burgundy: #9f1239;
+            --color-gold: #fbbf24;
+
+            /* Backgrounds */
+            --color-background: #fefdfb;
+            --color-surface: #fdf8f3;
+            --color-surface-elevated: #f5ebe0;
+
+            /* Text */
+            --color-text: #44403c;
+            --color-text-secondary: #78716c;
+            --color-text-tertiary: #a8a29e;
+
+            /* Borders */
+            --color-border-light: #e7e5e4;
+            --color-border: #d6d3d1;
+            --color-border-strong: #a8a29e;
+
+            /* Typography */
+            --font-display: 'Georgia', 'Cambria', serif;
+            --font-body: system-ui, -apple-system, sans-serif;
+            --font-mono: 'SF Mono', 'Consolas', monospace;
+
+            /* Spacing */
+            --space-xs: 0.25rem;
+            --space-sm: 0.5rem;
+            --space-md: 1rem;
+            --space-lg: 1.5rem;
+            --space-xl: 2rem;
+
+            /* Borders */
+            --radius-sm: 4px;
+            --radius-md: 8px;
+            --radius-lg: 12px;
+            --radius-xl: 16px;
+
+            /* Transitions */
+            --transition-fast: 150ms ease-out;
+            --transition-normal: 200ms ease-out;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-body);
+            line-height: 1.6;
+            color: var(--color-text);
+            background: var(--color-background);
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-display);
+        }
+
+        .header {
+            background: linear-gradient(135deg, var(--color-burgundy) 0%, var(--color-primary) 100%);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+        .header h1 {
+            font-family: var(--font-display);
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .header p {
+            font-family: var(--font-body);
+            font-size: 1.2rem;
+            opacity: 0.95;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .toc {
+            background: var(--color-surface);
+            padding: var(--space-xl);
+            border-radius: var(--radius-xl);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            margin-bottom: var(--space-xl);
+            border-left: 5px solid var(--color-primary);
+        }
+
+        .toc h2 {
+            color: var(--color-text);
+            margin-bottom: var(--space-md);
+        }
+
+        .toc-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--space-sm);
+        }
+
+        .toc a {
+            color: var(--color-primary-hover);
+            text-decoration: none;
+            padding: var(--space-sm);
+            border-radius: var(--radius-sm);
+            transition: all var(--transition-fast);
+            display: block;
+        }
+
+        .toc a:hover {
+            background: var(--color-surface-elevated);
+            color: var(--color-primary-active);
+            transform: translateX(4px);
+        }
+
+        .section {
+            background: var(--color-surface);
+            padding: var(--space-xl);
+            border-radius: var(--radius-xl);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            margin-bottom: var(--space-xl);
+            transition: box-shadow var(--transition-normal);
+        }
+
+        .section:hover {
+            box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+        }
+
+        .section h2 {
+            color: var(--color-text);
+            margin-bottom: var(--space-lg);
+            font-size: 2rem;
+            border-bottom: 3px solid var(--color-primary);
+            padding-bottom: var(--space-sm);
+        }
+
+        .section h3 {
+            color: var(--color-text);
+            margin: var(--space-lg) 0 var(--space-md);
+            font-size: 1.3rem;
+        }
+
+        .menu-overview {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: var(--space-md);
+            margin-bottom: var(--space-lg);
+        }
+
+        .menu-item {
+            background: var(--color-surface-elevated);
+            padding: var(--space-md);
+            border-radius: var(--radius-md);
+            border-left: 4px solid var(--color-primary);
+            transition: all var(--transition-fast);
+        }
+
+        .menu-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .menu-item h4 {
+            color: var(--color-text);
+            margin-bottom: var(--space-sm);
+        }
+
+        .menu-item .source {
+            font-size: 0.85rem;
+            color: var(--color-text-secondary);
+            font-style: italic;
+        }
+
+        .menu-item a {
+            color: var(--color-primary);
+            text-decoration: none;
+            transition: color var(--transition-fast);
+        }
+
+        .menu-item a:hover {
+            color: var(--color-primary-active);
+            text-decoration: underline;
+        }
+
+        .menu-item-img {
+            width: 100%;
+            height: 120px;
+            object-fit: cover;
+            border-radius: var(--radius-md);
+            margin-bottom: var(--space-sm);
+        }
+
+        .recipe-hero-img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .recipe-card {
+            background: var(--color-surface);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            margin-bottom: var(--space-xl);
+            border-left: 5px solid var(--color-primary);
+            transition: all var(--transition-normal);
+        }
+
+        .recipe-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+        }
+
+        .recipe-header {
+            padding: var(--space-lg) var(--space-xl);
+            background: var(--color-surface-elevated);
+            border-bottom: 1px solid var(--color-border-light);
+        }
+
+        .recipe-header h3 {
+            font-size: 1.6rem;
+            color: var(--color-text);
+            margin-bottom: 0.3rem;
+        }
+
+        .recipe-source {
+            font-size: 0.9rem;
+            color: var(--color-text-secondary);
+            font-style: italic;
+            margin-bottom: var(--space-sm);
+        }
+
+        .recipe-source a {
+            color: var(--color-primary);
+            transition: color var(--transition-fast);
+        }
+
+        .recipe-source a:hover {
+            color: var(--color-primary-active);
+        }
+
+        .recipe-meta {
+            display: flex;
+            gap: var(--space-lg);
+            flex-wrap: wrap;
+            margin-top: 0.75rem;
+        }
+
+        .recipe-meta-item {
+            background: white;
+            padding: 0.4rem 0.8rem;
+            border-radius: var(--radius-md);
+            font-size: 0.85rem;
+            border: 1px solid var(--color-border-light);
+            font-family: var(--font-body);
+        }
+
+        .recipe-meta-item strong {
+            color: var(--color-primary-hover);
+        }
+
+        .recipe-body {
+            padding: var(--space-lg) var(--space-xl);
+        }
+
+        .ingredients-instructions {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: var(--space-xl);
+        }
+
+        .ingredients h4, .instructions h4 {
+            color: var(--color-text);
+            margin-bottom: var(--space-md);
+            font-size: 1.2rem;
+            border-bottom: 2px solid var(--color-primary);
+            padding-bottom: var(--space-sm);
+        }
+
+        .ingredients ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .ingredients li {
+            padding: 0.4rem 0;
+            border-bottom: 1px solid var(--color-border-light);
+            padding-left: var(--space-lg);
+            position: relative;
+            font-size: 0.95rem;
+        }
+
+        .ingredients li:before {
+            content: "▪";
+            color: var(--color-primary);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        .ingredients .subheading {
+            font-weight: bold;
+            color: var(--color-text);
+            padding-left: 0;
+            margin-top: 0.75rem;
+        }
+
+        .ingredients .subheading:before {
+            content: "";
+        }
+
+        .instructions ol {
+            counter-reset: step-counter;
+            list-style: none;
+            padding: 0;
+        }
+
+        .instructions li {
+            counter-increment: step-counter;
+            margin-bottom: 1.2rem;
+            padding-left: 2.5rem;
+            position: relative;
+            font-size: 0.95rem;
+        }
+
+        .instructions li:before {
+            content: counter(step-counter);
+            background: var(--color-primary);
+            color: white;
+            font-weight: bold;
+            width: 1.8rem;
+            height: 1.8rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            left: 0;
+            top: 0;
+            font-size: 0.85rem;
+        }
+
+        .recipe-notes {
+            background: rgba(101, 163, 13, 0.1);
+            padding: var(--space-md);
+            border-radius: var(--radius-md);
+            margin-top: var(--space-lg);
+            border-left: 4px solid var(--color-success);
+        }
+
+        .recipe-notes h5 {
+            color: var(--color-success-hover);
+            margin-bottom: var(--space-sm);
+        }
+
+        .recipe-notes p {
+            font-size: 0.9rem;
+        }
+
+        /* Shopping List Styles */
+        .shopping-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: var(--space-lg);
+            margin-top: var(--space-lg);
+        }
+
+        .shopping-category {
+            background: var(--color-surface-elevated);
+            padding: var(--space-lg);
+            border-radius: var(--radius-lg);
+            border-top: 3px solid var(--color-primary);
+            transition: all var(--transition-fast);
+        }
+
+        .shopping-category:hover {
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+
+        .shopping-category h3 {
+            color: var(--color-text);
+            margin-bottom: var(--space-md);
+            font-size: 1.1rem;
+        }
+
+        .shopping-category ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .shopping-category li {
+            padding: 0.4rem 0;
+            border-bottom: 1px solid var(--color-border-light);
+            font-size: 0.9rem;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .shopping-category li:before {
+            content: "☐";
+            margin-right: var(--space-sm);
+            color: var(--color-primary);
+        }
+
+        .shopping-category .item-note {
+            font-size: 0.8rem;
+            color: var(--color-text-secondary);
+            font-style: italic;
+        }
+
+        /* Timeline Styles */
+        .timeline {
+            background: var(--color-surface-elevated);
+            padding: var(--space-lg);
+            border-radius: var(--radius-lg);
+            margin: var(--space-md) 0;
+            border-left: 4px solid var(--color-primary);
+        }
+
+        .timeline h3 {
+            color: var(--color-text);
+            margin-bottom: var(--space-md);
+            font-size: 1.3rem;
+        }
+
+        .timeline-item {
+            margin: 0.75rem 0;
+            padding: 0.75rem;
+            background: white;
+            border-radius: var(--radius-md);
+            transition: all var(--transition-fast);
+        }
+
+        .timeline-item:hover {
+            transform: translateX(4px);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        .timeline-time {
+            font-weight: bold;
+            color: var(--color-primary);
+            margin-bottom: 0.3rem;
+            font-family: var(--font-mono);
+        }
+
+        .timeline-item p {
+            font-size: 0.9rem;
+        }
+
+        .timeline-item ul {
+            margin: var(--space-sm) 0 0 var(--space-lg);
+            font-size: 0.9rem;
+        }
+
+        /* Equipment Styles */
+        .equipment-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--space-lg);
+        }
+
+        .equipment-category {
+            background: var(--color-surface-elevated);
+            padding: var(--space-lg);
+            border-radius: var(--radius-lg);
+        }
+
+        .equipment-category h4 {
+            color: var(--color-text);
+            margin-bottom: var(--space-md);
+        }
+
+        .equipment-category ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .equipment-category li {
+            padding: 0.3rem 0;
+            font-size: 0.9rem;
+        }
+
+        .equipment-category li:before {
+            content: "✓ ";
+            color: var(--color-success);
+        }
+
+        /* Alert Boxes - Using Design System Colors */
+        .info-box {
+            background: rgba(159, 18, 57, 0.08);
+            padding: var(--space-lg);
+            border-radius: var(--radius-lg);
+            margin: var(--space-md) 0;
+            border-left: 4px solid var(--color-burgundy);
+        }
+
+        .info-box h3 {
+            color: var(--color-burgundy);
+            margin-bottom: 0.75rem;
+        }
+
+        .warning-box {
+            background: rgba(249, 115, 22, 0.1);
+            padding: var(--space-lg);
+            border-radius: var(--radius-lg);
+            margin: var(--space-md) 0;
+            border-left: 4px solid var(--color-warm);
+        }
+
+        .warning-box h3 {
+            color: var(--color-warm);
+            margin-bottom: 0.75rem;
+        }
+
+        .success-box {
+            background: rgba(101, 163, 13, 0.1);
+            padding: var(--space-lg);
+            border-radius: var(--radius-lg);
+            margin: var(--space-md) 0;
+            border-left: 4px solid var(--color-success);
+        }
+
+        .success-box h3 {
+            color: var(--color-success-hover);
+            margin-bottom: 0.75rem;
+        }
+
+        /* Oven Schedule Table */
+        .oven-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: var(--space-md) 0;
+            font-size: 0.9rem;
+        }
+
+        .oven-table th, .oven-table td {
+            border: 1px solid var(--color-border-light);
+            padding: 0.75rem;
+            text-align: left;
+        }
+
+        .oven-table th {
+            background: var(--color-burgundy);
+            color: white;
+            font-family: var(--font-display);
+        }
+
+        .oven-table tr:nth-child(even) {
+            background: var(--color-surface-elevated);
+        }
+
+        .oven-table .temp {
+            font-weight: bold;
+            color: var(--color-primary);
+            font-family: var(--font-mono);
+        }
+
+        /* Dietary Tags */
+        .dietary-tags {
+            display: flex;
+            gap: var(--space-sm);
+            flex-wrap: wrap;
+            margin-top: var(--space-sm);
+        }
+
+        .tag {
+            font-size: 0.75rem;
+            padding: 0.2rem 0.5rem;
+            border-radius: var(--radius-sm);
+            font-weight: bold;
+            font-family: var(--font-body);
+        }
+
+        .tag-vegan {
+            background: rgba(101, 163, 13, 0.2);
+            color: var(--color-success-hover);
+        }
+
+        .tag-gf-option {
+            background: rgba(251, 191, 36, 0.3);
+            color: var(--color-primary-active);
+        }
+
+        .tag-make-ahead {
+            background: rgba(159, 18, 57, 0.15);
+            color: var(--color-burgundy);
+        }
+
+        .tag-kid-friendly {
+            background: rgba(245, 158, 11, 0.2);
+            color: var(--color-primary-hover);
+        }
+
+        /* Print Styles */
+        @media print {
+            body {
+                background: white;
+                color: black;
+                font-size: 12pt;
+            }
+            .header {
+                background: none;
+                color: black;
+                text-shadow: none;
+                box-shadow: none;
+                border-bottom: 2px solid black;
+            }
+            .recipe-card, .section {
+                break-inside: avoid;
+                page-break-inside: avoid;
+                box-shadow: none;
+                border: 1px solid #ccc;
+            }
+            .toc {
+                display: none;
+            }
+            .menu-item, .shopping-category, .timeline-item, .info-box, .warning-box, .success-box {
+                box-shadow: none;
+            }
+            a {
+                color: black;
+                text-decoration: underline;
+            }
+            .shopping-category li:before {
+                content: "[ ]";
+                font-family: monospace;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header {
+                padding: 2rem 1rem;
+            }
+            .header h1 {
+                font-size: 1.8rem;
+            }
+            .header p {
+                font-size: 1rem;
+            }
+            .container {
+                padding: 1rem;
+            }
+            .section {
+                padding: 1.5rem 1rem;
+            }
+            .section h2 {
+                font-size: 1.5rem;
+            }
+            .toc-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            .menu-overview {
+                grid-template-columns: 1fr;
+            }
+            .equipment-grid {
+                grid-template-columns: 1fr;
+            }
+            .shopping-grid {
+                grid-template-columns: 1fr;
+            }
+            .ingredients-instructions {
+                grid-template-columns: 1fr;
+            }
+            .recipe-header {
+                padding: 1rem;
+            }
+            .recipe-header h3 {
+                font-size: 1.3rem;
+            }
+            .recipe-body {
+                padding: 1rem;
+            }
+            .recipe-meta {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+            .timeline {
+                padding: 1rem;
+            }
+            .timeline h3 {
+                font-size: 1.1rem;
+            }
+            .oven-table {
+                font-size: 0.8rem;
+            }
+            .oven-table th, .oven-table td {
+                padding: 0.5rem;
+            }
+            .info-box, .warning-box, .success-box {
+                padding: 1rem;
+            }
+            .info-box h3, .warning-box h3, .success-box h3 {
+                font-size: 1.1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header h1 {
+                font-size: 1.5rem;
+            }
+            .toc-grid {
+                grid-template-columns: 1fr;
+            }
+            .section h2 {
+                font-size: 1.3rem;
+            }
+            .recipe-header h3 {
+                font-size: 1.2rem;
+            }
+            .ingredients h4, .instructions h4 {
+                font-size: 1rem;
+            }
+            .timeline-time {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>🦃 Thanksgiving 2025 🍂</h1>
+        <p>✨ The Ultimate Feast-tacular Master Plan ✨</p>
+        <p style="font-size: 1rem; margin-top: 0.5rem;">🗓️ Thursday, November 27th | 🍽️ Dinner at 3:00 PM | 👨‍👩‍👧‍👦 8 Hungry Guests</p>
+    </div>
+
+    <div class="container">
+        <!-- Table of Contents -->
+        <div class="toc">
+            <h2>🗺️ Your Turkey Day Adventure Map</h2>
+            <div class="toc-grid">
+                <a href="#menu">🍽️ The Glorious Menu</a>
+                <a href="#equipment">🔧 Battle Stations</a>
+                <a href="#shopping">🛒 Grocery Quest</a>
+                <a href="#timeline">📅 The Master Timeline</a>
+                <a href="#recipes">📜 Sacred Recipes</a>
+                <a href="#cooking-day">⏰ D-Day Schedule</a>
+                <a href="#dietary">🥗 Dietary Deets</a>
+                <a href="#beverages">🥂 Sip Sip Hooray</a>
+                <a href="#beyond-food">🎪 Beyond the Food</a>
+            </div>
+        </div>
+
+        <!-- Menu Overview -->
+        <div class="section" id="menu">
+            <h2>🌟 The Magnificent Menu 🌟</h2>
+            <p style="margin-bottom: 1.5rem;">Behold! A spectacular spread that'll make your guests weep tears of joy! 😭✨ <strong>Estimated total cost: $180-240</strong> (a small price to pay for LEGENDARY status)</p>
+
+            <div class="menu-overview">
+                <div class="menu-item">
+                    <img src="https://static01.nyt.com/images/2016/11/17/dining/17TURKEYREX2/17TURKEYREX2-superJumbo.jpg" alt="Spatchcock Turkey" class="menu-item-img">
+                    <h4>Spatchcock Roast Turkey</h4>
+                    <p>12-14 lb turkey, dry-brined to perfection</p>
+                    <p class="source">NYT Cooking</p>
+                    <div class="dietary-tags">
+                        <span class="tag tag-gf-option">GF</span>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <img src="https://www.halfbakedharvest.com/wp-content/uploads/2018/11/Herby-Mushroom-Croissant-Stuffing-1.jpg" alt="Herby Mushroom Croissant Stuffing" class="menu-item-img">
+                    <h4>Herby Mushroom Croissant Stuffing</h4>
+                    <p>Wild mushrooms, kale, Gruyere</p>
+                    <p class="source"><a href="https://www.halfbakedharvest.com/herby-mushroom-croissant-stuffing/" target="_blank">Half Baked Harvest</a></p>
+                    <div class="dietary-tags">
+                        <span class="tag tag-make-ahead">Make Ahead</span>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <img src="https://cdn.loveandlemons.com/wp-content/uploads/2022/11/roasted-root-vegetables-1.jpg" alt="Roasted Root Vegetables" class="menu-item-img">
+                    <h4>Roasted Root Vegetables</h4>
+                    <p>Carrots, parsnips, sweet potato with crispy sage</p>
+                    <p class="source"><a href="https://www.loveandlemons.com/roasted-root-vegetables/" target="_blank">Love and Lemons</a></p>
+                    <div class="dietary-tags">
+                        <span class="tag tag-vegan">Vegan</span>
+                        <span class="tag tag-gf-option">GF</span>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <img src="https://images.food52.com/xlGUk-5cCHR5Qb_b8Q4kzrxGvFM=/1200x1200/filters:format(webp)/d61c6f1c-d113-4b4e-bf29-7de7db1b91ae--2014-1021_martha-stewart-macaroni-cheese-007.jpg" alt="Martha Stewart Mac and Cheese" class="menu-item-img">
+                    <h4>Martha Stewart Mac & Cheese</h4>
+                    <p>The ultimate comfort food classic</p>
+                    <p class="source">Martha Stewart</p>
+                    <div class="dietary-tags">
+                        <span class="tag tag-kid-friendly">Kid Favorite</span>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <img src="https://www.halfbakedharvest.com/wp-content/uploads/2021/09/Autumn-Harvest-Honeycrisp-Apple-and-Feta-Salad-5.jpg" alt="Autumn Harvest Salad" class="menu-item-img">
+                    <h4>Autumn Harvest Salad</h4>
+                    <p>Honeycrisp, feta, pomegranate</p>
+                    <p class="source"><a href="https://www.halfbakedharvest.com/autumn-harvest-honeycrisp-apple-and-feta-salad/" target="_blank">Half Baked Harvest</a></p>
+                    <div class="dietary-tags">
+                        <span class="tag tag-gf-option">GF</span>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <img src="https://www.halfbakedharvest.com/wp-content/uploads/2020/11/Make-Ahead-Roasted-Garlic-Mashed-Potatoes-1.jpg" alt="Roasted Garlic Mashed Potatoes" class="menu-item-img">
+                    <h4>Roasted Garlic Mashed Potatoes</h4>
+                    <p>Cooked in cream with roasted garlic</p>
+                    <p class="source"><a href="https://www.halfbakedharvest.com/make-ahead-roasted-garlic-mashed-potatoes/" target="_blank">Half Baked Harvest</a></p>
+                    <div class="dietary-tags">
+                        <span class="tag tag-make-ahead">Make Ahead</span>
+                        <span class="tag tag-gf-option">GF</span>
+                        <span class="tag tag-kid-friendly">Kid Favorite</span>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <img src="https://www.simplyrecipes.com/thmb/F-1RRjYU5_3Jhv3p1N6OhFVPpFE=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/Simply-Recipes-Sauteed-Green-Beans-LEAD-03-4c1293f5df554e0fba27d5d7c6f3ac6c.jpg" alt="Lemon Garlic Green Beans" class="menu-item-img">
+                    <h4>Lemon Garlic Green Beans</h4>
+                    <p>Bright, fresh, and flavorful</p>
+                    <p class="source">Classic</p>
+                    <div class="dietary-tags">
+                        <span class="tag tag-vegan">Vegan</span>
+                        <span class="tag tag-gf-option">GF</span>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <img src="https://cdn.loveandlemons.com/wp-content/uploads/2020/10/mushroom-gravy-1.jpg" alt="Mushroom Gravy" class="menu-item-img">
+                    <h4>Mushroom Gravy</h4>
+                    <p>Rich, umami-forward gravy</p>
+                    <p class="source"><a href="https://www.loveandlemons.com/mushroom-gravy/" target="_blank">Love and Lemons</a></p>
+                    <div class="dietary-tags">
+                        <span class="tag tag-vegan">Vegan</span>
+                        <span class="tag tag-make-ahead">Make Ahead</span>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <img src="https://www.kingarthurbaking.com/sites/default/files/2020-12/crusty-european-style-hard-rolls.jpg" alt="Artisan Bread" class="menu-item-img">
+                    <h4>Artisan Bread</h4>
+                    <p>Fresh rolls or homemade cornbread</p>
+                    <p class="source">Your choice!</p>
+                </div>
+                <div class="menu-item">
+                    <img src="https://www.halfbakedharvest.com/wp-content/uploads/2021/09/Cinnamon-Apple-Crumble-Cake-1.jpg" alt="Cinnamon Apple Crumble Cake" class="menu-item-img">
+                    <h4>Cinnamon Apple Crumble Cake</h4>
+                    <p>With vanilla ice cream</p>
+                    <p class="source"><a href="https://www.halfbakedharvest.com/cinnamon-apple-crumble-cake/" target="_blank">Half Baked Harvest</a></p>
+                    <div class="dietary-tags">
+                        <span class="tag tag-make-ahead">Make Ahead</span>
+                        <span class="tag tag-kid-friendly">Kid Favorite</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Equipment Checklist -->
+        <div class="section" id="equipment">
+            <h2>⚔️ Your Kitchen Arsenal ⚔️</h2>
+            <p style="margin-bottom: 1rem;">Rally your troops! Gather these weapons of mass deliciousness by Tuesday. No chef left behind! 🎖️</p>
+
+            <div class="equipment-grid">
+                <div class="equipment-category">
+                    <h4>🔥 Baking & Roasting</h4>
+                    <ul>
+                        <li>Large rimmed baking sheet (for turkey)</li>
+                        <li>2 additional baking sheets (vegetables)</li>
+                        <li>9x13" baking dish (mac & cheese)</li>
+                        <li>9x13" baking dish (stuffing)</li>
+                        <li>10" springform pan (cake)</li>
+                        <li>Roasting rack (optional for turkey)</li>
+                        <li>Parchment paper</li>
+                        <li>Aluminum foil</li>
+                    </ul>
+                </div>
+                <div class="equipment-category">
+                    <h4>🍳 Stovetop & Prep</h4>
+                    <ul>
+                        <li>Large Dutch oven (potatoes)</li>
+                        <li>Large pot with lid (pasta, beans)</li>
+                        <li>Large skillet (stuffing veggies)</li>
+                        <li>Medium saucepan (gravy, milk)</li>
+                        <li>Small saucepan (crispy sage)</li>
+                        <li>Colander</li>
+                        <li>Fine mesh strainer</li>
+                    </ul>
+                </div>
+                <div class="equipment-category">
+                    <h4>🔪 Secret Weapons</h4>
+                    <ul>
+                        <li>Kitchen shears (for the spatchcock SNIP SNIP!)</li>
+                        <li>Instant-read thermometer (CRUCIAL!)</li>
+                        <li>Potato ricer or masher</li>
+                        <li>Electric hand mixer</li>
+                        <li>Whisk</li>
+                        <li>Wooden spoons</li>
+                        <li>Sharp chef's knife</li>
+                        <li>Cutting boards (2-3)</li>
+                        <li>Vegetable peeler</li>
+                        <li>Citrus zester/grater</li>
+                        <li>Measuring cups & spoons</li>
+                    </ul>
+                </div>
+                <div class="equipment-category">
+                    <h4>✨ The Grand Presentation</h4>
+                    <ul>
+                        <li>Large platter (turkey's throne)</li>
+                        <li>8-10 serving bowls/dishes</li>
+                        <li>Gravy boat (fancy!)</li>
+                        <li>Serving spoons (8-10)</li>
+                        <li>Carving knife & fork</li>
+                        <li>Ice cream scoop</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Shopping List -->
+        <div class="section" id="shopping">
+            <h2>🛒 The Great Grocery Quest 🛒</h2>
+            <p style="margin-bottom: 1rem;">Your mission, should you choose to accept it: Acquire these sacred ingredients by Monday! 🕵️ Pro tip: Go early, avoid the crowds, feel SMUG. 😏</p>
+
+            <div class="shopping-grid">
+                <div class="shopping-category">
+                    <h3>🥩 Meat & Deli</h3>
+                    <ul>
+                        <li>12-14 lb whole turkey <span class="item-note">(THE STAR! 🌟)</span></li>
+                        <li>3 oz thinly sliced prosciutto</li>
+                    </ul>
+                </div>
+
+                <div class="shopping-category">
+                    <h3>🥛 Dairy & Eggs</h3>
+                    <ul>
+                        <li>Butter - 5 sticks (2.5 lbs)</li>
+                        <li>Heavy cream - 1 quart (4 cups)</li>
+                        <li>Whole milk - 6 cups</li>
+                        <li>Eggs - 1 dozen</li>
+                        <li>Sharp white cheddar - 18 oz</li>
+                        <li>Gruyere cheese - 10 oz</li>
+                        <li>Feta cheese - 4 oz</li>
+                        <li>Vanilla ice cream - 1 quart</li>
+                    </ul>
+                </div>
+
+                <div class="shopping-category">
+                    <h3>🥕 Produce - Veggies Galore</h3>
+                    <ul>
+                        <li>Garlic - 2 heads</li>
+                        <li>Yellow onion - 1 small</li>
+                        <li>Shallot - 1 large</li>
+                        <li>Celery - 1 bunch (need 3 stalks)</li>
+                        <li>Carrots - 1-1/2 lbs</li>
+                        <li>Parsnips - 1-1/2 lbs</li>
+                        <li>Sweet potato - 1 lb (1 large)</li>
+                        <li>Yukon gold potatoes - 5 lbs</li>
+                        <li>Green beans - 2 lbs</li>
+                        <li>Mixed wild mushrooms - 1 lb</li>
+                        <li>Cremini mushrooms - 1 lb</li>
+                        <li>Tuscan kale - 1 bunch (2 cups)</li>
+                        <li>Arugula - 6 oz container</li>
+                        <li>Avocado - 1</li>
+                    </ul>
+                </div>
+
+                <div class="shopping-category">
+                    <h3>🍎 Fruity Treasures</h3>
+                    <ul>
+                        <li>Honeycrisp apples - 2 (salad)</li>
+                        <li>Baking apples - 4-5 <span class="item-note">(Granny Smith or Honeycrisp)</span></li>
+                        <li>Pomegranate - 1</li>
+                        <li>Lemons - 4</li>
+                    </ul>
+                </div>
+
+                <div class="shopping-category">
+                    <h3>🌿 Herb Garden Haul</h3>
+                    <ul>
+                        <li>Fresh sage - 3 bunches (the MVP!)</li>
+                        <li>Fresh thyme - 2 bunches</li>
+                        <li>Fresh rosemary - 1 bunch</li>
+                    </ul>
+                </div>
+
+                <div class="shopping-category">
+                    <h3>🥖 Carb Heaven (Bakery)</h3>
+                    <ul>
+                        <li>Croissants - 6-8 large <span class="item-note">(day-old is fine)</span></li>
+                        <li>White sandwich bread - 6 slices</li>
+                        <li>Dinner rolls - 12-16 <span class="item-note">(pick up Wed/Thu from Oat Bakery)</span></li>
+                    </ul>
+                </div>
+
+                <div class="shopping-category">
+                    <h3>🧁 Pantry - Baking Magic</h3>
+                    <ul>
+                        <li>All-purpose flour - 5 cups</li>
+                        <li>Granulated sugar - 2 cups</li>
+                        <li>Powdered sugar - 1/2 cup</li>
+                        <li>Baking powder - 2 tsp</li>
+                        <li>Vanilla extract - 1 tbsp</li>
+                        <li>Ground cinnamon - 2 tbsp</li>
+                        <li>Ground nutmeg - 1/4 tsp</li>
+                        <li>Cayenne pepper - 1/2 tsp</li>
+                    </ul>
+                </div>
+
+                <div class="shopping-category">
+                    <h3>🍳 Pantry - Cooking Essentials</h3>
+                    <ul>
+                        <li>Extra-virgin olive oil - 2 cups</li>
+                        <li>Diamond Crystal kosher salt - 6 tbsp <span class="item-note">(or 4 tbsp Morton's)</span></li>
+                        <li>Fine sea salt</li>
+                        <li>Black peppercorns</li>
+                        <li>Elbow macaroni - 1 lb</li>
+                        <li>Vegetable broth - 6 cups</li>
+                        <li>Apple cider vinegar - 1/4 cup</li>
+                        <li>Dijon mustard - 1 tbsp</li>
+                        <li>Honey or maple syrup - 3 tbsp</li>
+                        <li>Tamari or soy sauce - 1 tbsp</li>
+                    </ul>
+                </div>
+
+                <div class="shopping-category">
+                    <h3>🥜 Crunchy Bits</h3>
+                    <ul>
+                        <li>Raw pecans - 1/4 cup</li>
+                        <li>Raw pumpkin seeds - 2 tbsp</li>
+                    </ul>
+                </div>
+
+                <div class="shopping-category">
+                    <h3>💎 Bonus Round (Optional)</h3>
+                    <ul>
+                        <li>Apple butter - 1 tbsp (salad dressing)</li>
+                        <li>Red pepper flakes</li>
+                        <li>Beet - 1 small (for root veggies)</li>
+                        <li>Turnip - 1 small (for root veggies)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Prep Timeline -->
+        <div class="section" id="timeline">
+            <h2>🗓️ The Epic Countdown Begins 🗓️</h2>
+
+            <div class="timeline">
+                <h3>🌅 Sunday or Monday (T-minus 4-5 Days)</h3>
+                <div class="timeline-item">
+                    <div class="timeline-time">🧊 Operation Defrost (If Using Frozen Turkey)</div>
+                    <p>Move that big beautiful bird from freezer to fridge! Allow 24 hours per 5 lbs. Your 12-14 lb turkey needs 3 full days to wake up. Patience, grasshopper! 🦗</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-time">🛒 Shopping Trip #1 - THE BIG HAUL</div>
+                    <p>Storm the grocery store like a champion! Buy everything EXCEPT:
+                    <ul>
+                        <li>Fresh herbs (Tuesday - want them PERKY)</li>
+                        <li>Avocado (Tuesday/Wednesday - timing is everything)</li>
+                        <li>Dinner rolls (Wed/Thu from Oat Bakery)</li>
+                    </ul>
+                    </p>
+                </div>
+            </div>
+
+            <div class="timeline">
+                <h3>✂️ Tuesday (T-minus 2 Days) - SURGERY DAY</h3>
+                <div class="timeline-item">
+                    <div class="timeline-time">🔪 Morning - Spatchcock That Bird! (45 min)</div>
+                    <p>
+                    <ul>
+                        <li>Remove turkey from packaging, remove giblets</li>
+                        <li>Pat completely dry with paper towels</li>
+                        <li>Place breast-side down on cutting board</li>
+                        <li>Using kitchen shears, cut along both sides of backbone</li>
+                        <li>Remove backbone (save for stock)</li>
+                        <li>Flip turkey over, press firmly on breastbone to flatten</li>
+                        <li>Loosen skin over breasts, season under skin with 2 tsp salt</li>
+                        <li>Season entire turkey generously with remaining salt (6 tbsp total)</li>
+                        <li>Place on baking sheet, refrigerate UNCOVERED 12-48 hours</li>
+                    </ul>
+                    </p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-time">🍄 Afternoon - Gravy Time! (45 min)</div>
+                    <p>
+                    <ul>
+                        <li>Follow full recipe (see below)</li>
+                        <li>Let cool completely</li>
+                        <li>Store in airtight container in fridge (up to 3 days)</li>
+                        <li>RESIST the urge to eat it all with a spoon! 🥄</li>
+                    </ul>
+                    </p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-time">🍎 Afternoon - DESSERT FIRST! Bake Apple Crumble Cake (1.5 hrs)</div>
+                    <p>
+                    <ul>
+                        <li>Follow full recipe (see below)</li>
+                        <li>Let cool completely in pan</li>
+                        <li>Cover tightly with plastic wrap</li>
+                        <li>Store at room temperature (up to 2 days)</li>
+                        <li>Your house will smell AMAZING 🤤</li>
+                    </ul>
+                    </p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-time">🌿 Shopping Trip #2 - Quick Errand</div>
+                    <p>Pick up fresh herbs and avocado. In and out, easy peasy! 🍃</p>
+                </div>
+            </div>
+
+            <div class="timeline">
+                <h3>🚀 Wednesday (T-minus 1 Day) - THE BIG PREP</h3>
+                <div class="timeline-item">
+                    <div class="timeline-time">🧄 Morning - Roast Garlic & Mash Potatoes (1.5 hrs)</div>
+                    <p>
+                    <ul>
+                        <li>Preheat oven to 400°F</li>
+                        <li>Slice top off garlic head, drizzle with oil, wrap in foil</li>
+                        <li>Roast 45-55 minutes until golden and soft</li>
+                        <li>Meanwhile, peel and cube potatoes</li>
+                        <li>Cook potatoes in cream/milk mixture with herbs</li>
+                        <li>Mash with roasted garlic and butter</li>
+                        <li>Transfer to 9x13 baking dish, cover, refrigerate</li>
+                    </ul>
+                    </p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-time">🥐 Afternoon - Stuffing Prep (45 min)</div>
+                    <p>
+                    <ul>
+                        <li>Tear croissants into pieces, toast lightly at 350°F</li>
+                        <li>Sauté onion, celery, mushrooms, kale with herbs</li>
+                        <li>Store toasted croissants and vegetable mixture SEPARATELY in fridge</li>
+                        <li>⚠️ DO NOT add egg mixture yet - that's tomorrow's job!</li>
+                    </ul>
+                    </p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-time">🥗 Afternoon - Salad Prep (30 min)</div>
+                    <p>
+                    <ul>
+                        <li>Toast pecans and pumpkin seeds with maple syrup and spices</li>
+                        <li>Crisp that prosciutto to perfection!</li>
+                        <li>Store nuts and prosciutto in airtight container at room temp</li>
+                        <li>Make vinaigrette, shake shake shake! Store in jar in fridge</li>
+                    </ul>
+                    </p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-time">🌙 Evening - Chop Chop Chop! (30 min)</div>
+                    <p>
+                    <ul>
+                        <li>Peel and chop carrots, parsnips, sweet potato</li>
+                        <li>Store in bowl of water in fridge (drain well before roasting)</li>
+                        <li>Trim green beans, store in bag in fridge</li>
+                        <li>Grate ALL the cheese for mac & cheese 🧀</li>
+                        <li>Chop remaining garlic for green beans</li>
+                    </ul>
+                    </p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-time">🥖 Pick Up Rolls - The Final Piece!</div>
+                    <p>Get dinner rolls from Oat Bakery (or make cornbread tonight if you're feeling EXTRA ambitious! 💪)</p>
+                </div>
+            </div>
+
+            <div class="info-box">
+                <h3>😴 Wednesday Night Checklist - Sleep Easy!</h3>
+                <p>Before you hit the pillow, verify you have (check these off and FEEL THE SATISFACTION):</p>
+                <ul style="margin-top: 0.5rem;">
+                    <li>✓ Turkey brining uncovered in fridge</li>
+                    <li>✓ Gravy in container in fridge</li>
+                    <li>✓ Cake wrapped at room temp</li>
+                    <li>✓ Mashed potatoes in baking dish in fridge</li>
+                    <li>✓ Stuffing components separate in fridge</li>
+                    <li>✓ Salad dressing and toppings ready</li>
+                    <li>✓ Root vegetables in water in fridge</li>
+                    <li>✓ Green beans trimmed in fridge</li>
+                    <li>✓ Cheese grated</li>
+                    <li>✓ Serving dishes and utensils laid out</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- All Recipes -->
+        <div class="section" id="recipes">
+            <h2>📜 The Sacred Recipe Scrolls 📜</h2>
+
+            <!-- Recipe 1: Spatchcock Turkey -->
+            <div class="recipe-card">
+                <div class="recipe-header">
+                    <h3>Spatchcock Roast Turkey</h3>
+                    <p class="recipe-source">Adapted from NYT Cooking</p>
+                    <div class="recipe-meta">
+                        <div class="recipe-meta-item"><strong>Serves:</strong> 8</div>
+                        <div class="recipe-meta-item"><strong>Active:</strong> 30 min</div>
+                        <div class="recipe-meta-item"><strong>Cook:</strong> 70-80 min</div>
+                        <div class="recipe-meta-item"><strong>Rest:</strong> 15 min</div>
+                    </div>
+                </div>
+                <div class="recipe-body">
+                    <div class="ingredients-instructions">
+                        <div class="ingredients">
+                            <h4>Ingredients</h4>
+                            <ul>
+                                <li>12-14 lb whole turkey</li>
+                                <li>6 tbsp Diamond Crystal kosher salt (or 4 tbsp Morton's)</li>
+                                <li>2-3 tbsp olive oil</li>
+                                <li>Freshly ground black pepper</li>
+                                <li>Fresh thyme, sage, rosemary sprigs (optional garnish)</li>
+                            </ul>
+                        </div>
+                        <div class="instructions">
+                            <h4>Instructions</h4>
+                            <ol>
+                                <li><strong>Spatchcock (Tuesday):</strong> Place turkey breast-down. Cut along both sides of backbone with kitchen shears. Remove backbone. Flip turkey, press firmly on breastbone until it cracks and bird lies flat.</li>
+                                <li><strong>Dry brine (Tuesday):</strong> Pat completely dry. Loosen skin over breasts, season underneath with 2 tsp salt. Season entire surface generously with remaining salt. Place on baking sheet, refrigerate uncovered 12-48 hours.</li>
+                                <li><strong>Bring to room temp (Thursday 10 AM):</strong> Remove from fridge 30-60 minutes before cooking.</li>
+                                <li><strong>Prep & roast (Thursday 11 AM):</strong> Preheat oven to 425°F. Brush turkey with olive oil, season with pepper. Roast 30 minutes at 425°F.</li>
+                                <li><strong>Reduce heat:</strong> Lower oven to 350°F. Continue roasting 40-50 minutes until breast reaches 155°F (thigh 175°F).</li>
+                                <li><strong>Rest (12:30 PM):</strong> Remove when breast hits 155°F. Tent loosely with foil, rest 15 minutes. Temperature will rise to 165°F.</li>
+                            </ol>
+                        </div>
+                    </div>
+                    <div class="recipe-notes">
+                        <h5>Key Tips</h5>
+                        <p>• Use an instant-read thermometer - it's the only way to know it's done<br>
+                        • The backbone makes excellent stock - roast it with onion, carrot, celery<br>
+                        • Carve the turkey on a cutting board with a channel to catch juices</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recipe 2: Croissant Stuffing -->
+            <div class="recipe-card">
+                <div class="recipe-header">
+                    <h3>Herby Mushroom Croissant Stuffing</h3>
+                    <p class="recipe-source"><a href="https://www.halfbakedharvest.com/herby-mushroom-croissant-stuffing/" target="_blank">Half Baked Harvest</a></p>
+                    <div class="recipe-meta">
+                        <div class="recipe-meta-item"><strong>Serves:</strong> 8-10</div>
+                        <div class="recipe-meta-item"><strong>Active:</strong> 30 min</div>
+                        <div class="recipe-meta-item"><strong>Bake:</strong> 45-50 min</div>
+                    </div>
+                </div>
+                <div class="recipe-body">
+                    <div class="ingredients-instructions">
+                        <div class="ingredients">
+                            <h4>Ingredients</h4>
+                            <ul>
+                                <li>12 cups torn croissants (6-8 croissants)</li>
+                                <li>8 tbsp (1 stick) butter, divided</li>
+                                <li>3 tbsp olive oil</li>
+                                <li>1 small onion, chopped</li>
+                                <li>3 celery stalks, chopped</li>
+                                <li>3-4 cups mixed mushrooms, sliced</li>
+                                <li>Salt and pepper</li>
+                                <li>2 cloves garlic, minced</li>
+                                <li>2 cups Tuscan kale, torn</li>
+                                <li>2 tbsp fresh sage, chopped</li>
+                                <li>1 tbsp fresh thyme, chopped</li>
+                                <li>2-3 cups vegetable broth</li>
+                                <li>3 eggs, beaten</li>
+                                <li>1/2 cup shredded Gruyere</li>
+                            </ul>
+                        </div>
+                        <div class="instructions">
+                            <h4>Instructions</h4>
+                            <ol>
+                                <li><strong>Toast croissants (Wed):</strong> Preheat oven to 350°F. Grease 9x13 dish. Spread torn croissants in dish, dot with 2 tbsp sliced butter. Bake 5-8 minutes until lightly toasted. Store in bag.</li>
+                                <li><strong>Sauté vegetables (Wed):</strong> Heat oil over medium. Cook onion 3-5 minutes. Add celery and mushrooms, season with salt/pepper. Cook undisturbed 5 minutes, then stir and cook 3-5 more minutes.</li>
+                                <li><strong>Add aromatics (Wed):</strong> Add remaining 6 tbsp butter, garlic, kale, sage, thyme. Cook until kale wilts, about 5 minutes. Cool and refrigerate.</li>
+                                <li><strong>Assemble (Thu 9 AM):</strong> Whisk 2 cups broth with eggs. Combine with croissants and vegetable mixture. Toss gently. Add more broth if dry. Pour into greased dish, top with Gruyere. Cover with foil.</li>
+                                <li><strong>Bake (Thu 12:45 PM):</strong> Bake covered at 350°F for 35 minutes. Remove foil, bake 10-15 more minutes until golden.</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recipe 3: Roasted Root Vegetables -->
+            <div class="recipe-card">
+                <div class="recipe-header">
+                    <h3>Roasted Root Vegetables with Crispy Sage</h3>
+                    <p class="recipe-source"><a href="https://www.loveandlemons.com/roasted-root-vegetables/" target="_blank">Love and Lemons</a></p>
+                    <div class="recipe-meta">
+                        <div class="recipe-meta-item"><strong>Serves:</strong> 8</div>
+                        <div class="recipe-meta-item"><strong>Prep:</strong> 20 min</div>
+                        <div class="recipe-meta-item"><strong>Roast:</strong> 25-50 min</div>
+                    </div>
+                </div>
+                <div class="recipe-body">
+                    <div class="ingredients-instructions">
+                        <div class="ingredients">
+                            <h4>Ingredients</h4>
+                            <ul>
+                                <li>1-1/2 lbs carrots, peeled, cut into 1" chunks</li>
+                                <li>1-1/2 lbs parsnips, peeled, cut into 1" chunks</li>
+                                <li>1 lb sweet potato, cut into 1" chunks</li>
+                                <li>1/4 cup olive oil</li>
+                                <li>1 tbsp fresh rosemary, chopped</li>
+                                <li>1 tbsp fresh sage, chopped</li>
+                                <li>1 tbsp fresh thyme leaves</li>
+                                <li>Salt and pepper</li>
+                                <li class="subheading">Crispy Sage:</li>
+                                <li>2 tbsp olive oil</li>
+                                <li>10 fresh sage leaves</li>
+                            </ul>
+                        </div>
+                        <div class="instructions">
+                            <h4>Instructions</h4>
+                            <ol>
+                                <li><strong>Prep vegetables (Wed):</strong> Peel and chop all vegetables. Store in water in fridge.</li>
+                                <li><strong>Roast (Thu 1:30 PM):</strong> Preheat oven to 425°F. Line 2 baking sheets with parchment. Drain vegetables well, pat dry.</li>
+                                <li><strong>Season:</strong> Toss vegetables with 1/4 cup oil, herbs, salt, pepper. Spread in single layers on sheets.</li>
+                                <li><strong>Roast:</strong> Roast 25-50 minutes, rotating pans halfway. Parsnips and sweet potatoes finish first (25-35 min). Carrots take longer (40-50 min).</li>
+                                <li><strong>Crispy sage:</strong> Heat 2 tbsp oil in small pan until bubbling. Add sage leaves, cook 1 minute until crisp. Transfer to paper towels. Reserve oil.</li>
+                                <li><strong>Serve:</strong> Transfer vegetables to platter. Drizzle with 1 tbsp sage oil, top with crispy sage.</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recipe 4: Mac and Cheese -->
+            <div class="recipe-card">
+                <div class="recipe-header">
+                    <h3>Martha Stewart Mac & Cheese</h3>
+                    <p class="recipe-source">Martha Stewart</p>
+                    <div class="recipe-meta">
+                        <div class="recipe-meta-item"><strong>Serves:</strong> 8-10</div>
+                        <div class="recipe-meta-item"><strong>Active:</strong> 30 min</div>
+                        <div class="recipe-meta-item"><strong>Bake:</strong> 40-45 min</div>
+                    </div>
+                </div>
+                <div class="recipe-body">
+                    <div class="ingredients-instructions">
+                        <div class="ingredients">
+                            <h4>Ingredients</h4>
+                            <ul>
+                                <li>8 tbsp (1 stick) butter, plus 2 tbsp</li>
+                                <li>6 slices white bread, torn into 1/4" pieces</li>
+                                <li>5-1/2 cups whole milk</li>
+                                <li>1/2 cup all-purpose flour</li>
+                                <li>2 tsp salt</li>
+                                <li>1/4 tsp nutmeg</li>
+                                <li>1/4 tsp black pepper</li>
+                                <li>1/4 tsp cayenne</li>
+                                <li>4-1/2 cups (18 oz) sharp white cheddar, grated</li>
+                                <li>2 cups (8 oz) Gruyere, grated</li>
+                                <li>1 lb elbow macaroni</li>
+                            </ul>
+                        </div>
+                        <div class="instructions">
+                            <h4>Instructions</h4>
+                            <ol>
+                                <li><strong>Prep (Thu 8 AM):</strong> Preheat oven to 375°F. Butter a 9x13" dish. Toss bread with 2 tbsp melted butter.</li>
+                                <li><strong>Heat milk:</strong> Warm milk in saucepan over medium (don't boil).</li>
+                                <li><strong>Make roux:</strong> Melt 6 tbsp butter in large pot. Add flour, whisk 1 minute.</li>
+                                <li><strong>Make sauce:</strong> Slowly whisk in hot milk. Cook, whisking constantly, until thick and bubbly.</li>
+                                <li><strong>Add cheese:</strong> Remove from heat. Stir in salt, spices, 3 cups cheddar, 1-1/2 cups Gruyere until melted.</li>
+                                <li><strong>Cook pasta:</strong> Boil macaroni 2-3 minutes LESS than package says. Drain, rinse with cold water.</li>
+                                <li><strong>Combine:</strong> Stir pasta into cheese sauce. Pour into prepared dish.</li>
+                                <li><strong>Top:</strong> Sprinkle remaining 1-1/2 cups cheddar and 1/2 cup Gruyere. Top with breadcrumbs. Cover with foil.</li>
+                                <li><strong>Bake (Thu 1:30 PM):</strong> Bake covered 30 minutes. Uncover, bake 10-15 more until golden. Broil briefly if needed.</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recipe 5: Harvest Salad -->
+            <div class="recipe-card">
+                <div class="recipe-header">
+                    <h3>Autumn Harvest Honeycrisp Apple & Feta Salad</h3>
+                    <p class="recipe-source"><a href="https://www.halfbakedharvest.com/autumn-harvest-honeycrisp-apple-and-feta-salad/" target="_blank">Half Baked Harvest</a></p>
+                    <div class="recipe-meta">
+                        <div class="recipe-meta-item"><strong>Serves:</strong> 8</div>
+                        <div class="recipe-meta-item"><strong>Active:</strong> 20 min</div>
+                    </div>
+                </div>
+                <div class="recipe-body">
+                    <div class="ingredients-instructions">
+                        <div class="ingredients">
+                            <h4>Ingredients</h4>
+                            <ul>
+                                <li class="subheading">Salad:</li>
+                                <li>1/4 cup raw pecans</li>
+                                <li>2 tbsp pumpkin seeds</li>
+                                <li>3 tbsp maple syrup</li>
+                                <li>1/2 tsp cayenne</li>
+                                <li>1/4 tsp cinnamon</li>
+                                <li>Flaky sea salt</li>
+                                <li>3 oz prosciutto, thinly sliced</li>
+                                <li>6 cups arugula</li>
+                                <li>2 Honeycrisp apples, sliced</li>
+                                <li>1 avocado, diced</li>
+                                <li>Arils from 1 pomegranate</li>
+                                <li>1/2 cup crumbled feta</li>
+                                <li class="subheading">Vinaigrette:</li>
+                                <li>1/3 cup olive oil</li>
+                                <li>1/4 cup apple cider vinegar</li>
+                                <li>1 tbsp Dijon mustard</li>
+                                <li>1 tbsp apple butter (optional)</li>
+                                <li>2 tsp honey or maple syrup</li>
+                                <li>1 tbsp fresh thyme</li>
+                                <li>2 tsp fresh sage, chopped</li>
+                                <li>Salt and pepper</li>
+                            </ul>
+                        </div>
+                        <div class="instructions">
+                            <h4>Instructions</h4>
+                            <ol>
+                                <li><strong>Candy nuts (Wed):</strong> Preheat oven to 350°F. Toss pecans and seeds with maple syrup, cayenne, cinnamon. Spread on lined baking sheet with prosciutto.</li>
+                                <li><strong>Bake:</strong> Bake 10-15 minutes until toasted and prosciutto is crisp. Sprinkle nuts with salt. Cool. Store in container.</li>
+                                <li><strong>Make dressing (Wed):</strong> Shake all vinaigrette ingredients in jar. Refrigerate.</li>
+                                <li><strong>Assemble (Thu 2:30 PM):</strong> Slice apples and avocado. Combine arugula, apples, avocado, pomegranate in large bowl.</li>
+                                <li><strong>Dress and serve:</strong> Toss with vinaigrette. Top with candied nuts, crispy prosciutto, feta. Serve immediately.</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recipe 6: Mashed Potatoes -->
+            <div class="recipe-card">
+                <div class="recipe-header">
+                    <h3>Make-Ahead Roasted Garlic Mashed Potatoes</h3>
+                    <p class="recipe-source"><a href="https://www.halfbakedharvest.com/make-ahead-roasted-garlic-mashed-potatoes/" target="_blank">Half Baked Harvest</a></p>
+                    <div class="recipe-meta">
+                        <div class="recipe-meta-item"><strong>Serves:</strong> 8-10</div>
+                        <div class="recipe-meta-item"><strong>Active:</strong> 30 min</div>
+                        <div class="recipe-meta-item"><strong>Cook:</strong> 25 min + 45 for garlic</div>
+                    </div>
+                </div>
+                <div class="recipe-body">
+                    <div class="ingredients-instructions">
+                        <div class="ingredients">
+                            <h4>Ingredients</h4>
+                            <ul>
+                                <li>1 head garlic</li>
+                                <li>Olive oil</li>
+                                <li>5 lbs Yukon gold potatoes, peeled, cubed</li>
+                                <li>2 cups heavy cream</li>
+                                <li>2 cups whole milk</li>
+                                <li>3-4 sprigs fresh sage</li>
+                                <li>3-4 sprigs fresh thyme</li>
+                                <li>8 tbsp (1 stick) butter</li>
+                                <li>Salt and pepper</li>
+                                <li class="subheading">Optional finish:</li>
+                                <li>2 tbsp butter</li>
+                                <li>Fresh sage for brown butter</li>
+                            </ul>
+                        </div>
+                        <div class="instructions">
+                            <h4>Instructions</h4>
+                            <ol>
+                                <li><strong>Roast garlic (Wed):</strong> Preheat oven to 400°F. Slice top off garlic, drizzle with oil, wrap in foil. Roast 45-55 minutes until golden and soft.</li>
+                                <li><strong>Cook potatoes (Wed):</strong> In Dutch oven, combine potatoes, cream, milk, sage and thyme sprigs. Bring to gentle boil, then simmer 20-25 minutes until fork-tender.</li>
+                                <li><strong>Drain:</strong> Drain potatoes, RESERVING all the cream. Discard herb sprigs.</li>
+                                <li><strong>Mash:</strong> Press potatoes and squeezed garlic cloves through potato ricer into warm pot (or mash well).</li>
+                                <li><strong>Finish:</strong> Over low heat, stir in 1-1/2 cups reserved cream and butter. Add more cream to reach desired consistency. Season generously with salt and pepper.</li>
+                                <li><strong>Store:</strong> Transfer to 9x13" baking dish. Cover and refrigerate up to 3 days.</li>
+                                <li><strong>Reheat (Thu 12:45 PM):</strong> Pour 1/2 cup milk/cream and 2 tbsp butter over cold potatoes (don't stir). Cover with foil. Bake at 350°F for 25-30 minutes. Stir before serving.</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recipe 7: Green Beans -->
+            <div class="recipe-card">
+                <div class="recipe-header">
+                    <h3>Lemon Garlic Green Beans</h3>
+                    <p class="recipe-source">Classic</p>
+                    <div class="recipe-meta">
+                        <div class="recipe-meta-item"><strong>Serves:</strong> 8</div>
+                        <div class="recipe-meta-item"><strong>Total:</strong> 10 min</div>
+                    </div>
+                </div>
+                <div class="recipe-body">
+                    <div class="ingredients-instructions">
+                        <div class="ingredients">
+                            <h4>Ingredients</h4>
+                            <ul>
+                                <li>2 lbs green beans, trimmed</li>
+                                <li>3 tbsp olive oil</li>
+                                <li>3 cloves garlic, minced</li>
+                                <li>Zest of 1 lemon</li>
+                                <li>Juice of 1-2 lemons</li>
+                                <li>Salt and pepper</li>
+                                <li>Red pepper flakes (optional)</li>
+                            </ul>
+                        </div>
+                        <div class="instructions">
+                            <h4>Instructions</h4>
+                            <ol>
+                                <li><strong>Prep (Wed):</strong> Trim green beans. Store in bag in fridge. Mince garlic, store separately.</li>
+                                <li><strong>Blanch (Thu 2:15 PM):</strong> Bring large pot of salted water to boil. Add beans, cook 4-5 minutes until tender-crisp and bright green. Drain well.</li>
+                                <li><strong>Make dressing:</strong> In large bowl, whisk oil, garlic, lemon zest, lemon juice, salt, and pepper.</li>
+                                <li><strong>Toss:</strong> Add warm beans, toss to coat. Taste, adjust seasoning. Add red pepper flakes if desired.</li>
+                                <li><strong>Serve:</strong> Transfer to dish and serve immediately.</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recipe 8: Mushroom Gravy -->
+            <div class="recipe-card">
+                <div class="recipe-header">
+                    <h3>Mushroom Gravy</h3>
+                    <p class="recipe-source"><a href="https://www.loveandlemons.com/mushroom-gravy/" target="_blank">Love and Lemons</a></p>
+                    <div class="recipe-meta">
+                        <div class="recipe-meta-item"><strong>Serves:</strong> 8</div>
+                        <div class="recipe-meta-item"><strong>Makes:</strong> ~3 cups</div>
+                        <div class="recipe-meta-item"><strong>Total:</strong> 45 min</div>
+                    </div>
+                </div>
+                <div class="recipe-body">
+                    <div class="ingredients-instructions">
+                        <div class="ingredients">
+                            <h4>Ingredients</h4>
+                            <ul>
+                                <li>2 tbsp olive oil</li>
+                                <li>1 shallot, finely chopped (1/3 cup)</li>
+                                <li>1 lb cremini mushrooms, sliced</li>
+                                <li>1/2 tbsp tamari or soy sauce</li>
+                                <li>2 garlic cloves, minced</li>
+                                <li>1-1/2 tbsp fresh thyme leaves</li>
+                                <li>1/2 tbsp fresh rosemary, chopped</li>
+                                <li>1/4 cup all-purpose flour</li>
+                                <li>3 cups vegetable broth</li>
+                                <li>Salt and pepper</li>
+                            </ul>
+                        </div>
+                        <div class="instructions">
+                            <h4>Instructions</h4>
+                            <ol>
+                                <li><strong>Make (Tuesday):</strong> Heat oil in large skillet over medium. Add shallot, cook until soft, about 4 minutes.</li>
+                                <li><strong>Cook mushrooms:</strong> Add mushrooms, cook until soft and releasing liquid, 8-10 minutes.</li>
+                                <li><strong>Add aromatics:</strong> Stir in tamari, garlic, thyme, rosemary. Sprinkle flour over mushrooms, stir 1 minute.</li>
+                                <li><strong>Add broth:</strong> Pour in broth, bring to simmer. Cook, whisking often, until thickened, about 20 minutes. Should coat back of spoon.</li>
+                                <li><strong>Season and store:</strong> Season with salt and pepper. Cool completely, store in airtight container in fridge up to 3 days.</li>
+                                <li><strong>Reheat (Thu 2:30 PM):</strong> Warm over low heat, stirring in a splash of broth or water if too thick. Taste and adjust seasoning.</li>
+                            </ol>
+                        </div>
+                    </div>
+                    <div class="recipe-notes">
+                        <h5>Gluten-Free Option</h5>
+                        <p>Skip flour in step 3. After adding broth, mix 2 tbsp cornstarch with a few tbsp hot gravy until smooth. Stir back into pan and cook until thickened.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recipe 9: Apple Crumble Cake -->
+            <div class="recipe-card">
+                <div class="recipe-header">
+                    <h3>Cinnamon Apple Crumble Cake</h3>
+                    <p class="recipe-source"><a href="https://www.halfbakedharvest.com/cinnamon-apple-crumble-cake/" target="_blank">Half Baked Harvest</a></p>
+                    <div class="recipe-meta">
+                        <div class="recipe-meta-item"><strong>Serves:</strong> 10-12</div>
+                        <div class="recipe-meta-item"><strong>Active:</strong> 30 min</div>
+                        <div class="recipe-meta-item"><strong>Bake:</strong> 50-60 min</div>
+                    </div>
+                </div>
+                <div class="recipe-body">
+                    <div class="ingredients-instructions">
+                        <div class="ingredients">
+                            <h4>Ingredients</h4>
+                            <ul>
+                                <li class="subheading">Cake:</li>
+                                <li>1/2 cup + 1 tbsp butter, room temp</li>
+                                <li>2/3 cup granulated sugar</li>
+                                <li>1 tsp vanilla extract</li>
+                                <li>3 eggs</li>
+                                <li>2 cups all-purpose flour</li>
+                                <li>2 tsp baking powder</li>
+                                <li>1/2 tsp salt</li>
+                                <li>4-5 baking apples, cored and sliced</li>
+                                <li class="subheading">Crumble:</li>
+                                <li>1-1/2 cups all-purpose flour</li>
+                                <li>2/3 cup + 2 tsp sugar</li>
+                                <li>2-1/8 tsp cinnamon</li>
+                                <li>1 tsp vanilla extract</li>
+                                <li>1/2 cup + 1 tbsp melted butter</li>
+                                <li class="subheading">To serve:</li>
+                                <li>Powdered sugar</li>
+                                <li>Vanilla ice cream</li>
+                            </ul>
+                        </div>
+                        <div class="instructions">
+                            <h4>Instructions</h4>
+                            <ol>
+                                <li><strong>Prep (Tuesday):</strong> Preheat oven to 350°F. Butter a 10" springform pan.</li>
+                                <li><strong>Make batter:</strong> Beat butter, sugar, and vanilla until light and fluffy. Add eggs one at a time, beating well after each.</li>
+                                <li><strong>Add dry:</strong> Whisk flour, baking powder, salt. Add to butter mixture, mix until just combined.</li>
+                                <li><strong>Assemble:</strong> Spread batter in pan. Arrange apple slices on top, pressing gently into batter.</li>
+                                <li><strong>Make crumble:</strong> Whisk flour, 2/3 cup sugar, 2 tsp cinnamon. Stir in vanilla and melted butter until crumbly. Sprinkle over apples.</li>
+                                <li><strong>Final topping:</strong> Mix 2 tsp sugar with 1/8 tsp cinnamon, sprinkle over crumble.</li>
+                                <li><strong>Bake:</strong> Bake 50-60 minutes until golden. Skewer should come out with just a few moist crumbs.</li>
+                                <li><strong>Cool and store:</strong> Cool 15 minutes in pan. Remove sides. Cool completely. Cover tightly, store at room temp up to 2 days.</li>
+                                <li><strong>Serve (Thu):</strong> Dust with powdered sugar. Warm individual slices in microwave 20-30 seconds. Serve with ice cream.</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recipe 10: Bread -->
+            <div class="recipe-card">
+                <div class="recipe-header">
+                    <h3>Dinner Rolls or Cornbread</h3>
+                    <p class="recipe-source">Your choice</p>
+                    <div class="recipe-meta">
+                        <div class="recipe-meta-item"><strong>Serves:</strong> 8-10</div>
+                    </div>
+                </div>
+                <div class="recipe-body">
+                    <div class="ingredients-instructions">
+                        <div class="ingredients">
+                            <h4>Option 1: Bakery Rolls</h4>
+                            <ul>
+                                <li>12-16 dinner rolls from Oat Bakery</li>
+                                <li>2 tbsp butter for brushing</li>
+                            </ul>
+                            <h4 style="margin-top: 1rem;">Option 2: Quick Cornbread</h4>
+                            <ul>
+                                <li>1 cup cornmeal</li>
+                                <li>1 cup all-purpose flour</li>
+                                <li>1/4 cup sugar</li>
+                                <li>1 tbsp baking powder</li>
+                                <li>1/2 tsp salt</li>
+                                <li>1 cup buttermilk</li>
+                                <li>2 eggs</li>
+                                <li>1/4 cup melted butter</li>
+                            </ul>
+                        </div>
+                        <div class="instructions">
+                            <h4>Bakery Rolls Instructions</h4>
+                            <ol>
+                                <li>Pick up rolls Wednesday or Thursday morning</li>
+                                <li>Ask bakery to slice in half for you</li>
+                                <li>Brush cut sides with melted butter</li>
+                                <li>Wrap in foil, warm at 300°F for 10 minutes before serving</li>
+                            </ol>
+                            <h4 style="margin-top: 1rem;">Cornbread Instructions</h4>
+                            <ol>
+                                <li>Preheat oven to 400°F. Grease 9x9" pan</li>
+                                <li>Whisk dry ingredients in large bowl</li>
+                                <li>Whisk buttermilk, eggs, butter in small bowl</li>
+                                <li>Combine wet and dry, pour into pan</li>
+                                <li>Bake 20-25 minutes until golden</li>
+                                <li>Can make Wednesday, rewarm Thursday</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Cooking Day Schedule -->
+        <div class="section" id="cooking-day">
+            <h2>🦃 THE BIG DAY - Operation Turkey Drop 🦃</h2>
+
+            <div class="warning-box">
+                <h3>🔥 OVEN COMMAND CENTER 🔥</h3>
+                <p>Your oven is about to work HARD. Here's the master schedule - tape this to your fridge!</p>
+                <table class="oven-table">
+                    <tr>
+                        <th>Time</th>
+                        <th>Temperature</th>
+                        <th>What's Cooking</th>
+                    </tr>
+                    <tr>
+                        <td>11:00-11:30</td>
+                        <td class="temp">425°F</td>
+                        <td>Turkey (high heat start)</td>
+                    </tr>
+                    <tr>
+                        <td>11:30-12:30</td>
+                        <td class="temp">350°F</td>
+                        <td>Turkey (finish)</td>
+                    </tr>
+                    <tr>
+                        <td>12:45-1:20</td>
+                        <td class="temp">350°F</td>
+                        <td>Potatoes + Stuffing (covered)</td>
+                    </tr>
+                    <tr>
+                        <td>1:20-1:35</td>
+                        <td class="temp">350°F</td>
+                        <td>Stuffing uncovered</td>
+                    </tr>
+                    <tr>
+                        <td>1:30-2:15</td>
+                        <td class="temp">350°F → 425°F</td>
+                        <td>Mac & cheese + Root vegetables</td>
+                    </tr>
+                    <tr>
+                        <td>2:45-2:55</td>
+                        <td class="temp">300°F</td>
+                        <td>Warm rolls</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="timeline">
+                <h3>☀️ Morning: 8:00 AM - 12:00 PM - Rise and SHINE!</h3>
+                <div class="timeline-item">
+                    <div class="timeline-time">8:00 AM - 🧀 Mac & Cheese Assembly</div>
+                    <p>Coffee in hand? Good. Complete mac & cheese through assembly (steps 1-8). Cover with foil, set aside at room temperature. YOU'RE DOING AMAZING!</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-time">9:00 AM - 🥐 Stuffing Assembly</div>
+                    <p>Combine croissants with vegetable mixture. Add egg/broth mixture. Top with cheese. Cover with foil, set aside. Looking GOOD!</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-time">10:00 AM - 🦃 Turkey Prep - The Star Gets Ready</div>
+                    <p>Remove turkey from fridge. Let sit at room temperature 30-60 minutes (it needs to warm up for its big debut!). Preheat oven to 425°F. Brush with oil, season with pepper.</p>
+                </div>
+                <div class="timeline-item" style="background: #fff3e0;">
+                    <div class="timeline-time">🚨 11:00 AM - TURKEY GOES IN! THIS IS NOT A DRILL! 🚨</div>
+                    <p><strong>Roast at 425°F for 30 minutes.</strong> Set timer. At 11:30, reduce to 350°F and continue 40-50 minutes until breast reaches 155°F. YOU'VE GOT THIS! 💪</p>
+                </div>
+            </div>
+
+            <div class="timeline">
+                <h3>🏃 Afternoon Push: 12:00 PM - 3:00 PM - THE HOME STRETCH!</h3>
+                <div class="timeline-item" style="background: #e8f5e9;">
+                    <div class="timeline-time">🎉 ~12:30 PM - TURKEY IS DONE! POP THE CHAMPAGNE!</div>
+                    <p>Remove when breast hits 155°F. Tent with foil, let it rest 15 minutes like the royalty it is (will reach 165°F). Keep oven at 350°F. Take a selfie with your bird! 📸</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-time">12:45 PM - Potatoes & Stuffing In</div>
+                    <p>
+                    <ul>
+                        <li>Pour 1/2 cup cream + 2 tbsp butter over cold mashed potatoes (don't stir). Cover tightly.</li>
+                        <li>Put covered potatoes and covered stuffing in 350°F oven.</li>
+                        <li>Both bake 35 minutes covered.</li>
+                    </ul>
+                    </p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-time">1:00 PM - Root Vegetable Prep</div>
+                    <p>Drain vegetables, pat dry, spread on baking sheets. Toss with oil, herbs, salt, pepper.</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-time">1:20 PM - Stuffing Uncovered</div>
+                    <p>Remove foil from stuffing. Continue baking 10-15 minutes until golden. Remove when done, keep covered.</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-time">1:25 PM - Potatoes Out</div>
+                    <p>Remove potatoes. Stir well. Transfer to slow cooker on low OR keep in low oven (200°F) covered.</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-time">1:30 PM - Mac & Cheese + Root Vegetables In</div>
+                    <p>
+                    <ul>
+                        <li>Put covered mac & cheese in at 350°F</li>
+                        <li>Increase oven to 425°F (or use both if available)</li>
+                        <li>Put root vegetables in</li>
+                    </ul>
+                    </p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-time">2:00 PM - Mac & Cheese Uncovered</div>
+                    <p>Remove foil. Bake 10-15 more minutes until golden. Broil briefly if needed (watch carefully!).</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-time">2:15 PM - Green Beans</div>
+                    <p>Bring large pot of salted water to boil. Blanch beans 4-5 minutes. Drain and toss with lemon-garlic dressing.</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-time">2:30 PM - 🎨 Final Assembly - SHOWTIME!</div>
+                    <p>
+                    <ul>
+                        <li>Check root vegetables - remove when done, add crispy sage (chef's kiss! 😘)</li>
+                        <li>Reheat gravy on stovetop (add splash of broth if thick)</li>
+                        <li>Toss salad with dressing and toppings - make it GORGEOUS</li>
+                        <li>Warm rolls in foil at 300°F for 10 minutes</li>
+                        <li>CARVE THAT GLORIOUS TURKEY 🔪</li>
+                        <li>Transfer everything to serving dishes</li>
+                        <li>Stand back and ADMIRE YOUR WORK!</li>
+                    </ul>
+                    </p>
+                </div>
+                <div class="timeline-item" style="background: #d2691e; color: white;">
+                    <div class="timeline-time" style="color: white;">🎊🎊🎊 3:00 PM - DINNER IS SERVED!!! 🎊🎊🎊</div>
+                    <p>YOU DID IT! YOU ABSOLUTE LEGEND! Sit down, take a deep breath, and enjoy this INCREDIBLE feast you created! Cheers to YOU! 🥂🦃✨</p>
+                </div>
+            </div>
+
+            <div class="info-box">
+                <h3>🍰 Dessert Finale - The Sweet Victory Lap!</h3>
+                <p>After everyone has had time to digest and loosen their pants (30-60 minutes):</p>
+                <ul style="margin-top: 0.5rem;">
+                    <li>Slice that GORGEOUS apple crumble cake</li>
+                    <li>Warm individual slices in microwave 20-30 seconds</li>
+                    <li>Dust with powdered sugar like SNOW ❄️</li>
+                    <li>Top with vanilla ice cream</li>
+                    <li>Accept compliments graciously (you earned them!)</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Dietary Notes -->
+        <div class="section" id="dietary">
+            <h2>🥗 Dietary Deets & Clever Swaps 🥗</h2>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem;">
+                <div class="info-box">
+                    <h3>🌱 Vegetarian/Vegan Options</h3>
+                    <p>Plant-based pals, we've got you covered!</p>
+                    <ul style="margin-top: 0.5rem;">
+                        <li><strong>Already Vegan:</strong> Roasted Root Vegetables, Mushroom Gravy, Green Beans 🎉</li>
+                        <li><strong>Easy Vegan:</strong> Salad (skip prosciutto, use maple in dressing, omit feta or go vegan cheese)</li>
+                    </ul>
+                </div>
+
+                <div class="info-box">
+                    <h3>🌾 Gluten-Free Modifications</h3>
+                    <ul style="margin-top: 0.5rem;">
+                        <li><strong>Gravy:</strong> Use cornstarch instead of flour (2 tbsp)</li>
+                        <li><strong>Mac & Cheese:</strong> Use GF pasta and GF flour for roux</li>
+                        <li><strong>Stuffing:</strong> Use GF bread cubes instead of croissants</li>
+                        <li><strong>Already GF:</strong> Turkey, Root Vegetables, Mashed Potatoes, Green Beans, Salad ✨</li>
+                    </ul>
+                </div>
+
+                <div class="info-box">
+                    <h3>🥛 Dairy-Free Modifications</h3>
+                    <ul style="margin-top: 0.5rem;">
+                        <li><strong>Mashed Potatoes:</strong> Use oat milk and vegan butter (still DELISH!)</li>
+                        <li><strong>Stuffing:</strong> Use olive oil instead of butter, skip cheese</li>
+                        <li><strong>Already DF:</strong> Turkey, Root Vegetables, Green Beans, Mushroom Gravy 🙌</li>
+                    </ul>
+                </div>
+
+                <div class="info-box">
+                    <h3>👧👦 Kid-Friendly Plates</h3>
+                    <p>For the tiny humans (ages 4 & 7), load up on:</p>
+                    <ul style="margin-top: 0.5rem;">
+                        <li>Mac & Cheese (ALWAYS a winner! 🏆)</li>
+                        <li>Mashed Potatoes (creamy, mild, perfect)</li>
+                        <li>Turkey white meat (sliced thin)</li>
+                        <li>Rolls with butter (carb heaven)</li>
+                        <li>Apple slices from salad (plain)</li>
+                        <li>Apple Cake with ice cream (they'll love you FOREVER)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Beverage Pairings -->
+        <div class="section" id="beverages">
+            <h2>🥂 Sip Sip Hooray! 🥂</h2>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem;">
+                <div class="shopping-category">
+                    <h3>🍷 Wine Wisdom</h3>
+                    <ul style="list-style: disc; padding-left: 1.5rem;">
+                        <li style="border: none;"><strong>White:</strong> Chardonnay (unoaked), Riesling, Gewürztraminer</li>
+                        <li style="border: none;"><strong>Red:</strong> Pinot Noir, Beaujolais, Côtes du Rhône</li>
+                        <li style="border: none;"><strong>Bubbly:</strong> Prosecco, Cava, Champagne 🍾</li>
+                    </ul>
+                    <p style="font-size: 0.85rem; margin-top: 0.5rem; color: #666;">Plan for 1 bottle per 2-3 adults (or more, no judgment! 😉)</p>
+                </div>
+
+                <div class="shopping-category">
+                    <h3>🍹 Non-Alcoholic Delights</h3>
+                    <ul style="list-style: disc; padding-left: 1.5rem;">
+                        <li style="border: none;">Sparkling apple cider (festive!)</li>
+                        <li style="border: none;">Cranberry spritzer (cranberry juice + sparkling water)</li>
+                        <li style="border: none;">Spiced hot apple cider (cozy vibes)</li>
+                        <li style="border: none;">Iced tea with lemon</li>
+                    </ul>
+                </div>
+
+                <div class="shopping-category">
+                    <h3>🧃 For the Little Ones</h3>
+                    <ul style="list-style: disc; padding-left: 1.5rem;">
+                        <li style="border: none;">Sparkling apple cider in wine glasses (they'll feel SO fancy!)</li>
+                        <li style="border: none;">Apple juice</li>
+                        <li style="border: none;">Milk</li>
+                        <li style="border: none;">Spa water with cucumber or orange slices ✨</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Beyond the Food -->
+        <div class="section" id="beyond-food">
+            <h2>🎪 Beyond the Food - The Full Experience 🎪</h2>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem;">
+                <div class="info-box">
+                    <h3>🍽️ Table & Setup (Do Wednesday Night!)</h3>
+                    <ul style="margin-top: 0.5rem;">
+                        <li>Set the table completely - plates, silverware, glasses, napkins</li>
+                        <li>Decide: buffet-style or family-style serving?</li>
+                        <li>Set up a beverage station so guests can help themselves</li>
+                        <li>Put out serving dishes with labels/sticky notes for what goes where</li>
+                        <li>Create a playlist if music matters to you</li>
+                        <li>Charge your phone for all those food photos!</li>
+                    </ul>
+                </div>
+
+                <div class="info-box">
+                    <h3>👥 Guest Management</h3>
+                    <ul style="margin-top: 0.5rem;">
+                        <li>Have appetizers out while you finish cooking (cheese board, nuts, crudites)</li>
+                        <li>Designate someone to handle drinks so you can focus on food</li>
+                        <li>Plan activities: football on TV? Games for kids?</li>
+                        <li>Accept help when offered - assign simple tasks like filling water glasses</li>
+                        <li>If guests offer to bring something, say YES - sides and desserts are perfect</li>
+                    </ul>
+                </div>
+
+                <div class="info-box">
+                    <h3>🧘 Flexibility & Backup Plans</h3>
+                    <ul style="margin-top: 0.5rem;">
+                        <li>Build in 30+ minutes of buffer time - something always takes longer</li>
+                        <li>Accept that not everything will be piping hot simultaneously (and that's OK!)</li>
+                        <li>Have store-bought backups ready (rolls, cranberry sauce, pie)</li>
+                        <li>If something flops, laugh it off - no one will remember</li>
+                        <li>A relaxed host creates better memories than a perfect meal</li>
+                    </ul>
+                </div>
+
+                <div class="info-box">
+                    <h3>📦 The Aftermath (Plan Ahead!)</h3>
+                    <ul style="margin-top: 0.5rem;">
+                        <li>Have plenty of containers ready for leftovers</li>
+                        <li>Save the turkey carcass for stock (freeze if not making immediately)</li>
+                        <li>Recruit 2-3 people for dish duty - many hands make light work!</li>
+                        <li>Run dishwasher loads throughout the day, not just at the end</li>
+                        <li>Consider disposable serving platters for easier cleanup</li>
+                        <li>Leftover Turkey sandwiches on Friday are the BEST part!</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Final Notes -->
+        <div class="success-box">
+            <h3>🏆 YOU'VE GOT THIS, SUPERSTAR! 🏆</h3>
+            <p>Look at you with this INCREDIBLE plan! You're basically a professional now! Here's what you've got:</p>
+            <ul style="margin: 0.5rem 0 0 1.5rem;">
+                <li>📜 Every recipe written out completely - no hunting around!</li>
+                <li>⏰ Hour-by-hour schedule - you'll know EXACTLY what to do</li>
+                <li>📅 Make-ahead tasks spread over 3 days - no stress!</li>
+                <li>🛒 Shopping list organized by store section - efficiency FTW!</li>
+                <li>🔧 Equipment checklist - no surprises!</li>
+                <li>🥗 Something delicious for every dietary need - everyone's happy!</li>
+            </ul>
+            <p style="margin-top: 1rem; font-size: 1.1rem;"><strong>Remember:</strong> The goal is to enjoy the day with your loved ones. This plan gives you the structure to stay CALM, have FUN, and create MEMORIES! You're going to absolutely CRUSH IT! 💪✨</p>
+            <p style="margin-top: 1rem; font-size: 1.3rem; text-align: center;">🦃🍂 HAPPY THANKSGIVING! 🍂🦃</p>
+        </div>
+
+        <footer style="text-align: center; padding: var(--space-xl); color: var(--color-text-secondary); font-style: italic; border-top: 2px solid var(--color-border); margin-top: var(--space-xl); background: var(--color-surface);">
+            <p style="font-size: 1.1rem;"><strong style="color: var(--color-primary);">📱 Pro Tip:</strong> Print this page or keep it open on your phone/tablet for easy reference while cooking!</p>
+            <p style="margin-top: var(--space-sm); font-size: 0.9rem;">Recipe sources: Half Baked Harvest • Love and Lemons • Martha Stewart • NYT Cooking</p>
+            <p style="margin-top: var(--space-md); font-size: 1.5rem;">🦃🥧🍂✨🥂</p>
+        </footer>
+    </div>
+</body>
+</html>
