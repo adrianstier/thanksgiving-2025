@@ -262,6 +262,11 @@
 
         // Load saved state on page load
         loadState();
+
+        // Open all categories by default
+        document.querySelectorAll('.category-content').forEach(el => {
+            el.classList.add('active');
+        });
     </script>
 </body>
 </html>
