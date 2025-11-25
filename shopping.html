@@ -91,6 +91,87 @@
         .clear-btn:hover {
             background: var(--color-surface-elevated);
         }
+        .add-item-section {
+            background: white;
+            padding: var(--space-md);
+            border-radius: var(--radius-md);
+            margin-bottom: var(--space-lg);
+            border-left: 3px solid var(--color-success);
+        }
+        .add-item-section h3 {
+            margin: 0 0 var(--space-sm);
+            font-size: 1rem;
+            color: var(--color-text);
+        }
+        .add-item-form {
+            display: flex;
+            gap: var(--space-sm);
+        }
+        .add-item-form input[type="text"] {
+            flex: 1;
+            padding: var(--space-sm);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-sm);
+            font-size: 0.9rem;
+        }
+        .add-item-form input[type="text"]:focus {
+            outline: none;
+            border-color: var(--color-primary);
+        }
+        .add-item-form button {
+            padding: var(--space-sm) var(--space-md);
+            background: var(--color-success);
+            color: white;
+            border: none;
+            border-radius: var(--radius-sm);
+            cursor: pointer;
+            font-size: 0.9rem;
+            white-space: nowrap;
+        }
+        .add-item-form button:hover {
+            background: var(--color-success-hover);
+        }
+        .custom-items-container {
+            margin-top: var(--space-md);
+        }
+        .custom-item {
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);
+            padding: var(--space-sm) 0;
+            border-bottom: 1px solid var(--color-border-light);
+            font-size: 0.9rem;
+        }
+        .custom-item:last-child {
+            border-bottom: none;
+        }
+        .custom-item input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            accent-color: var(--color-success);
+            cursor: pointer;
+        }
+        .custom-item label {
+            cursor: pointer;
+            flex: 1;
+        }
+        .custom-item.checked label {
+            text-decoration: line-through;
+            color: var(--color-text-light);
+        }
+        .custom-item .delete-btn {
+            background: none;
+            border: none;
+            color: var(--color-text-light);
+            cursor: pointer;
+            padding: 4px 8px;
+            font-size: 1rem;
+            opacity: 0.5;
+        }
+        .custom-item .delete-btn:hover {
+            opacity: 1;
+            color: #dc2626;
+        }
     </style>
 </head>
 <body>
@@ -115,6 +196,15 @@
 
     <main class="container">
         <section class="section">
+            <div class="add-item-section">
+                <h3>Add Your Own Items</h3>
+                <form class="add-item-form" onsubmit="addCustomItem(event)">
+                    <input type="text" id="newItemInput" placeholder="Enter item (e.g., Ice cream)" required>
+                    <button type="submit">+ Add</button>
+                </form>
+                <div id="customItems" class="custom-items-container"></div>
+            </div>
+
             <button class="category-btn" onclick="toggle('charcuterie')">
                 Charcuterie Board <span class="count">12 items</span>
             </button>
@@ -275,7 +365,7 @@
         }
 
         function checkItem(checkbox) {
-            const item = checkbox.closest('.item');
+            const item = checkbox.closest('.item') || checkbox.closest('.custom-item');
             if (checkbox.checked) {
                 item.classList.add('checked');
             } else {
@@ -300,7 +390,8 @@
                     const cb = document.getElementById(id);
                     if (cb) {
                         cb.checked = true;
-                        cb.closest('.item').classList.add('checked');
+                        const item = cb.closest('.item') || cb.closest('.custom-item');
+                        if (item) item.classList.add('checked');
                     }
                 });
             }
@@ -309,13 +400,67 @@
         function clearAll() {
             document.querySelectorAll('input[type="checkbox"]').forEach(cb => {
                 cb.checked = false;
-                cb.closest('.item').classList.remove('checked');
+                const item = cb.closest('.item') || cb.closest('.custom-item');
+                if (item) item.classList.remove('checked');
             });
             localStorage.removeItem('thanksgiving-shopping');
         }
 
+        // Custom items functionality
+        let customItems = JSON.parse(localStorage.getItem('thanksgiving-custom-items') || '[]');
+
+        function addCustomItem(event) {
+            event.preventDefault();
+            const input = document.getElementById('newItemInput');
+            const text = input.value.trim();
+            if (!text) return;
+
+            const id = 'custom-' + Date.now();
+            customItems.push({ id, text, checked: false });
+            saveCustomItems();
+            renderCustomItems();
+            input.value = '';
+            input.focus();
+        }
+
+        function deleteCustomItem(id) {
+            customItems = customItems.filter(item => item.id !== id);
+            saveCustomItems();
+            renderCustomItems();
+            saveState();
+        }
+
+        function toggleCustomItem(checkbox, id) {
+            const item = customItems.find(i => i.id === id);
+            if (item) {
+                item.checked = checkbox.checked;
+                saveCustomItems();
+            }
+            checkItem(checkbox);
+        }
+
+        function saveCustomItems() {
+            localStorage.setItem('thanksgiving-custom-items', JSON.stringify(customItems));
+        }
+
+        function renderCustomItems() {
+            const container = document.getElementById('customItems');
+            if (customItems.length === 0) {
+                container.innerHTML = '';
+                return;
+            }
+            container.innerHTML = customItems.map(item => `
+                <div class="custom-item ${item.checked ? 'checked' : ''}">
+                    <input type="checkbox" id="${item.id}" ${item.checked ? 'checked' : ''} onchange="toggleCustomItem(this, '${item.id}')">
+                    <label for="${item.id}">${item.text}</label>
+                    <button class="delete-btn" onclick="deleteCustomItem('${item.id}')" title="Remove item">&times;</button>
+                </div>
+            `).join('');
+        }
+
         // Load saved state on page load
         loadState();
+        renderCustomItems();
 
         // Open all categories by default
         document.querySelectorAll('.category-content').forEach(el => {
